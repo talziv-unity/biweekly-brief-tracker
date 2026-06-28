@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bi-Weekly Brief Tracker</title>
+<title>Hole It — Bi-Weekly Brief Tracker</title>
 <style>
   :root {
     --bg: #191919;
@@ -39,6 +39,7 @@
   .game h2 { margin: 0; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
   .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
   .gleft { font-size: 11px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+  .gsub { font-size: 10.5px; color: var(--muted); font-weight: 600; margin-top: 3px; opacity: .85; }
   .gbar { height: 5px; background: #333; border-radius: 99px; margin: 7px 0 6px; overflow: hidden; }
   .gbar > span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 99px; transition: width .25s ease; }
 
@@ -71,9 +72,21 @@
   .alldone { color: var(--done); font-weight: 700; }
 
   .topbar {
-    display: flex; align-items: center; justify-content: flex-end; gap: 16px;
+    display: flex; align-items: center; gap: 16px;
     margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
   }
+  .tb-side { flex: 1 1 0; display: flex; align-items: center; gap: 16px; min-width: 0; }
+  .tb-right { justify-content: flex-end; }
+  .weektabs { display: flex; gap: 4px; flex: 0 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 9px; padding: 3px; }
+  .weektabs button {
+    border: none; background: none; color: var(--muted); font: inherit; font-size: 12.5px; font-weight: 600;
+    padding: 5px 12px; border-radius: 6px; cursor: pointer; transition: all .12s ease; white-space: nowrap;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .weektabs button .gd { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .55; }
+  .weektabs button:hover { color: var(--ink); }
+  .weektabs button.active { background: color-mix(in srgb, var(--tab) 22%, transparent); color: var(--tab); }
+  .weektabs button.active .gd { opacity: 1; }
   .topbar .count { font-size: 12.5px; color: var(--muted); }
   .topbar .count b { color: var(--ink); font-size: 14px; }
   button.reset {
@@ -87,58 +100,112 @@
 <body>
 <div class="wrap">
   <header class="topbar">
-    <div class="count">Overall <b id="overallDone">0</b> / <b id="overallTotal">0</b> done</div>
-    <button class="reset" id="resetAll">↺ Reset cycle</button>
+    <div class="tb-side"></div>
+    <div class="weektabs" id="weektabs"></div>
+    <div class="tb-side tb-right">
+      <div class="count">This view <b id="overallDone">0</b> / <b id="overallTotal">0</b> done</div>
+      <button class="reset" id="resetAll">↺ Reset all</button>
+    </div>
   </header>
   <div class="grid" id="grid"></div>
 </div>
 
 <script>
+// Each game's bi-weekly breakdown, derived from the Creative Requests board
+// (Week 1 = 06-25 sweep wave, Week 2 = iteration-grind wave, Monthly = separate cadence).
+const W1 = "Week 1 · Monthly + Sweep + Inspiration", W2 = "Week 2 · Iteration Grind";
 const GAMES = [
-  { name: "Hole It", key: "hole", color: "var(--hole)", items: [
-    { label: "Iterations (Video)", target: 5 }, { label: "Inspiration (Video)", target: 2 },
-    { label: "New Ideas (Video)", target: 1 }, { label: "Playable", target: 2 },
-    { label: "IEC", target: 1 }, { label: "Banner", target: 1 } ]},
-  { name: "Screw Guru", key: "screw", color: "var(--screw)", items: [
-    { label: "Iterations (Video)", target: 2 }, { label: "Inspiration (Video)", target: 1 },
-    { label: "Sett AI", target: 6 }, { label: "Playable", target: 2 },
-    { label: "IEC", target: 1 }, { label: "Banner", target: 1 } ]},
-  { name: "Unravel Master", key: "unravel", color: "var(--unravel)", items: [
-    { label: "Iterations (Video)", target: 4 }, { label: "Inspiration (Video)", target: 1 },
-    { label: "Playable", target: 2 }, { label: "IEC", target: 1 }, { label: "Banner", target: 1 } ]},
+  { key: "hole", name: "Hole It", color: "var(--hole)", weeks: [
+    { name: W1, key: "w1", items: [
+      { label: "IEC", target: 1 }, { label: "Banner", target: 1 },
+      { label: "Iteration (Video)", target: 1 }, { label: "Poolday (Inspiration)", target: 1 },
+      { label: "Sonic VO (Inspiration)", target: 1 }, { label: "New Concept (New Idea)", target: 1 },
+      { label: "Playable", target: 1 }, { label: "SETT (4 deliveries)", target: 3 } ]},
+    { name: W2, key: "w2", items: [
+      { label: "Iteration (Video)", target: 5 }, { label: "New Concept (New Idea)", target: 1 },
+      { label: "Playable", target: 2 }, { label: "SETT (4 deliveries)", target: 1 } ]},
+  ]},
+  { key: "screw", name: "Screw Guru", color: "var(--screw)", weeks: [
+    { name: W1, key: "w1", items: [
+      { label: "IEC", target: 1 }, { label: "Banner", target: 1 },
+      { label: "Iteration (Video)", target: 1 }, { label: "Poolday (Inspiration)", target: 1 },
+      { label: "New Concept (New Idea)", target: 1 }, { label: "Playable", target: 1 },
+      { label: "SETT (4 deliveries)", target: 3 } ]},
+    { name: W2, key: "w2", items: [
+      { label: "Iteration (Video)", target: 2 }, { label: "Playable", target: 1 },
+      { label: "SETT (4 deliveries)", target: 1 } ]},
+  ]},
+  { key: "unravel", name: "Unravel Master", color: "var(--unravel)", weeks: [
+    { name: W1, key: "w1", items: [
+      { label: "IEC", target: 1 }, { label: "Banner", target: 1 },
+      { label: "Iteration (Video)", target: 1 }, { label: "Poolday (Inspiration)", target: 1 },
+      { label: "Sonic VO (Inspiration)", target: 1 }, { label: "New Concept (New Idea)", target: 1 },
+      { label: "Playable", target: 1 } ]},
+    { name: W2, key: "w2", items: [
+      { label: "Iteration (Video)", target: 3 }, { label: "New Concept (New Idea)", target: 1 },
+      { label: "Playable", target: 2 } ]},
+  ]},
 ];
 
-const STORE_KEY = "biweekly_brief_tracker_v1";
+// The week toggle — switches which week every game column shows. Built from the
+// week keys/names defined per-game above (short label for the tab, full name on the card).
+const WEEKS = [
+  { key: "w1", tab: "Week 1", color: "var(--hole)" },
+  { key: "w2", tab: "Week 2", color: "var(--screw)" },
+];
+
+const STORE_KEY = "biweekly_brief_tracker_v2";
 let state = load();
+if (!WEEKS.some(w => w.key === state.week)) state.week = WEEKS[0].key;
 
 function load() {
-  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { checks: {} }; }
-  catch { return { checks: {} }; }
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { checks: {}, week: WEEKS[0].key }; }
+  catch { return { checks: {}, week: WEEKS[0].key }; }
 }
 function save() { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
 
-function itemId(gk, idx) { return gk + ":" + idx; }
+function itemId(gameKey, weekKey, idx) { return gameKey + ":" + weekKey + ":" + idx; }
 function getChecked(id) { return state.checks[id] || 0; }
 function setChecked(id, n) { state.checks[id] = n; save(); }
+
+function renderTabs() {
+  const tabs = document.getElementById("weektabs");
+  tabs.innerHTML = "";
+  WEEKS.forEach(w => {
+    const b = document.createElement("button");
+    b.style.setProperty("--tab", w.color);
+    b.className = w.key === state.week ? "active" : "";
+    b.style.color = w.key === state.week ? w.color : "";
+    b.textContent = w.tab;
+    b.onclick = () => { state.week = w.key; save(); renderTabs(); render(); };
+    tabs.appendChild(b);
+  });
+}
 
 function render() {
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
   let oDone = 0, oTotal = 0;
 
-  GAMES.forEach(g => {
+  GAMES.forEach(game => {
+    const wk = game.weeks.find(w => w.key === state.week);
     let gDone = 0, gTotal = 0;
     const card = document.createElement("div");
     card.className = "game";
-    card.style.setProperty("--accent", g.color);
+    card.style.setProperty("--accent", game.color);
 
     const head = document.createElement("div");
     head.className = "ghead";
-    head.innerHTML = '<h2><span class="dot"></span>' + g.name + '</h2>';
+    head.innerHTML = '<h2><span class="dot"></span>' + game.name + '</h2>';
     const gleft = document.createElement("div");
     gleft.className = "gleft";
     head.appendChild(gleft);
     card.appendChild(head);
+
+    const sub = document.createElement("div");
+    sub.className = "gsub";
+    sub.textContent = wk ? wk.name : "";
+    card.appendChild(sub);
 
     const bar = document.createElement("div");
     bar.className = "gbar";
@@ -149,8 +216,9 @@ function render() {
     const itemsWrap = document.createElement("div");
     itemsWrap.className = "items";
 
-    g.items.forEach((it, idx) => {
-      const id = itemId(g.key, idx);
+    const items = wk ? wk.items : [];
+    items.forEach((it, idx) => {
+      const id = itemId(game.key, state.week, idx);
       let checked = Math.min(getChecked(id), it.target);
       gTotal += it.target; gDone += checked;
 
@@ -188,13 +256,13 @@ function render() {
     });
     card.appendChild(itemsWrap);
 
-    gleft.innerHTML = gDone === gTotal ? '<span class="alldone">All done ✓</span>' : gDone + ' / ' + gTotal;
+    gleft.innerHTML = gTotal && gDone === gTotal ? '<span class="alldone">All done ✓</span>' : gDone + ' / ' + gTotal;
     barFill.style.width = (gTotal ? (gDone / gTotal * 100) : 0) + "%";
 
     const foot = document.createElement("footer");
     const rb = document.createElement("button");
-    rb.textContent = "Reset " + g.name;
-    rb.onclick = () => { g.items.forEach((_, idx) => setChecked(itemId(g.key, idx), 0)); render(); };
+    rb.textContent = "Reset " + game.name + " · this week";
+    rb.onclick = () => { items.forEach((_, idx) => setChecked(itemId(game.key, state.week, idx), 0)); render(); };
     foot.appendChild(rb);
     card.appendChild(foot);
 
@@ -208,12 +276,12 @@ function render() {
 
 const resetBtn = document.getElementById("resetAll");
 let armed = false, armTimer = null;
-function disarm() { armed = false; clearTimeout(armTimer); resetBtn.classList.remove("arm"); resetBtn.textContent = "↺ Reset cycle"; }
+function disarm() { armed = false; clearTimeout(armTimer); resetBtn.classList.remove("arm"); resetBtn.textContent = "↺ Reset all"; }
 resetBtn.onclick = () => {
   if (!armed) {
     armed = true;
     resetBtn.classList.add("arm");
-    resetBtn.textContent = "Click again to reset all";
+    resetBtn.textContent = "Click again to reset everything";
     armTimer = setTimeout(disarm, 3000);
     return;
   }
@@ -223,6 +291,7 @@ resetBtn.onclick = () => {
   render();
 };
 
+renderTabs();
 render();
 </script>
 </body>
