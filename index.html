@@ -109,7 +109,7 @@
 
   <!-- ===== BODY ===== -->
   <div style="flex: 1; min-width: 0; overflow-y: auto;">
-    <div style="max-width: min(1680px, 96vw); margin: 0 auto; box-sizing: border-box; padding: 13px 28px 22px; display: flex; flex-direction: column; gap: 11px;">
+    <div style="max-width: min(1200px, 94vw); margin: 0 auto; box-sizing: border-box; padding: 13px 24px 22px; display: flex; flex-direction: column; gap: 11px;">
 
       <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
         <div class="cf-body2" style="color: var(--cf-error);">data.json not found — awaiting Doctor sync.</div>
@@ -189,7 +189,7 @@
 
         <!-- ============ LIST VIEW ============ -->
         <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); align-items: start; gap: 16px 24px;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
             <sc-for list="{{ curGroups }}" as="grp" hint-placeholder-count="3">
               <div style="display: flex; flex-direction: column; gap: 5px;">
                 <div style="display: flex; align-items: center; gap: 10px; padding: 0 2px;">
@@ -281,6 +281,9 @@
                 <sc-if value="{{ slot.showFill }}" hint-placeholder-val="{{ false }}">
                   <span title="{{ slot.fillText }}" style="font: 400 11px/1.4 var(--cf-font-mono); color: var(--cf-fg-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.fillText }}</span>
                 </sc-if>
+                <sc-if value="{{ slot.showRule }}" hint-placeholder-val="{{ false }}">
+                  <span style="font: 400 11px/1.4 var(--cf-font-sans); color: var(--cf-fg-disabled);">{{ slot.rule }}</span>
+                </sc-if>
                 <div style="flex: 1;"></div>
                 <div style="display: flex; align-items: center; gap: 10px;">
                   <div style="display: flex; gap: 5px; align-items: center; flex: 1;">
@@ -331,6 +334,9 @@
                     <span style="font: 500 13px/1.3 var(--cf-font-sans); color: {{ slot.labelColor }}; text-decoration: {{ slot.labelDeco }}; text-decoration-color: var(--cf-gray-7); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.labelMain }}</span>
                     <sc-if value="{{ slot.hasSub }}" hint-placeholder-val="{{ false }}">
                       <span style="font: 400 9px/1.3 var(--cf-font-mono); color: var(--cf-fg-disabled); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.labelSub }}</span>
+                    </sc-if>
+                    <sc-if value="{{ slot.showRule }}" hint-placeholder-val="{{ false }}">
+                      <span style="font: 400 9px/1.35 var(--cf-font-sans); color: var(--cf-fg-disabled); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.rule }}</span>
                     </sc-if>
                   </div>
                   <span style="font: 400 10px/1 var(--cf-font-mono); letter-spacing: 0.08em; color: var(--cf-fg-secondary);">{{ slot.group }}</span>
@@ -389,6 +395,9 @@
                           <span style="font: 500 13px/1.35 var(--cf-font-sans); color: {{ slot.labelColor }}; text-decoration: {{ slot.labelDeco }}; text-decoration-color: var(--cf-gray-7);">{{ slot.labelMain }}</span>
                           <sc-if value="{{ slot.hasSub }}" hint-placeholder-val="{{ false }}">
                             <span style="font: 400 9px/1.3 var(--cf-font-mono); color: var(--cf-fg-disabled);">{{ slot.labelSub }}</span>
+                          </sc-if>
+                          <sc-if value="{{ slot.showRule }}" hint-placeholder-val="{{ false }}">
+                            <span style="font: 400 10px/1.4 var(--cf-font-sans); color: var(--cf-fg-disabled);">{{ slot.rule }}</span>
                           </sc-if>
                         </div>
                         <span style="display: flex; align-items: center; gap: 7px; margin-top: 1px; flex-shrink: 0;">
