@@ -1,0 +1,151 @@
+/* ── Chat (Unity AI assistant surfaces) ──────────────────────────────────── */
+
+.appui-unitylogo--animated { animation: appui-unity-pulse 1.4s var(--ease-in-out) infinite; }
+@keyframes appui-unity-pulse { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .appui-unitylogo--animated { animation: none; } }
+
+/* Message bubbles */
+.appui-chatmsg { display: flex; font-family: var(--font-sans); font-size: var(--text-body); line-height: 1.5; }
+.appui-chatmsg--user { justify-content: flex-end; }
+.appui-chatmsg__user-bubble {
+  max-width: 80%;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-sm);
+  padding: 10px 14px;
+  white-space: pre-wrap;
+}
+.appui-chatmsg--assistant { flex-direction: column; gap: 10px; color: var(--foreground); }
+.appui-chatmsg__assistant-body > * + * { margin-top: 8px; }
+.appui-chatmsg__assistant-body p { margin: 0; }
+
+/* Streaming indicator */
+.appui-chatstream { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--foreground-secondary); }
+.appui-chatstream .appui-unitylogo { color: var(--primary); }
+
+/* Conversation list item */
+.appui-chatconv {
+  position: relative; display: flex; align-items: center;
+  border-radius: var(--radius-md); transition: var(--transition-control);
+  color: var(--foreground-secondary);
+}
+.appui-chatconv:hover { background: var(--muted); color: var(--foreground); }
+.appui-chatconv[data-active="true"] { background: var(--control-hover); color: var(--foreground); }
+.appui-chatconv__main { min-width: 0; flex: 1; padding: 8px; text-align: left; border: none; background: none; cursor: pointer; color: inherit; font-family: var(--font-sans); }
+.appui-chatconv__title { font-size: var(--text-sm); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appui-chatconv__sub { font-size: var(--text-xs); opacity: 0.6; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appui-chatconv__fav { margin-right: 4px; display: flex; align-items: center; justify-content: center; height: 28px; width: 28px; border: none; background: none; border-radius: var(--radius-md); cursor: pointer; color: var(--foreground-muted); opacity: 0; transition: opacity var(--duration-100); }
+.appui-chatconv:hover .appui-chatconv__fav { opacity: 1; }
+.appui-chatconv__fav[data-fav="true"] { color: var(--warning); opacity: 1; }
+.appui-chatconv__fav:hover { background: var(--surface); }
+
+/* Composer / ChatInput */
+.appui-chatinput {
+  display: flex; flex-direction: column; gap: 8px;
+  background: var(--field);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+  transition: var(--transition-control);
+}
+.appui-chatinput:focus-within { border-color: var(--border-focus); }
+.appui-chatinput__prompt { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 2px; }
+.appui-chatinput__textarea {
+  border: none; background: none; outline: none; resize: none;
+  color: var(--foreground); font-family: var(--font-sans); font-size: var(--text-body);
+  line-height: 1.5; width: 100%; min-height: 24px; max-height: 160px; padding: 0;
+}
+.appui-chatinput__textarea::placeholder { color: var(--foreground-secondary); }
+.appui-chatinput__row { display: flex; align-items: center; gap: 6px; }
+.appui-chatinput__spacer { flex: 1; }
+.appui-chatinput__send {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: var(--radius-md); border: none;
+  background: var(--primary); color: var(--primary-foreground); cursor: pointer;
+  transition: var(--transition-control);
+}
+.appui-chatinput__send:hover { background: var(--primary-hover); }
+.appui-chatinput__send:disabled { opacity: 0.4; pointer-events: none; }
+
+/* Tool permission */
+.appui-chattool { display: flex; flex-direction: column; gap: 12px; }
+.appui-chattool__head { display: flex; align-items: flex-start; gap: 8px; }
+.appui-chattool__icon { margin-top: 2px; flex-shrink: 0; color: var(--warning); }
+.appui-chattool__title { font-size: var(--text-body); font-weight: var(--font-weight-medium); }
+.appui-chattool__path { font-size: var(--text-sm); color: var(--foreground-muted); font-family: var(--font-mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appui-chattool__desc { font-size: var(--text-sm); color: var(--foreground-secondary); }
+.appui-chattool__actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+/* Plan / activity */
+.appui-chatplan { border: 1px solid var(--border); border-radius: var(--radius-md); padding: 10px 12px; background: var(--surface-subtle); }
+.appui-chatplan__row { display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); padding: 3px 0; color: var(--foreground); }
+.appui-chatplan__row .ph { flex-shrink: 0; }
+.appui-chatplan__row--done { color: var(--foreground-secondary); }
+.appui-chatplan__row--done .appui-chatplan__txt { text-decoration: line-through; opacity: 0.7; }
+.appui-chatplan__check { color: var(--positive); }
+.appui-chatplan__active { color: var(--primary); }
+
+/* ChatMessageActions */
+.appui-chatactions { display: inline-flex; align-items: center; gap: 2px; }
+.appui-chatactions .appui-iconbtn { color: var(--foreground-secondary); }
+.appui-chatactions .appui-iconbtn[data-selected="true"] { color: var(--primary); background: transparent; }
+
+/* ChatBudget — stacked "Budget" header over a full-width track */
+.appui-chatbudget { display: flex; flex-direction: column; gap: 8px; font-family: var(--font-sans); width: 100%; }
+.appui-chatbudget__hd { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #aaaaaa; }
+.appui-chatbudget__label { display: flex; align-items: center; gap: 6px; }
+.appui-chatbudget__label .ph { color: #808080; }
+.appui-chatbudget__track { position: relative; height: 6px; border-radius: 9999px; background: #111111; overflow: hidden; }
+/* fallback for the older inline markup + hard cap so the fill can never escape its 6px track */
+.appui-chatbudget__bar { position: relative; flex: 1; height: 6px; border-radius: 9999px; background: #111111; overflow: hidden; }
+.appui-chatbudget__fill { position: absolute; left: 0; top: 0; height: 100%; max-height: 6px; background: var(--primary); }
+.appui-chatbudget[data-warn="true"] .appui-chatbudget__fill { background: var(--warning); }
+.appui-chatbudget[data-warn="over"] .appui-chatbudget__fill { background: var(--destructive); }
+
+/* ChatQuestion */
+.appui-chatquestion { display: flex; flex-direction: column; gap: 10px; }
+.appui-chatquestion__q { font-size: var(--text-body); color: var(--foreground); }
+.appui-chatquestion__opts { display: flex; flex-direction: column; gap: 6px; }
+.appui-chatquestion__opt {
+  display: flex; align-items: center; gap: 8px; text-align: left; width: 100%;
+  padding: 8px 12px; border: 1px solid var(--border-input); border-radius: var(--radius-md);
+  background: var(--field); color: var(--foreground); font-family: var(--font-sans);
+  font-size: var(--text-sm); cursor: pointer; transition: var(--transition-control);
+}
+.appui-chatquestion__opt:hover { border-color: var(--border-focus); background: var(--field-hover); }
+.appui-chatquestion__opt[data-selected="true"] { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 14%, var(--field)); }
+.appui-chatquestion__opt .ph { color: var(--foreground-secondary); }
+.appui-chatquestion__opt[data-selected="true"] .ph { color: var(--primary); }
+
+/* ChatActivityTimeline — tool-activity rail (Unity agent) */
+.appui-chatactivity { display: flex; flex-direction: column; gap: 4px; font-family: var(--font-sans); }
+.appui-chatactivity__head { display: flex; align-items: center; gap: 6px; padding: 2px 0; border: none; background: none; cursor: pointer; color: #aaaaaa; font-size: 12px; }
+.appui-chatactivity__caret { color: #808080; transition: transform var(--duration-100); display: inline-flex; }
+.appui-chatactivity[data-open="true"] .appui-chatactivity__caret { transform: rotate(90deg); }
+.appui-chatactivity__dur { color: #6a6a6a; font-size: 11px; }
+.appui-chatactivity__timeline { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 6px 10px 2px; }
+.appui-chatactivity__line { position: absolute; left: 18px; top: 12px; bottom: 14px; width: 1px; background: #555555; z-index: 0; }
+.appui-chatactivity__row { position: relative; display: flex; align-items: center; gap: 10px; font-size: 12px; color: #aaaaaa; z-index: 1; }
+.appui-chatactivity__icon { width: 16px; display: inline-flex; align-items: center; justify-content: center; color: #808080; flex-shrink: 0; position: relative; z-index: 1; background: var(--appui-activity-bg, var(--background)); padding: 4px 0; box-sizing: content-box; }
+.appui-chatactivity__done { color: #808080; display: inline-flex; }
+
+/* ChatMessages (scroll container) */
+.appui-chatmessages { display: flex; flex-direction: column; gap: 20px; overflow-y: auto; }
+
+/* ChatSidebar */
+.appui-chatsidebar { display: flex; flex-direction: column; background: var(--surface); border-right: 1px solid var(--border); height: 100%; min-height: 0; font-family: var(--font-sans); }
+.appui-chatsidebar__head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; font-weight: var(--font-weight-semibold); }
+.appui-chatsidebar__new { padding: 0 10px 6px; }
+.appui-chatsidebar__list { flex: 1; overflow: auto; padding: 4px 8px; }
+.appui-chatsidebar__section { padding: 10px 8px 4px; font-size: var(--text-xs); color: var(--foreground-muted); text-transform: uppercase; letter-spacing: .04em; }
+.appui-chatsidebar__foot { padding: 8px; border-top: 1px solid var(--border); }
+
+/* ChatWindow */
+.appui-chatwindow { display: flex; flex-direction: column; min-height: 0; min-width: 0; background: var(--background); height: 100%; }
+.appui-chatwindow__thread { flex: 1; overflow: auto; padding: 24px; }
+.appui-chatwindow__inner { max-width: 720px; margin: 0 auto; }
+.appui-chatwindow__composer { max-width: 720px; margin: 0 auto; width: 100%; padding: 0 24px 20px; box-sizing: border-box; }
+
+/* ChatShell */
+.appui-chatshell { display: grid; grid-template-columns: 264px 1fr; height: 100%; min-height: 0; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }

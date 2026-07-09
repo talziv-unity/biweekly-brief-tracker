@@ -1,0 +1,39 @@
+/* ── Audio: MixerStrip, MixerInspector, AudioSourceInspector ─────────────── */
+
+/* MixerStrip (Unity audio mixer channel — header · meter · S/M/B · FX slots) */
+.appui-mixerstrip {
+  display: flex; flex-direction: column; width: 144px;
+  background: #282828; border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px #555555; overflow: hidden;
+  font-family: var(--font-sans); color: var(--foreground);
+}
+.appui-mixerstrip__name { padding: 7px 8px; text-align: center; font-size: 12px; font-weight: var(--font-weight-medium); color: #c0c0c0; }
+.appui-mixerstrip__meter { display: flex; justify-content: center; padding: 8px; }
+.appui-mixerstrip__smb { display: flex; gap: 4px; padding: 4px 8px 8px; }
+.appui-mixerstrip__btn {
+  flex: 1; height: 24px; border-radius: var(--radius-sm);
+  background: #323232; box-shadow: inset 0 0 0 1px #6a6a6a; border: none;
+  color: #aaaaaa; font-size: 11px; font-weight: var(--font-weight-semibold);
+  font-family: var(--font-sans); cursor: pointer; transition: var(--transition-control);
+}
+.appui-mixerstrip__btn:hover { color: var(--foreground); }
+.appui-mixerstrip__btn[data-on="true"][data-kind="S"] { background: var(--primary); color: #fff; box-shadow: none; }
+.appui-mixerstrip__btn[data-on="true"][data-kind="M"] { background: var(--warning); color: #fff; box-shadow: none; }
+.appui-mixerstrip__btn[data-on="true"][data-kind="B"] { background: var(--positive); color: #fff; box-shadow: none; }
+.appui-mixerstrip__fx { display: flex; flex-direction: column; gap: 2px; margin: 0 6px 6px; padding: 6px; border: 1px solid #555555; border-radius: var(--radius-sm); }
+.appui-mixerstrip__slot { position: relative; height: 22px; border-radius: 3px; background: #111111; padding: 4px 6px; font-size: 11px; color: #c0c0c0; display: flex; align-items: center; }
+.appui-mixerstrip__slot::after { content: ""; position: absolute; left: 6px; right: 6px; bottom: 1px; height: 2px; background: #caa84a; }
+.appui-mixerstrip__add { font-size: 11px; color: #6a6a6a; background: none; border: none; text-align: left; padding: 2px 0 0; cursor: pointer; font-family: var(--font-sans); }
+.appui-mixerstrip__add:hover { color: var(--foreground-secondary); }
+
+/* AudioSourceInspector */
+.appui-audiosource { display: flex; flex-direction: column; gap: 10px; font-family: var(--font-sans); }
+.appui-audiosource__head { display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); font-weight: var(--font-weight-semibold); color: var(--foreground); }
+.appui-audiosource__clip { display: flex; align-items: center; gap: 8px; padding: 6px 8px; background: var(--surface-inset); border: 1px solid var(--border-input); border-radius: var(--radius-md); font-size: var(--text-sm); }
+.appui-audiosource__wave { flex: 1; height: 22px; display: flex; align-items: center; gap: 1px; overflow: hidden; }
+.appui-audiosource__wave i { display: block; width: 2px; background: var(--primary); border-radius: 1px; opacity: .8; }
+
+/* MixerInspector */
+.appui-mixerinspector { display: flex; flex-direction: column; gap: 10px; padding: 12px; background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-lg); font-family: var(--font-sans); }
+.appui-mixerinspector__head { display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); font-weight: var(--font-weight-semibold); color: var(--foreground); }
+.appui-mixerinspector__strips { display: flex; gap: 8px; overflow-x: auto; }

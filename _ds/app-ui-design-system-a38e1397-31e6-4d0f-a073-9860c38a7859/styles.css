@@ -1,0 +1,46 @@
+/* ============================================================================
+   Unity App UI Design System — global entry point
+   Consumers link THIS file. It is an @import manifest only; do not add rules
+   here. Canonical theme is App UI Dark (applied to :root).
+   ============================================================================ */
+
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/elevation.css";
+@import "./tokens/motion.css";
+@import "./tokens/icons.css";
+
+/* Component styles (one stylesheet per concern group). */
+@import "./components/actions/actions.css";
+@import "./components/inputs/inputs.css";
+@import "./components/display/display.css";
+@import "./components/feedback/feedback.css";
+@import "./components/overlays/overlays.css";
+@import "./components/navigation/navigation.css";
+@import "./components/layout/layout.css";
+@import "./components/chat/chat.css";
+@import "./components/data/data.css";
+@import "./components/color/color.css";
+@import "./components/audio/audio.css";
+@import "./components/animation/animation.css";
+@import "./components/canvas/canvas.css";
+
+/* Base reset so cards / kits render in-brand without per-file boilerplate. */
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--line-height-regular);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

@@ -1,0 +1,442 @@
+/* ============================================================================
+   Unity App UI — Color tokens
+   Source of truth: @unity/app-ui-tokens (Style Dictionary) + build-registry.ts
+   semantic mapping. Canonical theme = App UI Dark (applied to :root so an
+   unconfigured page renders correctly). Switch themes with a data attribute on a
+   wrapper or <html>: data-appui-theme="light|editor-dark|editor-light|
+   cloud-dark|cloud-light" ("dark" is the default).
+   ============================================================================ */
+
+:root,
+[data-appui-theme="dark"] {
+  /* ── Theme primitive scale: neutral (dark) ─────────────────────────────── */
+  --appui-neutral-15: #000000;
+  --appui-neutral-25: #111111;
+  --appui-neutral-50: #111111;
+  --appui-neutral-100: #1d1d1d;
+  --appui-neutral-200: #282828;
+  --appui-neutral-300: #323232;
+  --appui-neutral-400: #3c3c3c;
+  --appui-neutral-500: #484848;
+  --appui-neutral-600: #555555;
+  --appui-neutral-700: #6a6a6a;
+  --appui-neutral-800: #7b7b7b;
+  --appui-neutral-900: #aaaaaa;
+  --appui-neutral-1000: #c0c0c0;
+  --appui-neutral-1100: #d5d5d5;
+  --appui-neutral-1200: #eeeeee;
+  --appui-neutral-1300: #ffffff;
+
+  /* ── Accent / status primitive scales ──────────────────────────────────── */
+  --appui-accent-25: #066ebf;
+  --appui-accent-50: #0780df;
+  --appui-accent-100: #0892ff;
+  --appui-accent-200: #6eb8ff;
+  --appui-accent-300: #6eb8ff;
+  --appui-destructive-25: #a13034;
+  --appui-destructive-50: #bc383c;
+  --appui-destructive-100: #d74045;
+  --appui-destructive-200: #ec5d5e;
+  --appui-destructive-300: #ec5d5e;
+  --appui-warning-25: #a35829;
+  --appui-warning-50: #a35829;
+  --appui-warning-100: #d17100;
+  --appui-warning-200: #ff801f;
+  --appui-warning-300: #ffa057;
+  --appui-positive-25: #28684a;
+  --appui-positive-50: #2f7c57;
+  --appui-positive-100: #11a85f;
+  --appui-positive-200: #33b074;
+  --appui-positive-300: #3dd68c;
+
+  /* ── Flat semantic roles (what components consume) ─────────────────────── */
+  /* Surfaces */
+  --background: #1d1d1d;
+  --surface: #282828;
+  --surface-inset: #323232;
+  --surface-raised: #323232;
+  --surface-subtle: #2a2a2a;
+  --surface-sunken: #111111;
+  --surface-overlay: #242424;
+  --muted: #323232;
+  --canvas: #111111;
+  --overlay: rgba(0, 0, 0, 0.5);
+
+  /* Foregrounds */
+  --foreground: #c0c0c0;            /* primary text / icon */
+  --foreground-secondary: #aaaaaa;  /* placeholder / secondary */
+  --foreground-muted: #6a6a6a;      /* disabled */
+  --foreground-emphasis: #d5d5d5;   /* high-contrast / hover */
+
+  /* Borders */
+  --border: #555555;
+  --border-input: #555555;
+  --border-strong: #6a6a6a;
+  --border-hover: #6a6a6a;
+  --border-focus: #0892ff;
+  --thumb-border: #323232;
+
+  /* Controls (buttons / quiet actions) */
+  --control: #323232;
+  --control-hover: #3c3c3c;
+  --control-active: #282828;
+  --control-foreground: #c0c0c0;
+
+  /* Primary (accent action) */
+  --primary: #0892ff;
+  --primary-hover: #0780df;
+  --primary-active: #066ebf;
+  --primary-foreground: #ffffff;
+
+  /* Status */
+  --destructive: #d74045;
+  --destructive-hover: #bc383c;
+  --destructive-active: #a13034;
+  --destructive-foreground: #ffffff;
+  --warning: #d17100;
+  --warning-foreground: #ffffff;
+  --positive: #11a85f;
+  --positive-foreground: #ffffff;
+
+  /* Fields / selection / interactive */
+  --field: #323232;
+  --field-hover: #3c3c3c;
+  --selected: rgba(8, 146, 255, 0.5);
+  --selected-hover: rgba(8, 146, 255, 0.6);
+  --ring: #0892ff;
+  --highlight: rgba(8, 146, 255, 0.5);
+  --highlight-foreground: #ffffff;
+  --link: #0892ff;
+  --link-visited: #8e4ec6;
+
+  /* Component-level derivations */
+  --scrollbar-thumb: var(--border-strong);
+  --scrollbar-track: var(--surface-sunken);
+  --slider-track: var(--surface-inset);
+  --slider-thumb: var(--control);
+}
+
+/* ── App UI Light ────────────────────────────────────────────────────────── */
+[data-appui-theme="light"] {
+  --appui-neutral-15: #000000;
+  --appui-neutral-25: #202020;
+  --appui-neutral-50: #1a1a1a;
+  --appui-neutral-100: #333333;
+  --appui-neutral-200: #4d4d4d;
+  --appui-neutral-300: #646464;
+  --appui-neutral-400: #808080;
+  --appui-neutral-500: #999999;
+  --appui-neutral-600: #b2b2b2;
+  --appui-neutral-700: #bbbbbb;
+  --appui-neutral-800: #cacaca;
+  --appui-neutral-900: #e0e0e0;
+  --appui-neutral-1000: #ebebeb;
+  --appui-neutral-1100: #f9f9f9;
+  --appui-neutral-1200: #f9f9f9;
+  --appui-neutral-1300: #ffffff;
+  --appui-accent-25: #066ebf;
+  --appui-accent-50: #0780df;
+  --appui-accent-100: #0892ff;
+  --appui-accent-200: #0f70cb;
+  --appui-accent-300: #7aace8;
+  --appui-destructive-100: #d74045;
+  --appui-warning-100: #d17100;
+  --appui-positive-100: #11a85f;
+
+  --background: #ebebeb;
+  --surface: #e0e0e0;
+  --surface-inset: #e0e0e0;
+  --surface-raised: #e0e0e0;
+  --surface-subtle: #e0e0e0;
+  --surface-sunken: #f4f4f4;
+  --surface-overlay: #ffffff;
+  --muted: #e0e0e0;
+  --canvas: #f9f9f9;
+  --overlay: rgba(0, 0, 0, 0.3);
+
+  --foreground: #333333;
+  --foreground-secondary: #4d4d4d;
+  --foreground-muted: #808080;
+  --foreground-emphasis: #1a1a1a;
+
+  --border: #b2b2b2;
+  --border-input: #b2b2b2;
+  --border-strong: #999999;
+  --border-hover: #999999;
+  --border-focus: #0892ff;
+  --thumb-border: #cacaca;
+
+  --control: #e0e0e0;
+  --control-hover: #cacaca;
+  --control-active: #ebebeb;
+  --control-foreground: #333333;
+
+  --primary: #0892ff;
+  --primary-hover: #0780df;
+  --primary-active: #066ebf;
+  --primary-foreground: #ffffff;
+
+  --destructive: #d74045;
+  --destructive-hover: #bc383c;
+  --destructive-active: #a13034;
+  --destructive-foreground: #ffffff;
+  --warning: #d17100;
+  --warning-foreground: #ffffff;
+  --positive: #11a85f;
+  --positive-foreground: #ffffff;
+
+  --field: #e0e0e0;
+  --field-hover: #cacaca;
+  --selected: rgba(8, 146, 255, 0.5);
+  --selected-hover: rgba(8, 146, 255, 0.6);
+  --ring: #0892ff;
+  --highlight: rgba(8, 146, 255, 0.5);
+  --highlight-foreground: #ffffff;
+  --link: #0892ff;
+  --link-visited: #8e4ec6;
+
+  --scrollbar-thumb: var(--border-strong);
+  --scrollbar-track: var(--surface-sunken);
+  --slider-track: var(--surface-inset);
+  --slider-thumb: var(--control);
+}
+
+/* ── Editor Dark (Unity Editor parity) ───────────────────────────────────── */
+[data-appui-theme="editor-dark"] {
+  --background: #282828;
+  --surface: #383838;
+  --surface-inset: #2a2a2a;
+  --surface-raised: #3e3e3e;
+  --surface-subtle: #313131;
+  --surface-sunken: #1e1e1e;
+  --surface-overlay: #303030;
+  --muted: #2a2a2a;
+  --canvas: #1e1e1e;
+  --overlay: rgba(0, 0, 0, 0.5);
+
+  --foreground: #d2d2d2;
+  --foreground-secondary: #9e9e9e;
+  --foreground-muted: #686868;
+  --foreground-emphasis: #ededed;
+
+  --border: #232323;
+  --border-input: #212121;
+  --border-strong: #1a1a1a;
+  --border-hover: #2f2f2f;
+  --border-focus: #2c5d87;
+  --thumb-border: #1a1a1a;
+
+  --control: #585858;
+  --control-hover: #646464;
+  --control-active: #4f4f4f;
+  --control-foreground: #d2d2d2;
+
+  --primary: #0892ff;
+  --primary-hover: #0780df;
+  --primary-active: #066ebf;
+  --primary-foreground: #ffffff;
+
+  --destructive: #d74045;
+  --destructive-hover: #bc383c;
+  --destructive-active: #a13034;
+  --destructive-foreground: #ffffff;
+  --warning: #d17100;
+  --warning-foreground: #ffffff;
+  --positive: #11a85f;
+  --positive-foreground: #ffffff;
+
+  --field: #2a2a2a;
+  --field-hover: #313131;
+  --selected: #2c5d87;
+  --selected-hover: #3a72b0;
+  --ring: #2c5d87;
+  --highlight: #2c5d87;
+  --highlight-foreground: #ffffff;
+  --link: #4c97ff;
+  --link-visited: #8e4ec6;
+
+  --scrollbar-thumb: #5f5f5f;
+  --scrollbar-track: rgba(0, 0, 0, 0.05);
+  --slider-track: #5e5e5e;
+  --slider-thumb: #999999;
+}
+
+/* ── Editor Light (Unity Editor parity) ──────────────────────────────────── */
+[data-appui-theme="editor-light"] {
+  --background: #c8c8c8;
+  --surface: #cbcbcb;
+  --surface-inset: #d6d6d6;
+  --surface-raised: #e4e4e4;
+  --surface-subtle: #d2d2d2;
+  --surface-sunken: #aeaeae;
+  --surface-overlay: #ececec;
+  --muted: #d6d6d6;
+  --canvas: #787878;
+  --overlay: rgba(0, 0, 0, 0.3);
+
+  --foreground: #090909;
+  --foreground-secondary: #383838;
+  --foreground-muted: #9a9a9a;
+  --foreground-emphasis: #000000;
+
+  --border: #939393;
+  --border-input: #b7b7b7;
+  --border-strong: #828282;
+  --border-hover: #a0a0a0;
+  --border-focus: #3a72b0;
+  --thumb-border: #b7b7b7;
+
+  --control: #e4e4e4;
+  --control-hover: #ececec;
+  --control-active: #d6d6d6;
+  --control-foreground: #090909;
+
+  --primary: #0892ff;
+  --primary-hover: #0780df;
+  --primary-active: #066ebf;
+  --primary-foreground: #ffffff;
+
+  --destructive: #d74045;
+  --destructive-hover: #bc383c;
+  --destructive-active: #a13034;
+  --destructive-foreground: #ffffff;
+  --warning: #d17100;
+  --warning-foreground: #ffffff;
+  --positive: #11a85f;
+  --positive-foreground: #ffffff;
+
+  --field: #e4e4e4;
+  --field-hover: #ececec;
+  --selected: #3a72b0;
+  --selected-hover: #4d83c0;
+  --ring: #3a72b0;
+  --highlight: #3a72b0;
+  --highlight-foreground: #ffffff;
+  --link: #0a64c0;
+  --link-visited: #8e4ec6;
+
+  --scrollbar-thumb: #9a9a9a;
+  --scrollbar-track: rgba(0, 0, 0, 0.05);
+  --slider-track: #8f8f8f;
+  --slider-thumb: #616161;
+}
+
+/* ── Cloud Dark ──────────────────────────────────────────────────────────── */
+[data-appui-theme="cloud-dark"] {
+  --background: #191919;
+  --surface: #242424;
+  --surface-inset: #2e2e2e;
+  --surface-raised: #2e2e2e;
+  --surface-subtle: #262626;
+  --surface-sunken: #0f0f0f;
+  --surface-overlay: #202020;
+  --muted: #2e2e2e;
+  --canvas: #0f0f0f;
+  --overlay: rgba(0, 0, 0, 0.5);
+
+  --foreground: #eeeeee;
+  --foreground-secondary: #aaaaaa;
+  --foreground-muted: #6a6a6a;
+  --foreground-emphasis: #ffffff;
+
+  --border: #4a4a4a;
+  --border-input: #4a4a4a;
+  --border-strong: #5e5e5e;
+  --border-hover: #5e5e5e;
+  --border-focus: #0a6ec8;
+  --thumb-border: #2e2e2e;
+
+  --control: #2e2e2e;
+  --control-hover: #383838;
+  --control-active: #242424;
+  --control-foreground: #eeeeee;
+
+  --primary: #0a6ec8;
+  --primary-hover: #0c7fe0;
+  --primary-active: #095aa3;
+  --primary-foreground: #ffffff;
+
+  --destructive: #d74045;
+  --destructive-hover: #bc383c;
+  --destructive-active: #a13034;
+  --destructive-foreground: #ffffff;
+  --warning: #d17100;
+  --warning-foreground: #ffffff;
+  --positive: #11a85f;
+  --positive-foreground: #ffffff;
+
+  --field: #2e2e2e;
+  --field-hover: #383838;
+  --selected: rgba(10, 110, 200, 0.5);
+  --selected-hover: rgba(10, 110, 200, 0.6);
+  --ring: #0a6ec8;
+  --highlight: rgba(10, 110, 200, 0.5);
+  --highlight-foreground: #ffffff;
+  --link: #0a6ec8;
+  --link-visited: #8e4ec6;
+
+  --scrollbar-thumb: var(--border-strong);
+  --scrollbar-track: var(--surface-sunken);
+  --slider-track: var(--surface-inset);
+  --slider-thumb: var(--control);
+}
+
+/* ── Cloud Light ─────────────────────────────────────────────────────────── */
+[data-appui-theme="cloud-light"] {
+  --background: #f9f9f9;
+  --surface: #ffffff;
+  --surface-inset: #f0f0f0;
+  --surface-raised: #ffffff;
+  --surface-subtle: #f0f0f0;
+  --surface-sunken: #ececec;
+  --surface-overlay: #ffffff;
+  --muted: #f0f0f0;
+  --canvas: #ececec;
+  --overlay: rgba(0, 0, 0, 0.3);
+
+  --foreground: #202020;
+  --foreground-secondary: #4d4d4d;
+  --foreground-muted: #808080;
+  --foreground-emphasis: #000000;
+
+  --border: #d4d4d4;
+  --border-input: #d4d4d4;
+  --border-strong: #b2b2b2;
+  --border-hover: #b2b2b2;
+  --border-focus: #0a6ec8;
+  --thumb-border: #e0e0e0;
+
+  --control: #f0f0f0;
+  --control-hover: #e4e4e4;
+  --control-active: #f9f9f9;
+  --control-foreground: #202020;
+
+  --primary: #0a6ec8;
+  --primary-hover: #0c7fe0;
+  --primary-active: #095aa3;
+  --primary-foreground: #ffffff;
+
+  --destructive: #d74045;
+  --destructive-hover: #bc383c;
+  --destructive-active: #a13034;
+  --destructive-foreground: #ffffff;
+  --warning: #d17100;
+  --warning-foreground: #ffffff;
+  --positive: #11a85f;
+  --positive-foreground: #ffffff;
+
+  --field: #ffffff;
+  --field-hover: #f0f0f0;
+  --selected: rgba(10, 110, 200, 0.5);
+  --selected-hover: rgba(10, 110, 200, 0.6);
+  --ring: #0a6ec8;
+  --highlight: rgba(10, 110, 200, 0.5);
+  --highlight-foreground: #ffffff;
+  --link: #0a6ec8;
+  --link-visited: #8e4ec6;
+
+  --scrollbar-thumb: var(--border-strong);
+  --scrollbar-track: var(--surface-sunken);
+  --slider-track: var(--surface-inset);
+  --slider-thumb: var(--control);
+}

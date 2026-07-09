@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/tokens/elevation.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/tokens/icons.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/components/actions/actions.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/components/inputs/inputs.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/components/display/display.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/components/feedback/feedback.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/components/navigation/navigation.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/components/layout/layout.css">
+  <link rel="stylesheet" href="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/styles.css">
+  <script src="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #111111; }
+    a { color: #0892ff; text-decoration: none; }
+    a:hover { color: #0780df; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #3c3c3c; border-radius: 999px; }
+  </style>
+</helmet>
+
+<div data-screen-label="Session Planner" style="height: 100vh; box-sizing: border-box; background: var(--canvas); color: var(--foreground); font-family: Inter, sans-serif; display: flex; flex-direction: column;">
+
+  <!-- App bar -->
+  <div style="box-sizing: border-box; background: var(--background); border-bottom: 1px solid var(--border); display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; padding: 8px 16px; flex-shrink: 0; min-width: 0;">
+    <span style="font-size: 15px; font-weight: 600; line-height: 1.2; white-space: nowrap;">Brief-session planner</span>
+    <div style="flex: 1;"></div>
+    <span style="font-size: 12px; color: var(--foreground-secondary); white-space: nowrap;">Remaining <span style="color: var(--foreground-emphasis); font-weight: 600;">{{ remainingLabel }}</span> of {{ totalLabel }} units</span>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <span style="font-size: 12px; color: var(--foreground-muted); white-space: nowrap;">Monday 9959638270 · read-only</span>
+    </sc-if>
+  </div>
+
+  <!-- Tabs + toolbar -->
+  <div style="background: var(--background); border-bottom: 1px solid var(--border); padding: 0 16px; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 16px; flex-shrink: 0; min-width: 0;">
+    <x-import component-from-global-scope="DesignSystem_a38e13.Tabs" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" items="{{ gameTabs }}" value="hole-it" on-change="{{ noop }}" hint-size="280px,36px"></x-import>
+    <div style="flex: 1;"></div>
+    <div style="display: flex; align-items: center; gap: 8px; padding: 4px 0;">
+      <x-import component-from-global-scope="DesignSystem_a38e13.ActionGroup" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" variant="segmented" hint-size="150px,28px">
+        <x-import component-from-global-scope="DesignSystem_a38e13.ActionButton" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" size="sm" selectable="{{ true }}" emphasis="accent" pressed="{{ showAllPressed }}" on-pressed-change="{{ setShowAll }}" hint-size="60px,28px">All slots</x-import>
+        <x-import component-from-global-scope="DesignSystem_a38e13.ActionButton" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" size="sm" selectable="{{ true }}" emphasis="accent" pressed="{{ showRemainingPressed }}" on-pressed-change="{{ setShowRemaining }}" hint-size="86px,28px">Remaining</x-import>
+      </x-import>
+      <x-import component-from-global-scope="DesignSystem_a38e13.ActionButton" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" size="sm" selectable="{{ true }}" pressed="{{ rulesPressed }}" on-pressed-change="{{ setRules }}" hint-size="64px,28px">Rules</x-import>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth;">
+
+    <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+      <div style="font-size: 14px; color: var(--destructive); padding: 8px 0;">data.json not found — awaiting Doctor sync.</div>
+    </sc-if>
+    <sc-if value="{{ showLoading }}" hint-placeholder-val="{{ true }}">
+      <div style="font-size: 13px; color: var(--foreground-muted);">Loading data.json…</div>
+    </sc-if>
+
+    <sc-for list="{{ cycles }}" as="cyc" hint-placeholder-count="3">
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px;">
+
+        <!-- section header (sticky) -->
+        <div style="position: sticky; top: -12px; z-index: 3; display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--surface); border-bottom: 1px solid var(--border); border-radius: 8px 8px 0 0;">
+          <span style="font-size: 14px; font-weight: 600; white-space: nowrap;">{{ cyc.label }}</span>
+          <x-import component-from-global-scope="DesignSystem_a38e13.Badge" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" variant="{{ cyc.badgeVariant }}" hint-size="66px,20px">{{ cyc.countLabel }} units</x-import>
+          <div style="flex: 1;"></div>
+          <sc-if value="{{ mid }}" hint-placeholder-val="{{ true }}">
+            <div style="width: 150px; flex-shrink: 0;">
+              <x-import component-from-global-scope="DesignSystem_a38e13.LinearProgress" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" value="{{ cyc.pct }}" size="sm" hint-size="150px,4px"></x-import>
+            </div>
+          </sc-if>
+          <span style="font-size: 12px; color: var(--foreground-secondary); width: 34px; text-align: right; font-variant-numeric: tabular-nums;">{{ cyc.pctLabel }}</span>
+        </div>
+
+        <!-- column headers (wide/mid only) -->
+        <sc-if value="{{ mid }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: {{ gridCols }}; gap: 12px; align-items: center; padding: 6px 12px; background: var(--surface-sunken); border-bottom: 1px solid var(--border);">
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--foreground-muted);">Done / target</span>
+            <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+              <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--foreground-muted);">Group</span>
+            </sc-if>
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--foreground-muted);">Slot · rule</span>
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--foreground-muted);">Fill note</span>
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--foreground-muted);">Monday</span>
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--foreground-muted); text-align: center;">Notion</span>
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--foreground-muted); text-align: center;">Brief</span>
+          </div>
+        </sc-if>
+
+        <!-- rows -->
+        <sc-for list="{{ cyc.slots }}" as="slot" hint-placeholder-count="7">
+
+          <!-- table row (wide / mid) -->
+          <sc-if value="{{ mid }}" hint-placeholder-val="{{ true }}">
+            <div style="display: grid; grid-template-columns: {{ gridCols }}; gap: 12px; align-items: center; padding: {{ rowPad }} 12px; border-bottom: 1px solid var(--border); opacity: {{ slot.rowOpacity }}; transition: background 120ms ease;" style-hover="background: var(--surface-subtle);">
+              <div style="display: flex; gap: 4px; align-items: center;">
+                <sc-for list="{{ slot.cells }}" as="cell" hint-placeholder-count="2">
+                  <div style="padding: 3px; display: flex;">
+                    <x-import component-from-global-scope="DesignSystem_a38e13.Checkbox" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" checked="{{ cell.on }}" on-change="{{ cell.onClick }}" hint-size="16px,16px"></x-import>
+                  </div>
+                </sc-for>
+              </div>
+              <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+                <span style="font-size: 12px; color: var(--foreground-secondary); white-space: nowrap; overflow: hidden;">{{ slot.group }}</span>
+              </sc-if>
+              <div onClick="{{ slot.toggleAll }}" style="cursor: pointer; min-width: 0;">
+                <div style="font-size: 13px; font-weight: 600; line-height: 1.3; color: {{ slot.labelColor }};">{{ slot.label }}</div>
+                <sc-if value="{{ slot.showRule }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size: 12px; color: var(--foreground-muted); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ slot.rule }}</div>
+                </sc-if>
+              </div>
+              <span title="{{ slot.fillText }}" style="font-family: 'Roboto Mono', monospace; font-size: 12px; color: {{ slot.fillColor }}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ slot.fillText }}</span>
+              <div>
+                <x-import component-from-global-scope="DesignSystem_a38e13.Chip" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" color="{{ slot.chipColor }}" variant="{{ slot.chipVariant }}" hint-size="60px,20px">{{ slot.mondayText }}</x-import>
+              </div>
+              <div style="display: flex; justify-content: center;">
+                <x-import component-from-global-scope="DesignSystem_a38e13.Icon" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" name="{{ slot.notionIcon }}" weight="{{ slot.notionWeight }}" size="md" color="{{ slot.notionColor }}" hint-size="17px,17px"></x-import>
+              </div>
+              <div style="display: flex; justify-content: center;">
+                <x-import component-from-global-scope="DesignSystem_a38e13.Icon" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" name="{{ slot.briefIcon }}" weight="{{ slot.briefWeight }}" size="md" color="{{ slot.briefColor }}" hint-size="17px,17px"></x-import>
+              </div>
+            </div>
+          </sc-if>
+
+          <!-- stacked row (narrow) -->
+          <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--border); opacity: {{ slot.rowOpacity }};">
+              <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+                <div onClick="{{ slot.toggleAll }}" style="cursor: pointer; min-width: 0; flex: 1;">
+                  <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: {{ slot.labelColor }};">{{ slot.label }}</div>
+                </div>
+                <x-import component-from-global-scope="DesignSystem_a38e13.Chip" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" color="{{ slot.chipColor }}" variant="{{ slot.chipVariant }}" hint-size="60px,20px">{{ slot.mondayText }}</x-import>
+              </div>
+              <sc-if value="{{ slot.showRule }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size: 12px; color: var(--foreground-muted); line-height: 1.3;">{{ slot.rule }}</div>
+              </sc-if>
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; gap: 4px; align-items: center;">
+                  <sc-for list="{{ slot.cells }}" as="cell" hint-placeholder-count="2">
+                    <div style="padding: 4px; display: flex;">
+                      <x-import component-from-global-scope="DesignSystem_a38e13.Checkbox" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" checked="{{ cell.on }}" on-change="{{ cell.onClick }}" hint-size="16px,16px"></x-import>
+                    </div>
+                  </sc-for>
+                </div>
+                <span style="font-family: 'Roboto Mono', monospace; font-size: 12px; color: {{ slot.fillColor }}; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;">{{ slot.fillText }}</span>
+                <div style="display: flex; align-items: center; gap: 4px;">
+                  <x-import component-from-global-scope="DesignSystem_a38e13.Icon" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" name="{{ slot.notionIcon }}" weight="{{ slot.notionWeight }}" size="sm" color="{{ slot.notionColor }}" hint-size="14px,14px"></x-import>
+                  <span style="font-size: 11px; color: var(--foreground-muted);">Notion</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 4px;">
+                  <x-import component-from-global-scope="DesignSystem_a38e13.Icon" from="_ds/app-ui-design-system-a38e1397-31e6-4d0f-a073-9860c38a7859/_ds_bundle.js" name="{{ slot.briefIcon }}" weight="{{ slot.briefWeight }}" size="sm" color="{{ slot.briefColor }}" hint-size="14px,14px"></x-import>
+                  <span style="font-size: 11px; color: var(--foreground-muted);">Brief</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </sc-for>
+
+        <!-- all-done note when filtered -->
+        <sc-if value="{{ cyc.allDoneNote }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 10px 12px; font-size: 12px; color: var(--foreground-muted);">All slots done — switch to “All slots” to review.</div>
+        </sc-if>
+      </div>
+    </sc-for>
+
+    <!-- footer meta -->
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 2px 2px;">
+      <span style="font-size: 12px; color: var(--foreground-muted);">{{ updatedLine }} · Monday read-only · Notion briefs + tags only · page reads local data.json</span>
+      <span style="font-size: 12px; color: var(--foreground-muted); white-space: nowrap;">Style: <span style="color: var(--foreground-secondary); font-weight: 600;">App UI</span> · <a href="index.html">Cloud</a></span>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1440, &quot;height&quot;: 900 },
+  &quot;dimCompleted&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Display&quot; },
+  &quot;density&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;COMPACT&quot;, &quot;COMFORTABLE&quot;], &quot;default&quot;: &quot;COMPACT&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Display&quot; }
+}">
+class Component extends DCLogic {
+  state = { data: null, error: false, ticks: {}, ui: { filter: "all", rules: true }, w: window.innerWidth };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener("resize", this._onResize);
+    try {
+      const ui = JSON.parse(localStorage.getItem("session-planner-ui"));
+      if (ui && ui.filter) this.setState({ ui: ui });
+    } catch (e) {}
+    fetch("data.json")
+      .then((r) => { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then((d) => this.setState({ data: d, ticks: this.loadTicks(d) }))
+      .catch(() => this.setState({ error: true }));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._onResize);
+  }
+
+  setUI(patch) {
+    const ui = Object.assign({}, this.state.ui, patch);
+    this.setState({ ui: ui });
+    try { localStorage.setItem("session-planner-ui", JSON.stringify(ui)); } catch (e) {}
+  }
+
+  storageKey(d) { return "session-planner:" + ((d && d.game) || "GAME"); }
+
+  loadTicks(d) {
+    try { return JSON.parse(localStorage.getItem(this.storageKey(d))) || {}; }
+    catch (e) { return {}; }  }
+
+  saveTicks(t) {
+    try { localStorage.setItem(this.storageKey(this.state.data), JSON.stringify(t)); }
+    catch (e) {}
+  }
+
+  setTick(key, n) {
+    const t = Object.assign({}, this.state.ticks);
+    t[key] = n;
+    this.setState({ ticks: t });
+    this.saveTicks(t);
+  }
+
+  sentence(s) {
+    if (!s) return s;
+    let out = s.toLowerCase();
+    out = out.replace(/[a-z]/, (c) => c.toUpperCase());
+    const keep = ["AI", "JP", "KR", "IEC", "VO", "VD", "ID"];
+    keep.forEach((k) => {
+      out = out.replace(new RegExp("\\b" + k + "\\b", "gi"), k);
+    });
+    out = out.replace(/\s([a-z])$/, (m, c) => " " + c.toUpperCase());
+    return out;
+  }
+
+  mondayVM(status) {
+    const s = (status || "").trim().toUpperCase();
+    if (!s) return { text: "No sync", color: undefined, variant: "outline" };
+    if (s.indexOf("DONE") >= 0) return { text: this.sentence(s), color: "positive", variant: "solid" };
+    if (s.indexOf("WORK") >= 0) return { text: this.sentence(s), color: "accent", variant: "solid" };
+    if (s.indexOf("STUCK") >= 0 || s.indexOf("BLOCK") >= 0) return { text: this.sentence(s), color: "destructive", variant: "solid" };
+    return { text: this.sentence(s), color: undefined, variant: "solid" };
+  }
+
+  renderVals() {
+    const data = this.state.data;
+    const ticks = this.state.ticks;
+    const ui = this.state.ui;
+    const dim = this.props.dimCompleted !== undefined ? !!this.props.dimCompleted : true;
+    const compact = (this.props.density || "COMPACT") === "COMPACT";
+    const w = this.state.w;
+    const wide = w >= 1050;
+    const mid = w >= 720;
+    const narrow = !mid;
+    const showRules = !!ui.rules;
+    const remainingOnly = ui.filter === "remaining";
+
+    let totalUnits = 0;
+    let doneUnits = 0;
+
+    const cycles = ((data && data.cycles) || []).map((cyc) => {
+      let cycTotal = 0;
+      let cycDone = 0;
+
+      let slots = (cyc.slots || []).map((slot) => {
+        const target = Math.max(1, slot.target || 1);
+        const key = cyc.id + ":" + slot.id;
+        const jsonDone = typeof slot.done === "number" ? slot.done : (slot.done ? target : 0);
+        const raw = ticks[key] !== undefined ? ticks[key] : jsonDone;
+        const count = Math.max(0, Math.min(target, raw));
+        const complete = count >= target;
+        cycTotal += target;
+        cycDone += count;
+
+        const cells = [];
+        for (let i = 0; i < target; i++) {
+          const on = i < count;
+          cells.push({
+            on: on,
+            onClick: () => this.setTick(key, i + 1 === count ? i : i + 1),
+          });
+        }
+
+        const m = this.mondayVM(slot.monday && slot.monday.status);
+        const inNotion = !!(slot.monday && slot.monday.in_notion);
+        const briefed = !!(slot.monday && slot.monday.brief_created);
+
+        return {
+          complete: complete,
+          group: this.sentence(slot.group || ""),
+          label: this.sentence(slot.label || slot.id),
+          rule: this.sentence(slot.rule || ""),
+          showRule: showRules && !!slot.rule,
+          fillText: slot.fill || "—",
+          fillColor: slot.fill ? "var(--foreground)" : "var(--foreground-muted)",
+          labelColor: complete ? "var(--foreground-muted)" : "var(--foreground-emphasis)",
+          rowOpacity: complete && dim ? 0.55 : 1,
+          cells: cells,
+          toggleAll: () => this.setTick(key, complete ? 0 : target),
+          mondayText: m.text, chipColor: m.color, chipVariant: m.variant,
+          notionIcon: inNotion ? "check-circle" : "circle",
+          notionWeight: inNotion ? "fill" : "regular",
+          notionColor: inNotion ? "var(--positive)" : "var(--foreground-muted)",
+          briefIcon: briefed ? "check-circle" : "circle",
+          briefWeight: briefed ? "fill" : "regular",
+          briefColor: briefed ? "var(--positive)" : "var(--foreground-muted)",
+        };
+      });
+
+      totalUnits += cycTotal;
+      doneUnits += cycDone;
+      const complete = cycTotal > 0 && cycDone >= cycTotal;
+      const pct = cycTotal > 0 ? Math.round((cycDone / cycTotal) * 100) : 0;
+      const visible = remainingOnly ? slots.filter((s) => !s.complete) : slots;
+
+      return {
+        label: this.sentence(cyc.label || cyc.id),
+        countLabel: cycDone + "/" + cycTotal,
+        badgeVariant: complete ? "positive" : "secondary",
+        pct: pct,
+        pctLabel: pct + "%",
+        slots: visible,
+        allDoneNote: remainingOnly && visible.length === 0,
+      };
+    });
+
+    return {
+      gameTabs: [
+        { value: "hole-it", label: "Hole It" },
+        { value: "screw-guru", label: "Screw Guru" },
+        { value: "unravel", label: "Unravel" },
+      ],
+      noop: () => {},
+      cycles: cycles,
+      loaded: !!data,
+      error: this.state.error,
+      showLoading: !data && !this.state.error,
+      remainingLabel: String(Math.max(0, totalUnits - doneUnits)),
+      totalLabel: String(totalUnits),
+      rowPad: compact ? "5px" : "10px",
+      gridCols: wide
+        ? "118px 88px minmax(210px, 1.3fr) minmax(160px, 1fr) 104px 52px 52px"
+        : "118px minmax(180px, 1.3fr) minmax(120px, 1fr) 104px 48px 48px",
+      wide: wide,
+      mid: mid,
+      narrow: narrow,
+      showAllPressed: !remainingOnly,
+      showRemainingPressed: remainingOnly,
+      rulesPressed: showRules,
+      setShowAll: () => this.setUI({ filter: "all" }),
+      setShowRemaining: () => this.setUI({ filter: "remaining" }),
+      setRules: (p) => this.setUI({ rules: !!p }),
+      updatedLine: data ? "Last Doctor sync " + (data.updated || "—").toLowerCase() : "Awaiting Doctor sync",
+    };
+  }
+}
+
+</script>
+</body>
+</html>

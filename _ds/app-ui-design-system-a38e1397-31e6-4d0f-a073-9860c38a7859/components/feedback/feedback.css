@@ -1,0 +1,115 @@
+/* ── Feedback: Toast, HelpBox, LinearProgress, CircularSpinner, Skeleton ──── */
+
+/* Toast */
+.appui-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-input);
+  border-left-width: 3px;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  box-shadow: var(--shadow-popover);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  min-width: 280px;
+  max-width: 380px;
+}
+.appui-toast__icon { flex-shrink: 0; margin-top: 1px; }
+.appui-toast__body { flex: 1; min-width: 0; }
+.appui-toast__title { font-weight: var(--font-weight-semibold); margin-bottom: 2px; }
+.appui-toast__msg { color: var(--foreground-secondary); }
+.appui-toast--info { border-left-color: var(--primary); }
+.appui-toast--info .appui-toast__icon { color: var(--primary); }
+.appui-toast--positive { border-left-color: var(--positive); }
+.appui-toast--positive .appui-toast__icon { color: var(--positive); }
+.appui-toast--warning { border-left-color: var(--warning); }
+.appui-toast--warning .appui-toast__icon { color: var(--warning); }
+.appui-toast--destructive { border-left-color: var(--destructive); }
+.appui-toast--destructive .appui-toast__icon { color: var(--destructive); }
+.appui-toast--default { border-left-color: var(--border-strong); }
+
+/* HelpBox */
+.appui-helpbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  border: 1px solid transparent;
+}
+.appui-helpbox__icon { flex-shrink: 0; margin-top: 1px; }
+.appui-helpbox--info { background: color-mix(in srgb, var(--primary) 12%, var(--surface)); border-color: color-mix(in srgb, var(--primary) 40%, transparent); color: var(--foreground); }
+.appui-helpbox--info .appui-helpbox__icon { color: var(--primary); }
+.appui-helpbox--positive { background: color-mix(in srgb, var(--positive) 12%, var(--surface)); border-color: color-mix(in srgb, var(--positive) 40%, transparent); }
+.appui-helpbox--positive .appui-helpbox__icon { color: var(--positive); }
+.appui-helpbox--warning { background: color-mix(in srgb, var(--warning) 14%, var(--surface)); border-color: color-mix(in srgb, var(--warning) 40%, transparent); }
+.appui-helpbox--warning .appui-helpbox__icon { color: var(--warning); }
+.appui-helpbox--destructive { background: color-mix(in srgb, var(--destructive) 12%, var(--surface)); border-color: color-mix(in srgb, var(--destructive) 40%, transparent); }
+.appui-helpbox--destructive .appui-helpbox__icon { color: var(--destructive); }
+
+/* LinearProgress */
+.appui-progress { width: 100%; height: 6px; border-radius: var(--radius-full); background: var(--surface-inset); overflow: hidden; }
+.appui-progress--sm { height: 4px; }
+.appui-progress--lg { height: 8px; }
+.appui-progress__bar { height: 100%; border-radius: var(--radius-full); background: var(--primary); transition: width var(--duration-200) var(--ease-standard); }
+.appui-progress--indeterminate .appui-progress__bar { width: 40% !important; animation: appui-progress-slide 1.1s var(--ease-in-out) infinite; }
+@keyframes appui-progress-slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(350%); } }
+
+/* CircularSpinner */
+.appui-spinner { display: inline-block; animation: appui-spin 0.8s linear infinite; color: var(--primary); }
+.appui-spinner svg { display: block; }
+@keyframes appui-spin { to { transform: rotate(360deg); } }
+
+/* Skeleton */
+.appui-skeleton { background: linear-gradient(90deg, var(--surface-inset) 25%, var(--control-hover) 37%, var(--surface-inset) 63%); background-size: 400% 100%; border-radius: var(--radius-sm); animation: appui-shimmer 1.4s ease infinite; }
+@keyframes appui-shimmer { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .appui-skeleton, .appui-spinner, .appui-progress--indeterminate .appui-progress__bar { animation: none; }
+}
+
+/* CircularProgress (determinate ring) */
+.appui-circprogress { display: inline-flex; position: relative; color: var(--primary); }
+.appui-circprogress svg { transform: rotate(-90deg); display: block; }
+.appui-circprogress__track { stroke: var(--surface-inset); }
+.appui-circprogress__bar { stroke: currentColor; transition: stroke-dashoffset var(--duration-200) var(--ease-standard); }
+.appui-circprogress__label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-family: var(--font-mono); color: var(--foreground); }
+
+/* Preloader */
+.appui-preloader { display: inline-flex; flex-direction: column; align-items: center; gap: 12px; color: var(--foreground-secondary); font-family: var(--font-sans); font-size: var(--text-sm); }
+.appui-preloader .appui-unitylogo { color: var(--primary); }
+
+/* ContextCounter */
+.appui-contextcounter { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: var(--text-xs); color: var(--foreground-secondary); }
+.appui-contextcounter__bar { width: 64px; height: 4px; border-radius: var(--radius-full); background: var(--surface-inset); overflow: hidden; }
+.appui-contextcounter__fill { height: 100%; border-radius: var(--radius-full); background: var(--primary); transition: width var(--duration-200) var(--ease-standard); }
+.appui-contextcounter[data-warn="true"] .appui-contextcounter__fill { background: var(--warning); }
+.appui-contextcounter[data-warn="over"] .appui-contextcounter__fill { background: var(--destructive); }
+
+/* FeedbackTray */
+.appui-feedbacktray { position: fixed; z-index: 200; display: flex; flex-direction: column; gap: 10px; max-width: 380px; }
+.appui-feedbacktray--bottom-right { right: 20px; bottom: 20px; align-items: flex-end; }
+.appui-feedbacktray--bottom-left { left: 20px; bottom: 20px; }
+.appui-feedbacktray--top-right { right: 20px; top: 20px; align-items: flex-end; }
+.appui-feedbacktray > * { animation: appui-tray-in var(--duration-200) var(--ease-out); }
+@keyframes appui-tray-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* VuMeter — continuous dB-scaled level meter (Unity audio mixer style) */
+.appui-vumeter { position: relative; display: inline-flex; align-items: flex-start; gap: 1px; font-family: var(--font-sans); }
+.appui-vumeter__bars { display: flex; gap: 2px; }
+.appui-vumeter__ch { position: relative; width: 7px; border-radius: 1px; background: #111111; box-shadow: inset 0 0 0 1px #555555; overflow: hidden; }
+.appui-vumeter__grad { position: absolute; left: 0; bottom: 0; width: 100%; background: linear-gradient(to top, #16a34a 0%, #22c55e 55%, #f59e0b 82%, #ef4444 100%); }
+/* gold fader arrow + dB badge */
+.appui-vumeter__fader { position: absolute; left: 16px; display: flex; align-items: center; transform: translateY(-50%); }
+.appui-vumeter__arrow { width: 6px; height: 10px; background: #caa84a; clip-path: polygon(100% 0, 0 50%, 100% 100%); }
+.appui-vumeter__badge { background: #caa84a; color: #000; font-size: 9px; font-weight: 700; line-height: 1; padding: 3px 4px; border-radius: 0 2px 2px 0; }
+/* dB ruler */
+.appui-vumeter__ruler { position: relative; width: 22px; margin-left: 8px; color: #6a6a6a; font-size: 9px; }
+.appui-vumeter__tick { position: absolute; left: 0; display: flex; align-items: center; gap: 3px; transform: translateY(-50%); white-space: nowrap; }
+.appui-vumeter__tick::before { content: ""; width: 4px; height: 1px; background: #6a6a6a; }

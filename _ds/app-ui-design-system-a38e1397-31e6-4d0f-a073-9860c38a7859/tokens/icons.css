@@ -1,0 +1,18 @@
+/* ============================================================================
+   Unity App UI — Iconography (Phosphor Icons)
+   App UI's symbol set IS Phosphor Icons (MIT). Loaded here from CDN so glyphs
+   are available everywhere as <i class="ph ph-{name}"></i>. Weights:
+     ph-thin · ph-light · ph (regular, default) · ph-bold · ph-fill · ph-duotone
+   The <Icon> component wraps this. In production Unity ships @unity/app-ui-symbols.
+   ============================================================================ */
+
+@import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css");
+@import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css");
+@import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css");
+
+:root {
+  --icon-color-primary: var(--foreground);
+  --icon-color-secondary: var(--foreground-secondary);
+  --icon-color-callout: var(--foreground-emphasis);
+  --icon-color-disabled: var(--foreground-muted);
+}

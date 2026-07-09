@@ -1,0 +1,196 @@
+/* ── Content display: Icon, Badge, Avatar, Chip, Card, Separator, Accordion,
+   Link, Text, Heading, Kbd, Quote, CodeBlock, Tooltip ────────────────────── */
+
+/* Badge */
+.appui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  padding: 1px 10px;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-sans);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.appui-badge--default { background: var(--primary); color: var(--primary-foreground); }
+.appui-badge--secondary { background: var(--control); color: var(--control-foreground); }
+.appui-badge--destructive { background: var(--destructive); color: var(--destructive-foreground); }
+.appui-badge--positive { background: var(--positive); color: var(--positive-foreground); }
+.appui-badge--warning { background: var(--warning); color: var(--warning-foreground); }
+.appui-badge--outline { color: var(--foreground); border-color: var(--border-strong); }
+
+/* Chip */
+.appui-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  background: var(--control);
+  color: var(--control-foreground);
+  border: 1px solid transparent;
+  cursor: default;
+}
+.appui-chip--outline { background: transparent; border-color: var(--border); }
+.appui-chip[data-color="accent"] { background: color-mix(in srgb, var(--primary) 22%, transparent); color: var(--primary); }
+.appui-chip[data-color="positive"] { background: color-mix(in srgb, var(--positive) 22%, transparent); color: var(--positive); }
+.appui-chip[data-color="warning"] { background: color-mix(in srgb, var(--warning) 22%, transparent); color: var(--warning); }
+.appui-chip[data-color="destructive"] { background: color-mix(in srgb, var(--destructive) 22%, transparent); color: var(--destructive); }
+.appui-chip__remove { display: inline-flex; cursor: pointer; opacity: 0.7; border: none; background: none; color: inherit; padding: 0; }
+.appui-chip__remove:hover { opacity: 1; }
+
+/* Avatar */
+.appui-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--control);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm);
+  user-select: none;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+.appui-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.appui-avatar--sm { width: 24px; height: 24px; font-size: var(--text-xs); }
+.appui-avatar--lg { width: 44px; height: 44px; font-size: var(--text-body-lg); }
+
+/* Card */
+.appui-card {
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  color: var(--foreground);
+  box-shadow: var(--shadow-card);
+}
+.appui-card--interactive { cursor: pointer; transition: background-color var(--duration-100) var(--ease-standard), box-shadow var(--duration-100) var(--ease-standard); }
+.appui-card--interactive:hover { background: var(--control-hover); }
+.appui-card--interactive:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ring); }
+.appui-card--selected { box-shadow: 0 0 0 2px var(--primary); }
+.appui-card__media { position: relative; flex-shrink: 0; overflow: hidden; background: var(--surface-inset); }
+.appui-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.appui-card__header { display: flex; flex-direction: column; gap: 4px; padding: 12px; }
+.appui-card__title { font-size: var(--text-body-lg); font-weight: var(--font-weight-semibold); line-height: 1.1; }
+.appui-card__desc { font-size: var(--text-sm); color: var(--foreground-secondary); margin: 0; }
+.appui-card__content { padding: 0 12px 12px; font-size: var(--text-sm); }
+.appui-card__footer { display: flex; align-items: center; gap: 8px; padding: 0 12px 12px; }
+
+/* Separator */
+.appui-separator { background: var(--border); border: none; flex-shrink: 0; }
+.appui-separator--horizontal { height: 1px; width: 100%; margin: 0; }
+.appui-separator--vertical { width: 1px; align-self: stretch; }
+
+/* Link */
+.appui-link { color: var(--link); text-decoration: none; text-underline-offset: 3px; cursor: pointer; }
+.appui-link:hover { text-decoration: underline; }
+.appui-link:visited { color: var(--link); }
+.appui-link[data-disabled="true"] { color: var(--foreground-muted); pointer-events: none; }
+
+/* Text + Heading */
+.appui-text { font-family: var(--font-sans); color: var(--foreground); margin: 0; line-height: var(--line-height-regular); }
+.appui-text--secondary { color: var(--foreground-secondary); }
+.appui-text--caption { font-size: var(--text-caption); }
+.appui-text--body { font-size: var(--text-body); }
+.appui-text--lg { font-size: var(--text-body-lg); }
+.appui-heading { font-family: var(--font-sans); color: var(--foreground); margin: 0; font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); }
+.appui-heading--sm { font-size: var(--text-heading-sm); }
+.appui-heading--md { font-size: var(--text-heading-md); }
+.appui-heading--lg { font-size: var(--text-heading-lg); }
+.appui-heading--xl { font-size: var(--text-heading-xl); }
+.appui-heading--display { font-size: var(--text-display); }
+
+/* Kbd */
+.appui-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-inset);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--foreground-secondary);
+}
+
+/* Quote */
+.appui-quote {
+  margin: 0;
+  padding: 4px 0 4px 16px;
+  border-left: 3px solid var(--primary);
+  color: var(--foreground);
+  font-size: var(--text-body-lg);
+  line-height: 1.5;
+}
+.appui-quote__cite { display: block; margin-top: 8px; font-size: var(--text-sm); color: var(--foreground-secondary); font-style: normal; }
+
+/* CodeBlock */
+.appui-codeblock {
+  position: relative;
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-input);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+.appui-codeblock__bar { display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background: var(--surface-inset); border-bottom: 1px solid var(--border-input); }
+.appui-codeblock__lang { font-size: 11px; color: var(--foreground-secondary); font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.04em; }
+.appui-codeblock pre { margin: 0; padding: 12px; overflow: auto; font-size: var(--text-sm); line-height: 1.5; color: var(--foreground); }
+
+/* Tooltip (CSS-driven, hover) */
+.appui-tooltip { position: relative; display: inline-flex; }
+.appui-tooltip__pop {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-overlay);
+  color: var(--foreground);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  box-shadow: var(--shadow-popover);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-100) var(--ease-out);
+  z-index: 50;
+}
+.appui-tooltip:hover .appui-tooltip__pop { opacity: 1; }
+
+/* Accordion */
+.appui-accordion { border-bottom: 1px solid var(--border); }
+.appui-accordion__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+}
+.appui-accordion__caret { transition: transform var(--duration-150) var(--ease-standard); color: var(--foreground-secondary); }
+.appui-accordion[data-open="true"] .appui-accordion__caret { transform: rotate(90deg); }
+.appui-accordion__body { padding: 0 4px 12px 24px; font-size: var(--text-sm); color: var(--foreground-secondary); line-height: 1.5; }

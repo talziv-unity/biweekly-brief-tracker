@@ -1,0 +1,70 @@
+/* ── Color: ColorSwatch, ColorSlider, ColorWheel, SVSquare, ColorPicker,
+   GradientField ──────────────────────────────────────────────────────────── */
+
+/* checkerboard for alpha */
+.appui-checker {
+  background-image:
+    linear-gradient(45deg, var(--border) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--border) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--border) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--border) 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0;
+}
+
+/* ColorSwatch */
+.appui-colorswatch {
+  display: inline-block; border-radius: var(--radius-sm);
+  border: 1px solid var(--thumb-border); cursor: pointer; padding: 0;
+  width: 24px; height: 24px; position: relative; overflow: hidden;
+}
+.appui-colorswatch__fill { position: absolute; inset: 0; }
+.appui-colorswatch--sm { width: 16px; height: 16px; }
+.appui-colorswatch--lg { width: 36px; height: 36px; border-radius: var(--radius-md); }
+.appui-colorswatch[data-selected="true"] { box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary); }
+
+/* ColorSlider (hue / alpha track) */
+.appui-colorslider { position: relative; height: 12px; border-radius: var(--radius-full); cursor: pointer; }
+.appui-colorslider--hue { background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%); }
+.appui-colorslider__thumb { position: absolute; top: 50%; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 1px solid var(--thumb-border); transform: translate(-50%, -50%); box-shadow: var(--shadow-card); }
+.appui-colorslider input { position: absolute; inset: 0; width: 100%; opacity: 0; margin: 0; cursor: pointer; }
+
+/* SVSquare (saturation / value picking area) */
+.appui-svsquare { position: relative; border-radius: var(--radius-sm); overflow: hidden; aspect-ratio: 1; cursor: crosshair; }
+.appui-svsquare__sat { position: absolute; inset: 0; background: linear-gradient(to right, #fff, transparent); }
+.appui-svsquare__val { position: absolute; inset: 0; background: linear-gradient(to top, #000, transparent); }
+.appui-svsquare__thumb { position: absolute; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; transform: translate(-50%, -50%); box-shadow: 0 0 0 1px rgba(0,0,0,.4); pointer-events: none; }
+
+/* ColorWheel */
+.appui-colorwheel { position: relative; border-radius: 50%; aspect-ratio: 1;
+  background:
+    radial-gradient(circle, #fff 0%, transparent 70%),
+    conic-gradient(from 90deg, #f00, #f0f, #00f, #0ff, #0f0, #ff0, #f00);
+  cursor: crosshair;
+}
+.appui-colorwheel__thumb { position: absolute; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; transform: translate(-50%, -50%); box-shadow: 0 0 0 1px rgba(0,0,0,.4); }
+
+/* ColorPicker (popover composition) */
+.appui-colorpicker { width: 220px; background: var(--surface-overlay); border: 1px solid var(--border-input); border-radius: var(--radius-md); box-shadow: var(--shadow-menu); padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.appui-colorpicker__sv { width: 100%; }
+.appui-colorpicker__row { display: flex; align-items: center; gap: 8px; }
+.appui-colorpicker__hex { flex: 1; }
+.appui-colorpicker__preview { width: 28px; height: 28px; border-radius: var(--radius-sm); border: 1px solid var(--thumb-border); flex-shrink: 0; }
+
+/* GradientField */
+.appui-gradientfield {
+  position: relative; height: 24px; border-radius: var(--radius-sm);
+  border: 1px solid var(--thumb-border); cursor: pointer; overflow: hidden;
+}
+.appui-gradientfield__stop {
+  position: absolute; top: 100%; width: 10px; height: 10px; transform: translate(-50%, -2px) rotate(45deg);
+  background: #fff; border: 1px solid var(--thumb-border);
+}
+
+/* GradientEditor */
+.appui-gradienteditor { width: 240px; background: var(--surface-overlay); border: 1px solid var(--border-input); border-radius: var(--radius-md); box-shadow: var(--shadow-menu); padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+.appui-gradienteditor__bar { position: relative; padding-bottom: 10px; }
+.appui-gradienteditor__stops { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.appui-gradienteditor__stop { display: flex; align-items: center; gap: 6px; padding: 3px 6px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; font-size: var(--text-xs); color: var(--foreground-secondary); }
+.appui-gradienteditor__stop[data-selected="true"] { border-color: var(--primary); background: var(--field); color: var(--foreground); }
+.appui-gradienteditor__swatch { width: 16px; height: 16px; border-radius: 3px; border: 1px solid var(--thumb-border); }

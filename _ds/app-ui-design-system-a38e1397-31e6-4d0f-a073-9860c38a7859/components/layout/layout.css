@@ -1,0 +1,63 @@
+/* ── Layout: Panel, ScrollArea, FloatingWindow, Resizable ────────────────── */
+
+/* Panel */
+.appui-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  overflow: hidden;
+}
+.appui-panel--flat { box-shadow: none; }
+.appui-panel--raised { box-shadow: var(--shadow-raised); }
+.appui-panel--overlay { box-shadow: var(--shadow-menu); background: var(--surface-overlay); }
+.appui-panel__header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-bottom: 1px solid var(--border);
+  font-size: var(--text-sm); font-weight: var(--font-weight-semibold);
+}
+.appui-panel__header .appui-panel__actions { margin-left: auto; display: flex; gap: 4px; }
+.appui-panel__body { padding: 12px; }
+
+/* ScrollArea */
+.appui-scrollarea { overflow: auto; scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) transparent; }
+.appui-scrollarea::-webkit-scrollbar { width: 10px; height: 10px; }
+.appui-scrollarea::-webkit-scrollbar-track { background: transparent; }
+.appui-scrollarea::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: var(--radius-full); border: 2px solid transparent; background-clip: padding-box; }
+.appui-scrollarea::-webkit-scrollbar-thumb:hover { background: var(--border-strong); background-clip: padding-box; }
+
+/* FloatingWindow */
+.appui-floatwin {
+  background: var(--surface);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-dialog);
+  display: flex; flex-direction: column;
+  color: var(--foreground);
+  overflow: hidden;
+}
+.appui-floatwin__titlebar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px 6px 12px;
+  background: var(--surface-inset);
+  border-bottom: 1px solid var(--border);
+  cursor: grab; user-select: none;
+}
+.appui-floatwin__title { flex: 1; font-size: var(--text-sm); font-weight: var(--font-weight-medium); }
+.appui-floatwin__body { padding: 12px; overflow: auto; }
+
+/* Resizable (visual handle) */
+.appui-resizable { display: flex; }
+.appui-resizable__handle {
+  width: 6px; cursor: col-resize; flex-shrink: 0;
+  background: transparent; position: relative;
+}
+.appui-resizable__handle::after { content: ""; position: absolute; inset: 0 2px; background: var(--border); border-radius: var(--radius-full); opacity: 0; transition: opacity var(--duration-100); }
+.appui-resizable__handle:hover::after { opacity: 1; }
+
+/* Resizable functional split */
+.appui-resizable__pane { overflow: auto; min-width: 0; min-height: 0; }
+.appui-resizable--vertical { flex-direction: column; }
+.appui-resizable--vertical .appui-resizable__handle { width: auto; height: 6px; cursor: row-resize; }
+.appui-resizable--vertical .appui-resizable__handle::after { inset: 2px 0; }
+.appui-resizable__handle[data-dragging="true"]::after { opacity: 1; background: var(--primary); }

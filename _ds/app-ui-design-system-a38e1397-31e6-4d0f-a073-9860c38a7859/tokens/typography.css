@@ -1,0 +1,70 @@
+/* ============================================================================
+   Unity App UI — Typography tokens
+   Inter for UI text, Roboto Mono for code. Body = 400 / 1.4 line-height;
+   headings = 600 / 1.1 line-height. Scale runs caption (12) → display (45).
+   ============================================================================ */
+
+:root {
+  /* Families */
+  --font-sans: Inter, ui-sans-serif, system-ui, Roboto, "Noto Sans", "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Consolas, "Liberation Mono", monospace;
+
+  /* Weights (App UI uses 400 / 500 / 600) */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line heights */
+  --line-height-tight: 1.1;   /* headings */
+  --line-height-regular: 1.4; /* body */
+
+  /* ── Type scale (font-size only; pair with line-height tokens) ─────────── */
+  --text-caption: 12px;       /* labels, helper text, metadata */
+  --text-body: 14px;          /* default body */
+  --text-body-lg: 16px;       /* emphasised body / lead */
+  --text-heading-sm: 19px;
+  --text-heading-md: 22px;
+  --text-heading-lg: 25px;
+  --text-heading-xl: 32px;
+  --text-display: 45px;
+
+  /* Tailwind-parity aliases used by some registry components */
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 14px;
+}
+
+/* ── Type role helper classes (optional convenience) ─────────────────────── */
+.appui-caption {
+  font: var(--font-weight-regular) var(--text-caption) / var(--line-height-regular) var(--font-sans);
+}
+.appui-body {
+  font: var(--font-weight-regular) var(--text-body) / var(--line-height-regular) var(--font-sans);
+}
+.appui-body-strong {
+  font: var(--font-weight-semibold) var(--text-body) / var(--line-height-regular) var(--font-sans);
+}
+.appui-body-lg {
+  font: var(--font-weight-regular) var(--text-body-lg) / var(--line-height-regular) var(--font-sans);
+}
+.appui-heading-sm {
+  font: var(--font-weight-semibold) var(--text-heading-sm) / var(--line-height-tight) var(--font-sans);
+}
+.appui-heading-md {
+  font: var(--font-weight-semibold) var(--text-heading-md) / var(--line-height-tight) var(--font-sans);
+}
+.appui-heading-lg {
+  font: var(--font-weight-semibold) var(--text-heading-lg) / var(--line-height-tight) var(--font-sans);
+}
+.appui-heading-xl {
+  font: var(--font-weight-semibold) var(--text-heading-xl) / var(--line-height-tight) var(--font-sans);
+}
+.appui-display {
+  font: var(--font-weight-semibold) var(--text-display) / var(--line-height-tight) var(--font-sans);
+}
+.appui-mono {
+  font: var(--font-weight-regular) var(--text-sm) / var(--line-height-regular) var(--font-mono);
+}

@@ -1,0 +1,32 @@
+/* ============================================================================
+   Unity App UI — Motion tokens
+   Short, functional transitions. UI uses ease-out for entrances and a quick
+   standard curve for state changes; no bouncing on system controls.
+   ============================================================================ */
+
+:root {
+  /* Durations */
+  --duration-50: 50ms; /* @kind other */
+  --duration-100: 100ms; /* @kind other */
+  --duration-125: 125ms; /* @kind other */
+  --duration-150: 150ms; /* @kind other */
+  --duration-200: 200ms; /* @kind other */
+  --duration-250: 250ms; /* @kind other */
+  --duration-300: 300ms; /* @kind other */
+  --duration-400: 400ms; /* @kind other */
+
+  /* Easing */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+
+  /* Common composite transitions */
+  --transition-control: background-color var(--duration-100) var(--ease-standard),
+    border-color var(--duration-100) var(--ease-standard),
+    color var(--duration-100) var(--ease-standard),
+    box-shadow var(--duration-100) var(--ease-standard); /* @kind other */
+  --transition-overlay: opacity var(--duration-150) var(--ease-out),
+    transform var(--duration-150) var(--ease-out); /* @kind other */
+}

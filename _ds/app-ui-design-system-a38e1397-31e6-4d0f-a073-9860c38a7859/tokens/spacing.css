@@ -1,0 +1,106 @@
+/* ============================================================================
+   Unity App UI — Spacing, sizing & radius tokens
+   Sizing scale is density-aware in the source (Compact / Normal / Comfort);
+   values below are Normal density. Spacing for layout uses the 4px base ramp.
+   ============================================================================ */
+
+:root {
+  /* ── Sizing ramp (Normal density px) — control heights, gaps, icon sizes ─ */
+  --appui-sizing-0: 0px;
+  --appui-sizing-10: 1px;
+  --appui-sizing-25: 2px;
+  --appui-sizing-50: 2px;
+  --appui-sizing-60: 3px;
+  --appui-sizing-75: 4px;
+  --appui-sizing-100: 5px;
+  --appui-sizing-125: 6px;
+  --appui-sizing-150: 7px;
+  --appui-sizing-160: 8px;
+  --appui-sizing-175: 9px;
+  --appui-sizing-200: 10px;
+  --appui-sizing-225: 11px;
+  --appui-sizing-250: 12px;
+  --appui-sizing-275: 13px;
+  --appui-sizing-300: 14px;
+  --appui-sizing-320: 16px;
+  --appui-sizing-350: 17px;
+  --appui-sizing-375: 18px;
+  --appui-sizing-400: 20px;
+  --appui-sizing-450: 22px;
+  --appui-sizing-500: 24px;
+  --appui-sizing-550: 26px;
+  --appui-sizing-600: 30px;
+  --appui-sizing-700: 34px;
+  --appui-sizing-800: 38px;
+  --appui-sizing-1000: 48px;
+  --appui-sizing-1250: 60px;
+
+  /* ── Layout spacing scale (4px base) ───────────────────────────────────── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+
+  /* ── Control sizing aliases (semantic; default control = md) ───────────── */
+  --control-height-sm: 20px;   /* sizing-400 */
+  --control-height-md: 24px;   /* sizing-500 */
+  --control-height-lg: 30px;   /* sizing-600 */
+  --control-square-sm: 20px;
+  --control-square-md: 24px;
+  --control-square-lg: 30px;
+
+  /* Icon glyph sizes inside controls */
+  --icon-xxs: 10px;  /* sizing-200 */
+  --icon-xs: 12px;   /* sizing-250 */
+  --icon-sm: 14px;   /* sizing-300 */
+  --icon-md: 17px;   /* sizing-350 */
+  --icon-lg: 20px;   /* sizing-400 */
+
+  /* Control internals */
+  --control-gap-sm: 2px;
+  --control-gap-md: 5px;
+  --control-gap-lg: 7px;
+  --control-padding-x: 10px;
+
+  /* ── Radius scale ──────────────────────────────────────────────────────── */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;   /* controls (default) */
+  --radius-lg: 8px;   /* panels / cards */
+  --radius-xl: 16px;
+  --radius-full: 9999px; /* chips / avatars / pills */
+
+  /* Borders */
+  --border-width: 1px;
+  --border-width-thick: 2px;
+}
+
+/* ── Compact density overrides (dense editor tooling) ────────────────────── */
+[data-appui-density="compact"] {
+  --space-xs: 2px;
+  --space-sm: 6px;
+  --space-md: 8px;
+  --space-lg: 12px;
+  --space-xl: 16px;
+  --control-height-sm: 16px;
+  --control-height-md: 20px;
+  --control-height-lg: 24px;
+  --control-square-sm: 16px;
+  --control-square-md: 20px;
+  --control-square-lg: 24px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+}
+
+/* ── Comfort density overrides (touch) ───────────────────────────────────── */
+[data-appui-density="comfort"] {
+  --control-height-sm: 28px;
+  --control-height-md: 34px;
+  --control-height-lg: 42px;
+  --control-square-sm: 28px;
+  --control-square-md: 34px;
+  --control-square-lg: 42px;
+}

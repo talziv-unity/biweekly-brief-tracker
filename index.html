@@ -1,298 +1,1016 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hole It — Bi-Weekly Brief Tracker</title>
-<style>
-  :root {
-    --bg: #191919;
-    --card: #252525;
-    --ink: #e9e9e7;
-    --muted: #9b9a97;
-    --line: #373737;
-    --hole: #34d399;
-    --screw: #60a5fa;
-    --unravel: #c084fc;
-    --done: #34d399;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    font-size: 13px;
-  }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 14px 14px 14px; }
-
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: stretch; }
-  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
-
-  .game {
-    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 12px 13px 5px; border-top: 3px solid var(--accent);
-    display: flex; flex-direction: column;
-  }
-  .ghead { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-  .game h2 { margin: 0; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
-  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
-  .gleft { font-size: 11px; color: var(--muted); font-weight: 600; white-space: nowrap; }
-  .gsub { font-size: 10.5px; color: var(--muted); font-weight: 600; margin-top: 3px; opacity: .85; }
-  .gbar { height: 5px; background: #333; border-radius: 99px; margin: 7px 0 6px; overflow: hidden; }
-  .gbar > span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 99px; transition: width .25s ease; }
-
-  .items { flex: 1 1 auto; }
-  .item {
-    display: flex; align-items: center; gap: 8px;
-    padding: 6px 0; border-top: 1px solid var(--line);
-  }
-  .item:first-of-type { border-top: none; }
-  .item .label { font-size: 12.5px; font-weight: 600; flex: 1 1 auto; min-width: 0; }
-  .boxes { display: flex; gap: 4px; flex: 0 0 auto; }
-  .box {
-    width: 21px; height: 21px; border-radius: 5px; border: 1.5px solid var(--line);
-    background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 10.5px; font-weight: 700; color: #6f6f6c; user-select: none; transition: all .12s ease;
-  }
-  .box:hover { border-color: var(--accent); color: var(--ink); }
-  .box.on { background: var(--accent); border-color: var(--accent); color: #0c1a12; }
-  .item .left {
-    font-size: 11px; font-weight: 700; color: var(--accent);
-    background: color-mix(in srgb, var(--accent) 20%, transparent);
-    padding: 2px 7px; border-radius: 99px; white-space: nowrap; flex: 0 0 auto;
-    min-width: 46px; text-align: center;
-  }
-  .item .left.done { color: #0c1a12; background: var(--done); }
-
-  .game footer { margin-top: auto; padding: 9px 0 4px; display: flex; justify-content: flex-end; }
-  .game footer button { border: none; background: none; color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; text-decoration: underline; opacity: .7; }
-  .game footer button:hover { opacity: 1; color: var(--ink); }
-  .alldone { color: var(--done); font-weight: 700; }
-
-  .topbar {
-    display: flex; align-items: center; gap: 16px;
-    margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
-  }
-  .tb-side { flex: 1 1 0; display: flex; align-items: center; gap: 16px; min-width: 0; }
-  .tb-right { justify-content: flex-end; }
-  .weektabs { display: flex; gap: 4px; flex: 0 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 9px; padding: 3px; }
-  .weektabs button {
-    border: none; background: none; color: var(--muted); font: inherit; font-size: 12.5px; font-weight: 600;
-    padding: 5px 12px; border-radius: 6px; cursor: pointer; transition: all .12s ease; white-space: nowrap;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .weektabs button .gd { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .55; }
-  .weektabs button:hover { color: var(--ink); }
-  .weektabs button.active { background: color-mix(in srgb, var(--tab) 22%, transparent); color: var(--tab); }
-  .weektabs button.active .gd { opacity: 1; }
-  .topbar .count { font-size: 12.5px; color: var(--muted); }
-  .topbar .count b { color: var(--ink); font-size: 14px; }
-  button.reset {
-    border: 1px solid var(--line); background: var(--card); color: var(--muted);
-    border-radius: 8px; padding: 6px 13px; font: inherit; font-size: 12.5px; cursor: pointer; transition: all .15s;
-  }
-  button.reset:hover { border-color: #555; color: var(--ink); }
-  button.reset.arm { border-color: #e5484d; color: #ff7173; }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-<div class="wrap">
-  <header class="topbar">
-    <div class="tb-side"></div>
-    <div class="weektabs" id="weektabs"></div>
-    <div class="tb-side tb-right">
-      <div class="count">This view <b id="overallDone">0</b> / <b id="overallTotal">0</b> done</div>
-      <button class="reset" id="resetAll">↺ Reset all</button>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/cloud-foundation-design-system-23b54027-0ad7-42d6-ad9f-6626653bff1e/colors_and_type.css">
+  <script src="_ds/cloud-foundation-design-system-23b54027-0ad7-42d6-ad9f-6626653bff1e/_ds_bundle.js"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #131313; }
+    a { color: #6EB8FF; text-decoration: none; }
+    a:hover { color: #C6E4FF; text-decoration: underline; }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #3A3A3A; border-radius: 999px; }
+    input::placeholder { color: #6a6a6a; }
+    input[type=datetime-local] { color-scheme: dark; }
+    @keyframes cf-pop { from { opacity: 0; transform: scale(0.55); } to { opacity: 1; transform: scale(1); } }
+    .cf-dragging { opacity: 0.35; }
+  </style>
+</helmet>
+
+<div class="cf-dark" data-screen-label="Session Planner — Cloud" style="height: 100vh; box-sizing: border-box; background: var(--cf-bg); color: var(--cf-fg); font-family: var(--cf-font-sans); font-weight: 400; display: flex; flex-direction: column; overflow: hidden;">
+
+  <!-- ===== TOP HEADER: games + waves (centered) ===== -->
+  <div style="position: relative; flex-shrink: 0; box-sizing: border-box; background: var(--cf-bg-paper); border-bottom: 1px solid var(--cf-divider); padding: 10px 56px 9px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+
+    <!-- reminders bell (top-right) -->
+    <div style="position: absolute; top: 9px; right: 14px;">
+      <button onClick="{{ togglePanel }}" title="Reminders" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 999px; border: 1px solid {{ bellBorder }}; background: {{ bellBg }}; color: {{ bellFg }}; cursor: pointer;">
+        <i class="{{ bellIcon }}" style="font-size: 16px;"></i>
+        <sc-if value="{{ hasReminders }}" hint-placeholder-val="{{ false }}">
+          <span style="position: absolute; top: -4px; right: -4px; min-width: 16px; height: 16px; box-sizing: border-box; padding: 0 4px; border-radius: 999px; background: {{ badgeBg }}; color: #fff; font: 600 10px/16px var(--cf-font-mono); text-align: center;">{{ reminderCount }}</span>
+        </sc-if>
+      </button>
+
+      <sc-if value="{{ panelOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: 38px; right: 0; width: 308px; box-sizing: border-box; background: var(--cf-bg-elevation-2); border: 1px solid var(--cf-border); border-radius: 12px; padding: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.5); z-index: 30; display: flex; flex-direction: column; gap: 10px; text-align: left;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font: 600 12px/1 var(--cf-font-sans); flex: 1;">Reminders</span>
+            <button onClick="{{ toggleAlerts }}" style="font: 400 10px/1 var(--cf-font-sans); display: flex; align-items: center; gap: 5px; border: 1px solid {{ alertsBorder }}; background: {{ alertsBg }}; color: {{ alertsFg }}; border-radius: 999px; padding: 5px 9px; cursor: pointer; white-space: nowrap;">
+              <i class="{{ alertsIcon }}" style="font-size: 11px;"></i> {{ alertsLabel }}
+            </button>
+          </div>
+
+          <sc-if value="{{ hasReminders }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 6px; max-height: 190px; overflow-y: auto;">
+              <sc-for list="{{ reminders }}" as="rem" hint-placeholder-count="2">
+                <div style="display: flex; align-items: flex-start; gap: 9px; background: var(--cf-bg-paper); border: 1px solid var(--cf-divider-strong); border-radius: 9px; padding: 8px 10px;">
+                  <span style="width: 7px; height: 7px; border-radius: 999px; background: {{ rem.dot }}; margin-top: 4px; flex-shrink: 0;"></span>
+                  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font: 500 12px/1.3 var(--cf-font-sans); color: var(--cf-fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ rem.title }}</span>
+                    <sc-if value="{{ rem.hasNote }}" hint-placeholder-val="{{ false }}">
+                      <span style="font: 400 11px/1.4 var(--cf-font-sans); color: var(--cf-fg-secondary);">{{ rem.note }}</span>
+                    </sc-if>
+                    <span style="font: 400 10px/1 var(--cf-font-mono); color: {{ rem.whenColor }};">{{ rem.when }}</span>
+                  </div>
+                  <button onClick="{{ rem.remove }}" title="Dismiss" style="border: none; background: transparent; padding: 2px; cursor: pointer; color: var(--cf-fg-disabled); display: flex;" style-hover="color: var(--cf-error);">
+                    <i class="ph ph-x" style="font-size: 12px;"></i>
+                  </button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noReminders }}" hint-placeholder-val="{{ true }}">
+            <span style="font: 400 11px/1.5 var(--cf-font-sans); color: var(--cf-fg-disabled); padding: 2px;">No reminders yet. Add one below, or tap the bell on any task.</span>
+          </sc-if>
+
+          <div style="border-top: 1px solid var(--cf-divider); padding-top: 10px; display: flex; flex-direction: column; gap: 7px;">
+            <sc-if value="{{ rCtxHas }}" hint-placeholder-val="{{ false }}">
+              <span style="display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; font: 500 10px/1 var(--cf-font-sans); background: var(--cf-primary-lighter); color: var(--cf-primary-darker); border-radius: 999px; padding: 5px 9px;">
+                <i class="ph ph-target" style="font-size: 11px;"></i> {{ rCtxLabel }}
+                <i onClick="{{ clearRCtx }}" class="ph ph-x" style="font-size: 11px; cursor: pointer;"></i>
+              </span>
+            </sc-if>
+            <input value="{{ rNote }}" onChange="{{ onRNote }}" onKeyDown="{{ onRKey }}" placeholder="{{ rNotePlaceholder }}" style="box-sizing: border-box; width: 100%; background: var(--cf-bg); border: 1px solid var(--cf-border); border-radius: 7px; padding: 7px 9px; color: var(--cf-fg); font: 400 12px/1.3 var(--cf-font-sans); outline: none;" style-focus="border-color: var(--cf-primary);">
+            <div style="display: flex; gap: 7px;">
+              <input type="datetime-local" value="{{ rAt }}" onChange="{{ onRAt }}" style="flex: 1; min-width: 0; box-sizing: border-box; background: var(--cf-bg); border: 1px solid var(--cf-border); border-radius: 7px; padding: 6px 8px; color: var(--cf-fg); font: 400 11px/1.3 var(--cf-font-mono); outline: none;" style-focus="border-color: var(--cf-primary);">
+              <button onClick="{{ confirmRemind }}" style="font: 600 12px/1 var(--cf-font-sans); border: none; border-radius: 7px; padding: 0 15px; cursor: pointer; background: var(--cf-primary); color: #fff; white-space: nowrap;" style-hover="background: var(--cf-primary-dark);">Add</button>
+            </div>
+          </div>
+        </div>
+      </sc-if>
     </div>
-  </header>
-  <div class="grid" id="grid"></div>
+
+    <!-- games row -->
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
+      <span style="font: 600 12px/1 var(--cf-font-sans); padding: 6px 12px; border-radius: 999px; background: var(--cf-primary-lighter); color: var(--cf-primary-darker); white-space: nowrap;">Hole It</span>
+      <span style="font: 400 12px/1 var(--cf-font-sans); padding: 6px 12px; border-radius: 999px; color: var(--cf-fg-disabled); cursor: not-allowed; white-space: nowrap;">Screw Guru</span>
+      <span style="font: 400 12px/1 var(--cf-font-sans); padding: 6px 12px; border-radius: 999px; color: var(--cf-fg-disabled); cursor: not-allowed; white-space: nowrap;">Unravel</span>
+    </div>
+
+    <!-- waves row -->
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
+      <span style="font: 400 10px/1 var(--cf-font-mono); letter-spacing: 0.12em; color: var(--cf-fg-disabled);">WAVE</span>
+      <sc-for list="{{ waves }}" as="wv" hint-placeholder-count="3">
+        <button onClick="{{ wv.select }}" style="display: flex; align-items: center; gap: 8px; font: {{ wv.weight }} 12px/1 var(--cf-font-sans); border: 1px solid {{ wv.chipBorder }}; background: {{ wv.bg }}; color: {{ wv.fg }}; border-radius: 999px; padding: 6px 12px; cursor: pointer; white-space: nowrap; transition: background 140ms var(--cf-ease-standard), color 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="transform: translateY(-1px);">
+          {{ wv.name }}
+          <span style="font: 400 10px/1 var(--cf-font-mono); color: {{ wv.countColor }}; font-variant-numeric: tabular-nums;">{{ wv.count }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div style="flex: 1; min-width: 0; overflow-y: auto;">
+    <div style="max-width: 980px; margin: 0 auto; box-sizing: border-box; padding: 13px 20px 18px; display: flex; flex-direction: column; gap: 11px;">
+
+      <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+        <div class="cf-body2" style="color: var(--cf-error);">data.json not found — awaiting Doctor sync.</div>
+      </sc-if>
+      <sc-if value="{{ showLoading }}" hint-placeholder-val="{{ true }}">
+        <div class="cf-body2" style="color: var(--cf-fg-secondary);">Loading data.json…</div>
+      </sc-if>
+
+      <sc-if value="{{ loaded }}" hint-placeholder-val="{{ true }}">
+
+        <!-- wave title + controls -->
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: baseline; gap: 10px; min-width: 0;">
+            <span style="font: 600 18px/1.1 var(--cf-font-sans); letter-spacing: -0.02em;">{{ curName }}</span>
+            <span style="font: 400 10px/1 var(--cf-font-mono); letter-spacing: 0.1em; color: var(--cf-fg-disabled); white-space: nowrap;">{{ curEyebrow }}</span>
+          </div>
+          <div style="flex: 1; min-width: 20px;"></div>
+
+          <!-- view switcher -->
+          <div style="display: inline-flex; align-items: center; gap: 2px; background: var(--cf-bg-elevation-1); border-radius: 999px; padding: 3px;">
+            <sc-for list="{{ viewOptions }}" as="vo" hint-placeholder-count="4">
+              <button onClick="{{ vo.select }}" title="{{ vo.label }}" style="display: flex; align-items: center; gap: 6px; font: {{ vo.weight }} 11px/1 var(--cf-font-sans); border: none; background: {{ vo.bg }}; color: {{ vo.fg }}; border-radius: 999px; padding: 6px 11px; cursor: pointer; white-space: nowrap; transition: background 140ms var(--cf-ease-standard), color 140ms var(--cf-ease-standard);" style-hover="color: var(--cf-fg);">
+                <i class="{{ vo.icon }}" style="font-size: 13px;"></i> {{ vo.label }}
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- progress + actions -->
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 120px; height: 4px; border-radius: 999px; background: var(--cf-bg-elevation-1); overflow: hidden;">
+            <div style="height: 100%; border-radius: 999px; background: {{ curBarColor }}; width: {{ curPct }}; transition: width 250ms var(--cf-ease-standard);"></div>
+          </div>
+          <span style="font: 400 12px/1 var(--cf-font-mono); color: var(--cf-fg-secondary); font-variant-numeric: tabular-nums; white-space: nowrap;">{{ remainingLabel }}<span style="color: var(--cf-fg-disabled);">/{{ totalLabel }} left</span></span>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <button onClick="{{ toggleHideDone }}" style="font: 400 12px/1 var(--cf-font-sans); display: flex; align-items: center; gap: 6px; border: 1px solid {{ hideBorder }}; border-radius: 999px; padding: 6px 11px; cursor: pointer; background: {{ hideBg }}; color: {{ hideFg }}; white-space: nowrap; transition: background 140ms var(--cf-ease-standard), color 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="border-color: var(--cf-gray-7); transform: translateY(-1px);">
+              <i class="{{ hideIcon }}" style="font-size: 12px;"></i> Hide done
+            </button>
+            <button onClick="{{ toggleRules }}" style="font: 400 12px/1 var(--cf-font-sans); display: flex; align-items: center; gap: 6px; border: 1px solid {{ rulesBorder }}; border-radius: 999px; padding: 6px 11px; cursor: pointer; background: {{ rulesBg }}; color: {{ rulesFg }}; white-space: nowrap; transition: background 140ms var(--cf-ease-standard), color 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="border-color: var(--cf-gray-7); transform: translateY(-1px);">
+              <i class="{{ rulesIcon }}" style="font-size: 12px;"></i> Rules
+            </button>
+            <!-- reset -->
+            <div style="position: relative;">
+              <button onClick="{{ toggleReset }}" title="Reset" style="font: 400 12px/1 var(--cf-font-sans); display: flex; align-items: center; gap: 6px; border: 1px solid {{ resetBorder }}; border-radius: 999px; padding: 6px 11px; cursor: pointer; background: {{ resetBg }}; color: {{ resetFg }}; white-space: nowrap; transition: background 140ms var(--cf-ease-standard), color 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="border-color: var(--cf-gray-7); transform: translateY(-1px);">
+                <i class="ph ph-arrow-counter-clockwise" style="font-size: 12px;"></i> Reset
+              </button>
+              <sc-if value="{{ resetOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="position: absolute; top: 36px; right: 0; width: 252px; box-sizing: border-box; background: var(--cf-bg-elevation-2); border: 1px solid var(--cf-border); border-radius: 12px; padding: 10px; box-shadow: 0 12px 32px rgba(0,0,0,0.5); z-index: 30; display: flex; flex-direction: column; gap: 8px; text-align: left;">
+                  <sc-if value="{{ resetIdle }}" hint-placeholder-val="{{ true }}">
+                    <span style="font: 400 10px/1.4 var(--cf-font-sans); color: var(--cf-fg-disabled); text-align: center;">Clears progress, added &amp; removed tasks.</span>
+                    <div style="display: flex; align-items: stretch; gap: 6px;">
+                      <button onClick="{{ armWave }}" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; font: 500 11px/1 var(--cf-font-sans); border: 1px solid var(--cf-border); background: transparent; border-radius: 9px; padding: 10px 4px; cursor: pointer; color: var(--cf-fg); transition: background 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="background: var(--cf-action-hover); border-color: var(--cf-gray-7); transform: translateY(-1px);"><i class="ph ph-wave-sine" style="font-size: 16px; color: var(--cf-fg-secondary);"></i> Wave</button>
+                      <button onClick="{{ armGame }}" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; font: 500 11px/1 var(--cf-font-sans); border: 1px solid var(--cf-border); background: transparent; border-radius: 9px; padding: 10px 4px; cursor: pointer; color: var(--cf-fg); transition: background 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="background: var(--cf-action-hover); border-color: var(--cf-gray-7); transform: translateY(-1px);"><i class="ph ph-game-controller" style="font-size: 16px; color: var(--cf-fg-secondary);"></i> Game</button>
+                      <button onClick="{{ armAll }}" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; font: 500 11px/1 var(--cf-font-sans); border: 1px solid var(--cf-border); background: transparent; border-radius: 9px; padding: 10px 4px; cursor: pointer; color: var(--cf-fg); transition: background 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="background: var(--cf-action-hover); border-color: var(--cf-gray-7); transform: translateY(-1px);"><i class="ph ph-stack" style="font-size: 16px; color: var(--cf-fg-secondary);"></i> All</button>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ resetArmedShow }}" hint-placeholder-val="{{ false }}">
+                    <span style="font: 500 12px/1.4 var(--cf-font-sans); color: var(--cf-fg); padding: 6px 8px 2px;">Reset {{ resetArmedLabel }}?</span>
+                    <span style="font: 400 10px/1.4 var(--cf-font-sans); color: var(--cf-error); padding: 0 8px 8px;">This can’t be undone.</span>
+                    <div style="display: flex; gap: 6px; padding: 0 2px 2px;">
+                      <button onClick="{{ execReset }}" style="flex: 1; font: 600 12px/1 var(--cf-font-sans); border: none; border-radius: 8px; padding: 9px; cursor: pointer; background: var(--cf-error); color: #fff;" style-hover="background: var(--cf-error-dark);">Confirm reset</button>
+                      <button onClick="{{ cancelReset }}" style="font: 400 12px/1 var(--cf-font-sans); border: 1px solid var(--cf-border); background: transparent; border-radius: 8px; padding: 9px 12px; cursor: pointer; color: var(--cf-fg-secondary);" style-hover="color: var(--cf-fg);">Cancel</button>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-if>
+            </div>
+            <span title="{{ updatedLine }}" style="display: flex; align-items: center; gap: 6px; font: 400 12px/1 var(--cf-font-sans); color: var(--cf-fg-secondary); white-space: nowrap; padding: 0 2px;">
+              <span style="width: 8px; height: 8px; border-radius: 999px; background: var(--cf-success);"></span>
+              Synced
+            </span>
+          </div>
+          <sc-if value="{{ curHasHidden }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ curRestore }}" style="font: 400 11px/1 var(--cf-font-sans); border: none; background: transparent; padding: 2px 4px; cursor: pointer; color: var(--cf-fg-disabled); white-space: nowrap;" style-hover="color: var(--cf-fg-secondary);">{{ curHiddenLabel }} removed · restore</button>
+          </sc-if>
+        </div>
+
+        <!-- ============ LIST VIEW ============ -->
+        <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <sc-for list="{{ curGroups }}" as="grp" hint-placeholder-count="3">
+              <div style="display: flex; flex-direction: column; gap: 5px;">
+                <div style="display: flex; align-items: center; gap: 10px; padding: 0 2px;">
+                  <span style="font: 600 11px/1 var(--cf-font-mono); letter-spacing: 0.12em; color: var(--cf-fg-secondary); white-space: nowrap;">{{ grp.name }}</span>
+                  <span style="flex: 1; height: 1px; background: var(--cf-divider);"></span>
+                  <span style="font: 400 10px/1 var(--cf-font-mono); color: {{ grp.countColor }}; font-variant-numeric: tabular-nums; white-space: nowrap;">{{ grp.count }}</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                  <sc-for list="{{ grp.slots }}" as="slot" hint-placeholder-count="2">
+                    <div style="display: grid; grid-template-columns: 16px 96px minmax(0, 1fr) 104px auto; align-items: center; gap: 12px; background: {{ slot.dragBg }}; border: 1px solid {{ slot.dragBorder }}; border-radius: 10px; padding: {{ cardPad }}; box-sizing: border-box; opacity: {{ slot.rowOpacity }}; box-shadow: {{ slot.dragShadow }}; transform: {{ slot.dragTransform }}; transition: {{ slot.dragTransition }}; position: relative; z-index: {{ slot.dragZ }}; will-change: transform;" style-hover="border-color: var(--cf-gray-7);">
+                      <i onPointerDown="{{ slot.startDrag }}" class="ph ph-dots-six-vertical" title="Drag to reorder" style="font-size: 15px; color: var(--cf-fg-disabled); cursor: grab; touch-action: none;"></i>
+                      <div style="display: flex; gap: 5px; align-items: center;">
+                        <sc-for list="{{ slot.cells }}" as="cell" hint-placeholder-count="2">
+                          <button onClick="{{ cell.onClick }}" title="{{ cell.tip }}" style="width: 18px; height: 18px; box-sizing: border-box; border-radius: 999px; border: 1px solid {{ cell.border }}; background: {{ cell.bg }}; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; transition: background 120ms var(--cf-ease-standard), border-color 120ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="border-color: var(--cf-primary-darker); transform: scale(1.18);">
+                            <i class="ph-bold ph-check" style="font-size: 10px; color: #fff; opacity: {{ cell.checkOpacity }};"></i>
+                          </button>
+                        </sc-for>
+                      </div>
+                      <div style="min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+                        <div style="display: flex; align-items: baseline; gap: 10px; min-width: 0;">
+                          <span style="font: 500 14px/1.3 var(--cf-font-sans); color: {{ slot.labelColor }}; text-decoration: {{ slot.labelDeco }}; text-decoration-color: var(--cf-gray-7); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0;">{{ slot.labelMain }}</span>
+                          <sc-if value="{{ slot.hasSub }}" hint-placeholder-val="{{ false }}">
+                            <span style="font: 400 10px/1.3 var(--cf-font-mono); color: var(--cf-fg-disabled); white-space: nowrap; flex-shrink: 0;">{{ slot.labelSub }}</span>
+                          </sc-if>
+                        </div>
+                        <sc-if value="{{ slot.showFill }}" hint-placeholder-val="{{ true }}">
+                          <span title="{{ slot.fillText }}" style="font: 400 11px/1.4 var(--cf-font-mono); color: var(--cf-fg-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.fillText }}</span>
+                        </sc-if>
+                        <sc-if value="{{ slot.showRule }}" hint-placeholder-val="{{ false }}">
+                          <span style="font: 400 11px/1.4 var(--cf-font-sans); color: var(--cf-fg-disabled);">{{ slot.rule }}</span>
+                        </sc-if>
+                      </div>
+                      <div style="display: flex; align-items: center; justify-content: center;">
+                        <sc-if value="{{ slot.syncConnected }}" hint-placeholder-val="{{ false }}">
+                          <span style="font: 500 12px/1 var(--cf-font-sans); color: {{ slot.syncFg }}; white-space: nowrap;">{{ slot.syncText }}</span>
+                        </sc-if>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 12px; justify-content: flex-end;">
+                        <span style="display: flex; align-items: center; gap: 8px;">
+                          <i title="{{ slot.notionTip }}" class="{{ slot.notionClass }}" style="font-size: 16px; color: {{ slot.notionColor }};"></i>
+                          <i title="{{ slot.briefTip }}" class="{{ slot.briefClass }}" style="font-size: 16px; color: {{ slot.briefColor }};"></i>
+                        </span>
+                        <span style="display: flex; align-items: center; gap: 8px;">
+                          <button onClick="{{ slot.openRemind }}" title="Set reminder" style="border: none; background: transparent; padding: 4px; cursor: pointer; color: {{ slot.bellColor }}; opacity: {{ slot.bellOpacity }}; display: flex; transition: opacity 120ms, color 120ms;" style-hover="opacity: 1; color: var(--cf-primary-darker);">
+                            <i class="{{ slot.bellClass }}" style="font-size: 15px;"></i>
+                          </button>
+                          <sc-if value="{{ slot.notConfirming }}" hint-placeholder-val="{{ true }}">
+                            <button onClick="{{ slot.remove }}" title="Remove task" style="border: none; background: transparent; padding: 4px; cursor: pointer; color: var(--cf-fg-disabled); opacity: 0.4; display: flex; transition: opacity 120ms;" style-hover="opacity: 1; color: var(--cf-error);">
+                              <i class="ph ph-x" style="font-size: 14px;"></i>
+                            </button>
+                          </sc-if>
+                          <sc-if value="{{ slot.confirmOpen }}" hint-placeholder-val="{{ false }}">
+                            <span style="display: flex; align-items: center; gap: 8px; animation: cf-pop 150ms var(--cf-ease-standard);">
+                              <button onClick="{{ slot.confirmRemove }}" title="Confirm remove" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-success); background: var(--cf-success); cursor: pointer; padding: 0;" style-hover="background: var(--cf-success-dark);">
+                                <i class="ph-bold ph-check" style="font-size: 13px; color: #fff;"></i>
+                              </button>
+                              <button onClick="{{ slot.cancelRemove }}" title="Keep task" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-error); background: transparent; cursor: pointer; padding: 0; color: var(--cf-error);" style-hover="background: var(--cf-error); color: #fff;">
+                                <i class="ph-bold ph-x" style="font-size: 13px;"></i>
+                              </button>
+                            </span>
+                          </sc-if>
+                        </span>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <!-- ============ GALLERY VIEW ============ -->
+        <sc-if value="{{ isGallery }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(228px, 1fr)); gap: 10px;">
+            <sc-for list="{{ curFlat }}" as="slot" hint-placeholder-count="6">
+              <div style="display: flex; flex-direction: column; gap: 9px; background: var(--cf-bg-paper); border: 1px solid var(--cf-divider-strong); border-radius: 12px; padding: 13px 14px; box-sizing: border-box; opacity: {{ slot.rowOpacity }}; transition: border-color 140ms var(--cf-ease-standard), transform 140ms var(--cf-ease-standard), box-shadow 160ms var(--cf-ease-standard);" style-hover="border-color: var(--cf-gray-7); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.35);">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font: 600 10px/1 var(--cf-font-mono); letter-spacing: 0.1em; color: var(--cf-fg-disabled);">{{ slot.group }}</span>
+                  <div style="flex: 1;"></div>
+                  <i title="{{ slot.notionTip }}" class="{{ slot.notionClass }}" style="font-size: 14px; color: {{ slot.notionColor }};"></i>
+                  <i title="{{ slot.briefTip }}" class="{{ slot.briefClass }}" style="font-size: 14px; color: {{ slot.briefColor }};"></i>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0;">
+                  <span style="font: 500 14px/1.35 var(--cf-font-sans); color: {{ slot.labelColor }}; text-decoration: {{ slot.labelDeco }}; text-decoration-color: var(--cf-gray-7); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.labelMain }}</span>
+                  <sc-if value="{{ slot.hasSub }}" hint-placeholder-val="{{ false }}">
+                    <span style="font: 400 10px/1.3 var(--cf-font-mono); color: var(--cf-fg-disabled); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.labelSub }}</span>
+                  </sc-if>
+                </div>
+                <sc-if value="{{ slot.showFill }}" hint-placeholder-val="{{ false }}">
+                  <span title="{{ slot.fillText }}" style="font: 400 11px/1.4 var(--cf-font-mono); color: var(--cf-fg-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.fillText }}</span>
+                </sc-if>
+                <div style="flex: 1;"></div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <div style="display: flex; gap: 5px; align-items: center; flex: 1;">
+                    <sc-for list="{{ slot.cells }}" as="cell" hint-placeholder-count="2">
+                      <button onClick="{{ cell.onClick }}" title="{{ cell.tip }}" style="width: 18px; height: 18px; box-sizing: border-box; border-radius: 999px; border: 1px solid {{ cell.border }}; background: {{ cell.bg }}; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;" style-hover="border-color: var(--cf-primary-darker);">
+                        <i class="ph-bold ph-check" style="font-size: 10px; color: #fff; opacity: {{ cell.checkOpacity }};"></i>
+                      </button>
+                    </sc-for>
+                  </div>
+                  <button onClick="{{ slot.openRemind }}" title="Set reminder" style="border: none; background: transparent; padding: 3px; cursor: pointer; color: {{ slot.bellColor }}; opacity: {{ slot.bellOpacity }}; display: flex;" style-hover="opacity: 1; color: var(--cf-primary-darker);">
+                    <i class="{{ slot.bellClass }}" style="font-size: 15px;"></i>
+                  </button>
+                  <sc-if value="{{ slot.notConfirming }}" hint-placeholder-val="{{ true }}">
+                    <button onClick="{{ slot.remove }}" title="Remove task" style="border: none; background: transparent; padding: 3px; cursor: pointer; color: var(--cf-fg-disabled); opacity: 0.4; display: flex;" style-hover="opacity: 1; color: var(--cf-error);">
+                      <i class="ph ph-x" style="font-size: 14px;"></i>
+                    </button>
+                  </sc-if>
+                  <sc-if value="{{ slot.confirmOpen }}" hint-placeholder-val="{{ false }}">
+                    <span style="display: flex; align-items: center; gap: 8px; animation: cf-pop 150ms var(--cf-ease-standard);">
+                      <button onClick="{{ slot.confirmRemove }}" title="Confirm remove" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-success); background: var(--cf-success); cursor: pointer; padding: 0;">
+                        <i class="ph-bold ph-check" style="font-size: 13px; color: #fff;"></i>
+                      </button>
+                      <button onClick="{{ slot.cancelRemove }}" title="Keep task" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-error); background: transparent; cursor: pointer; padding: 0; color: var(--cf-error);">
+                        <i class="ph-bold ph-x" style="font-size: 13px;"></i>
+                      </button>
+                    </span>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <!-- ============ TABLE VIEW ============ -->
+        <sc-if value="{{ isTable }}" hint-placeholder-val="{{ false }}">
+          <div style="overflow-x: auto;">
+            <div style="min-width: 620px; display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: grid; grid-template-columns: minmax(150px, 2fr) 96px 108px 132px 84px; align-items: center; gap: 12px; padding: 4px 12px 6px;">
+                <span style="font: 600 10px/1 var(--cf-font-mono); letter-spacing: 0.12em; color: var(--cf-fg-disabled);">TASK</span>
+                <span style="font: 600 10px/1 var(--cf-font-mono); letter-spacing: 0.12em; color: var(--cf-fg-disabled);">CATEGORY</span>
+                <span style="font: 600 10px/1 var(--cf-font-mono); letter-spacing: 0.12em; color: var(--cf-fg-disabled);">PROGRESS</span>
+                <span style="font: 600 10px/1 var(--cf-font-mono); letter-spacing: 0.12em; color: var(--cf-fg-disabled);">STATUS</span>
+                <span style="font: 600 10px/1 var(--cf-font-mono); letter-spacing: 0.12em; color: var(--cf-fg-disabled); text-align: right;">ACTIONS</span>
+              </div>
+              <sc-for list="{{ curFlat }}" as="slot" hint-placeholder-count="6">
+                <div style="display: grid; grid-template-columns: minmax(150px, 2fr) 96px 108px 132px 84px; align-items: center; gap: 12px; background: var(--cf-bg-paper); border: 1px solid var(--cf-divider-strong); border-radius: 9px; padding: 9px 12px; box-sizing: border-box; opacity: {{ slot.rowOpacity }}; transition: border-color 140ms var(--cf-ease-standard), transform 140ms var(--cf-ease-standard);" style-hover="border-color: var(--cf-gray-7); transform: translateX(2px);">
+                  <div style="min-width: 0; display: flex; flex-direction: column; gap: 1px;">
+                    <span style="font: 500 13px/1.3 var(--cf-font-sans); color: {{ slot.labelColor }}; text-decoration: {{ slot.labelDeco }}; text-decoration-color: var(--cf-gray-7); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.labelMain }}</span>
+                    <sc-if value="{{ slot.hasSub }}" hint-placeholder-val="{{ false }}">
+                      <span style="font: 400 9px/1.3 var(--cf-font-mono); color: var(--cf-fg-disabled); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ slot.labelSub }}</span>
+                    </sc-if>
+                  </div>
+                  <span style="font: 400 10px/1 var(--cf-font-mono); letter-spacing: 0.08em; color: var(--cf-fg-secondary);">{{ slot.group }}</span>
+                  <div style="display: flex; gap: 5px; align-items: center;">
+                    <sc-for list="{{ slot.cells }}" as="cell" hint-placeholder-count="2">
+                      <button onClick="{{ cell.onClick }}" title="{{ cell.tip }}" style="width: 16px; height: 16px; box-sizing: border-box; border-radius: 999px; border: 1px solid {{ cell.border }}; background: {{ cell.bg }}; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;" style-hover="border-color: var(--cf-primary-darker);">
+                        <i class="ph-bold ph-check" style="font-size: 9px; color: #fff; opacity: {{ cell.checkOpacity }};"></i>
+                      </button>
+                    </sc-for>
+                  </div>
+                  <span style="display: flex; align-items: center; gap: 7px; min-width: 0;">
+                    <sc-if value="{{ slot.syncConnected }}" hint-placeholder-val="{{ false }}">
+                      <span style="font: 500 12px/1 var(--cf-font-sans); color: {{ slot.syncFg }}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ slot.syncText }}</span>
+                    </sc-if>
+                  </span>
+                  <span style="display: flex; align-items: center; gap: 8px; justify-content: flex-end;">
+                    <button onClick="{{ slot.openRemind }}" title="Set reminder" style="border: none; background: transparent; padding: 3px; cursor: pointer; color: {{ slot.bellColor }}; opacity: {{ slot.bellOpacity }}; display: flex;" style-hover="opacity: 1; color: var(--cf-primary-darker);">
+                      <i class="{{ slot.bellClass }}" style="font-size: 14px;"></i>
+                    </button>
+                    <sc-if value="{{ slot.notConfirming }}" hint-placeholder-val="{{ true }}">
+                      <button onClick="{{ slot.remove }}" title="Remove task" style="border: none; background: transparent; padding: 3px; cursor: pointer; color: var(--cf-fg-disabled); opacity: 0.4; display: flex;" style-hover="opacity: 1; color: var(--cf-error);">
+                        <i class="ph ph-x" style="font-size: 13px;"></i>
+                      </button>
+                    </sc-if>
+                    <sc-if value="{{ slot.confirmOpen }}" hint-placeholder-val="{{ false }}">
+                      <span style="display: flex; align-items: center; gap: 7px; animation: cf-pop 150ms var(--cf-ease-standard);">
+                        <button onClick="{{ slot.confirmRemove }}" title="Confirm remove" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-success); background: var(--cf-success); cursor: pointer; padding: 0;">
+                          <i class="ph-bold ph-check" style="font-size: 12px; color: #fff;"></i>
+                        </button>
+                        <button onClick="{{ slot.cancelRemove }}" title="Keep task" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-error); background: transparent; cursor: pointer; padding: 0; color: var(--cf-error);">
+                          <i class="ph-bold ph-x" style="font-size: 12px;"></i>
+                        </button>
+                      </span>
+                    </sc-if>
+                  </span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ============ BOARD VIEW ============ -->
+        <sc-if value="{{ isBoard }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; align-items: start;">
+              <sc-for list="{{ curCols }}" as="col" hint-placeholder-count="3">
+                <div style="min-width: 0; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px; padding: 0 2px;">
+                    <span style="width: 8px; height: 8px; border-radius: 999px; background: {{ col.accent }};"></span>
+                    <span style="font: 600 11px/1 var(--cf-font-sans); color: var(--cf-fg);">{{ col.label }}</span>
+                    <span style="font: 400 10px/1 var(--cf-font-mono); color: var(--cf-fg-disabled);">{{ col.count }}</span>
+                  </div>
+                  <sc-for list="{{ col.slots }}" as="slot" hint-placeholder-count="2">
+                    <div style="display: flex; flex-direction: column; gap: 8px; justify-content: space-between; min-height: 92px; background: var(--cf-bg-paper); border: 1px solid var(--cf-divider-strong); border-radius: 10px; padding: 11px 12px; box-sizing: border-box; opacity: {{ slot.rowOpacity }}; transition: border-color 140ms var(--cf-ease-standard), transform 140ms var(--cf-ease-standard), box-shadow 160ms var(--cf-ease-standard);" style-hover="border-color: var(--cf-gray-7); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.35);">
+                      <div style="display: flex; align-items: flex-start; gap: 8px;">
+                        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px;">
+                          <span style="font: 500 13px/1.35 var(--cf-font-sans); color: {{ slot.labelColor }}; text-decoration: {{ slot.labelDeco }}; text-decoration-color: var(--cf-gray-7);">{{ slot.labelMain }}</span>
+                          <sc-if value="{{ slot.hasSub }}" hint-placeholder-val="{{ false }}">
+                            <span style="font: 400 9px/1.3 var(--cf-font-mono); color: var(--cf-fg-disabled);">{{ slot.labelSub }}</span>
+                          </sc-if>
+                        </div>
+                        <span style="display: flex; align-items: center; gap: 7px; margin-top: 1px; flex-shrink: 0;">
+                          <button onClick="{{ slot.openRemind }}" title="Set reminder" style="border: none; background: transparent; padding: 0; cursor: pointer; color: {{ slot.bellColor }}; opacity: {{ slot.bellOpacity }}; display: flex; transition: opacity 120ms, color 120ms;" style-hover="opacity: 1; color: var(--cf-primary-darker);">
+                            <i class="{{ slot.bellClass }}" style="font-size: 14px;"></i>
+                          </button>
+                        </span>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="display: flex; gap: 4px; align-items: center; flex: 1;">
+                          <sc-for list="{{ slot.cells }}" as="cell" hint-placeholder-count="2">
+                            <button onClick="{{ cell.onClick }}" title="{{ cell.tip }}" style="width: 16px; height: 16px; box-sizing: border-box; border-radius: 999px; border: 1px solid {{ cell.border }}; background: {{ cell.bg }}; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;" style-hover="border-color: var(--cf-primary-darker);">
+                              <i class="ph-bold ph-check" style="font-size: 9px; color: #fff; opacity: {{ cell.checkOpacity }};"></i>
+                            </button>
+                          </sc-for>
+                        </div>
+                        <i title="{{ slot.notionTip }}" class="{{ slot.notionClass }}" style="font-size: 13px; color: {{ slot.notionColor }};"></i>
+                        <i title="{{ slot.briefTip }}" class="{{ slot.briefClass }}" style="font-size: 13px; color: {{ slot.briefColor }};"></i>
+                        <sc-if value="{{ slot.notConfirming }}" hint-placeholder-val="{{ true }}">
+                          <button onClick="{{ slot.remove }}" title="Remove task" style="border: none; background: transparent; padding: 2px; cursor: pointer; color: var(--cf-fg-disabled); opacity: 0.4; display: flex;" style-hover="opacity: 1; color: var(--cf-error);">
+                            <i class="ph ph-x" style="font-size: 13px;"></i>
+                          </button>
+                        </sc-if>
+                        <sc-if value="{{ slot.confirmOpen }}" hint-placeholder-val="{{ false }}">
+                          <span style="display: flex; align-items: center; gap: 6px; animation: cf-pop 150ms var(--cf-ease-standard);">
+                            <button onClick="{{ slot.confirmRemove }}" title="Confirm remove" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-success); background: var(--cf-success); cursor: pointer; padding: 0;">
+                              <i class="ph-bold ph-check" style="font-size: 11px; color: #fff;"></i>
+                            </button>
+                            <button onClick="{{ slot.cancelRemove }}" title="Keep task" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--cf-error); background: transparent; cursor: pointer; padding: 0; color: var(--cf-error);">
+                              <i class="ph-bold ph-x" style="font-size: 11px;"></i>
+                            </button>
+                          </span>
+                        </sc-if>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ curEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 26px 16px; border: 1px dashed var(--cf-divider-strong); border-radius: 12px;">
+            <i class="ph ph-check-circle" style="font-size: 22px; color: var(--cf-success);"></i>
+            <span class="cf-body2" style="color: var(--cf-fg-secondary);">Everything in this wave is done.</span>
+          </div>
+        </sc-if>
+
+        <!-- add task -->
+        <sc-if value="{{ addingHere }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; align-items: center; gap: 10px; background: var(--cf-bg-paper); border: 1px solid var(--cf-primary); border-radius: 10px; padding: 10px 14px;">
+            <input value="{{ addLabel }}" onChange="{{ onAddLabel }}" onKeyDown="{{ onAddKey }}" autoFocus="{{ true }}" placeholder="What needs doing?" style="flex: 1; min-width: 120px; box-sizing: border-box; background: transparent; border: none; color: var(--cf-fg); font: 400 14px/1.4 var(--cf-font-sans); outline: none;">
+            <span class="cf-caption" style="color: var(--cf-fg-disabled); white-space: nowrap;">units</span>
+            <input type="number" min="1" max="9" value="{{ addTarget }}" onChange="{{ onAddTarget }}" onKeyDown="{{ onAddKey }}" title="Target units" style="width: 44px; box-sizing: border-box; background: var(--cf-bg); border: 1px solid var(--cf-border); border-radius: 6px; padding: 5px 6px; color: var(--cf-fg); font: 400 13px/1.3 var(--cf-font-mono); outline: none;" style-focus="border-color: var(--cf-primary);">
+            <button onClick="{{ confirmAdd }}" style="font: 600 12px/1 var(--cf-font-sans); border: none; border-radius: 999px; padding: 8px 15px; cursor: pointer; background: var(--cf-primary); color: #fff; white-space: nowrap;" style-hover="background: var(--cf-primary-dark);">Add</button>
+            <button onClick="{{ cancelAdd }}" title="Cancel" style="border: none; background: transparent; padding: 4px; cursor: pointer; color: var(--cf-fg-secondary); display: flex;" style-hover="color: var(--cf-fg);">
+              <i class="ph ph-x" style="font-size: 14px;"></i>
+            </button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notAddingHere }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ startAdd }}" style="font: 400 13px/1 var(--cf-font-sans); display: flex; align-items: center; justify-content: center; gap: 7px; border: 1px dashed var(--cf-divider-strong); background: transparent; border-radius: 10px; padding: 11px; cursor: pointer; color: var(--cf-fg-disabled); transition: color 120ms, border-color 120ms;" style-hover="color: var(--cf-primary-darker); border-color: var(--cf-gray-7);">
+            <i class="ph ph-plus" style="font-size: 13px;"></i> Add task
+          </button>
+        </sc-if>
+
+        <span style="font: 400 10px/1.5 var(--cf-font-sans); color: var(--cf-fg-disabled); text-align: center; padding-top: 2px;">{{ updatedLine }} · Monday read-only · <a href="appui.html">App UI style</a></span>
+      </sc-if>
+    </div>
+  </div>
 </div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 980, &quot;height&quot;: 680 },
+  &quot;dimCompleted&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Display&quot; },
+  &quot;density&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;COMFORTABLE&quot;, &quot;COMPACT&quot;], &quot;default&quot;: &quot;COMFORTABLE&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Display&quot; }
+}">
+class Component extends DCLogic {
+  state = {
+    data: null, error: false, ticks: {}, custom: [], hidden: [], reminders: [], order: {},
+    ui: { hideDone: false, rules: false, selected: null, view: "list" },
+    adding: false, addLabel: "", addTarget: 1,
+    panelOpen: false, rCtx: null, rNote: "", rAt: "", confirmKey: null, confirmCtx: null,
+    resetOpen: false, resetArmed: null,
+    drag: null,
+    now: Date.now(), notifPerm: (typeof Notification !== "undefined") ? Notification.permission : "unsupported",
+  };
 
-<script>
-// Each game's bi-weekly breakdown, derived from the Creative Requests board
-// (Week 1 = 06-25 sweep wave, Week 2 = iteration-grind wave, Monthly = separate cadence).
-const W1 = "Week 1 · Monthly + Sweep + Inspiration", W2 = "Week 2 · Iteration Grind";
-const GAMES = [
-  { key: "hole", name: "Hole It", color: "var(--hole)", weeks: [
-    { name: W1, key: "w1", items: [
-      { label: "IEC", target: 1 }, { label: "Banner", target: 1 },
-      { label: "Iteration (Video)", target: 1 }, { label: "Poolday (Inspiration)", target: 1 },
-      { label: "Sonic VO (Inspiration)", target: 1 }, { label: "New Concept (New Idea)", target: 1 },
-      { label: "Playable", target: 1 }, { label: "SETT (4 deliveries)", target: 3 } ]},
-    { name: W2, key: "w2", items: [
-      { label: "Iteration (Video)", target: 5 }, { label: "New Concept (New Idea)", target: 1 },
-      { label: "Playable", target: 2 }, { label: "SETT (4 deliveries)", target: 1 } ]},
-  ]},
-  { key: "screw", name: "Screw Guru", color: "var(--screw)", weeks: [
-    { name: W1, key: "w1", items: [
-      { label: "IEC", target: 1 }, { label: "Banner", target: 1 },
-      { label: "Iteration (Video)", target: 1 }, { label: "Poolday (Inspiration)", target: 1 },
-      { label: "New Concept (New Idea)", target: 1 }, { label: "Playable", target: 1 },
-      { label: "SETT (4 deliveries)", target: 3 } ]},
-    { name: W2, key: "w2", items: [
-      { label: "Iteration (Video)", target: 2 }, { label: "Playable", target: 1 },
-      { label: "SETT (4 deliveries)", target: 1 } ]},
-  ]},
-  { key: "unravel", name: "Unravel Master", color: "var(--unravel)", weeks: [
-    { name: W1, key: "w1", items: [
-      { label: "IEC", target: 1 }, { label: "Banner", target: 1 },
-      { label: "Iteration (Video)", target: 1 }, { label: "Poolday (Inspiration)", target: 1 },
-      { label: "Sonic VO (Inspiration)", target: 1 }, { label: "New Concept (New Idea)", target: 1 },
-      { label: "Playable", target: 1 } ]},
-    { name: W2, key: "w2", items: [
-      { label: "Iteration (Video)", target: 3 }, { label: "New Concept (New Idea)", target: 1 },
-      { label: "Playable", target: 2 } ]},
-  ]},
-];
-
-// The week toggle — switches which week every game column shows. Built from the
-// week keys/names defined per-game above (short label for the tab, full name on the card).
-const WEEKS = [
-  { key: "w1", tab: "Week 1", color: "var(--hole)" },
-  { key: "w2", tab: "Week 2", color: "var(--screw)" },
-];
-
-const STORE_KEY = "biweekly_brief_tracker_v2";
-let state = load();
-if (!WEEKS.some(w => w.key === state.week)) state.week = WEEKS[0].key;
-
-function load() {
-  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { checks: {}, week: WEEKS[0].key }; }
-  catch { return { checks: {}, week: WEEKS[0].key }; }
-}
-function save() { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
-
-function itemId(gameKey, weekKey, idx) { return gameKey + ":" + weekKey + ":" + idx; }
-function getChecked(id) { return state.checks[id] || 0; }
-function setChecked(id, n) { state.checks[id] = n; save(); }
-
-function renderTabs() {
-  const tabs = document.getElementById("weektabs");
-  tabs.innerHTML = "";
-  WEEKS.forEach(w => {
-    const b = document.createElement("button");
-    b.style.setProperty("--tab", w.color);
-    b.className = w.key === state.week ? "active" : "";
-    b.style.color = w.key === state.week ? w.color : "";
-    b.textContent = w.tab;
-    b.onclick = () => { state.week = w.key; save(); renderTabs(); render(); };
-    tabs.appendChild(b);
-  });
-}
-
-function render() {
-  const grid = document.getElementById("grid");
-  grid.innerHTML = "";
-  let oDone = 0, oTotal = 0;
-
-  GAMES.forEach(game => {
-    const wk = game.weeks.find(w => w.key === state.week);
-    let gDone = 0, gTotal = 0;
-    const card = document.createElement("div");
-    card.className = "game";
-    card.style.setProperty("--accent", game.color);
-
-    const head = document.createElement("div");
-    head.className = "ghead";
-    head.innerHTML = '<h2><span class="dot"></span>' + game.name + '</h2>';
-    const gleft = document.createElement("div");
-    gleft.className = "gleft";
-    head.appendChild(gleft);
-    card.appendChild(head);
-
-    const sub = document.createElement("div");
-    sub.className = "gsub";
-    sub.textContent = wk ? wk.name : "";
-    card.appendChild(sub);
-
-    const bar = document.createElement("div");
-    bar.className = "gbar";
-    const barFill = document.createElement("span");
-    bar.appendChild(barFill);
-    card.appendChild(bar);
-
-    const itemsWrap = document.createElement("div");
-    itemsWrap.className = "items";
-
-    const items = wk ? wk.items : [];
-    items.forEach((it, idx) => {
-      const id = itemId(game.key, state.week, idx);
-      let checked = Math.min(getChecked(id), it.target);
-      gTotal += it.target; gDone += checked;
-
-      const item = document.createElement("div");
-      item.className = "item";
-
-      const label = document.createElement("span");
-      label.className = "label";
-      label.textContent = it.label;
-      item.appendChild(label);
-
-      const boxes = document.createElement("div");
-      boxes.className = "boxes";
-      for (let i = 0; i < it.target; i++) {
-        const b = document.createElement("div");
-        b.className = "box" + (i < checked ? " on" : "");
-        b.textContent = i + 1;
-        b.onclick = () => {
-          const cur = Math.min(getChecked(id), it.target);
-          const tgt = i + 1;
-          setChecked(id, cur >= tgt ? i : tgt);
-          render();
-        };
-        boxes.appendChild(b);
-      }
-      item.appendChild(boxes);
-
-      const remaining = it.target - checked;
-      const left = document.createElement("span");
-      left.className = "left" + (remaining === 0 ? " done" : "");
-      left.textContent = remaining === 0 ? "✓" : remaining + " left";
-      item.appendChild(left);
-
-      itemsWrap.appendChild(item);
-    });
-    card.appendChild(itemsWrap);
-
-    gleft.innerHTML = gTotal && gDone === gTotal ? '<span class="alldone">All done ✓</span>' : gDone + ' / ' + gTotal;
-    barFill.style.width = (gTotal ? (gDone / gTotal * 100) : 0) + "%";
-
-    const foot = document.createElement("footer");
-    const rb = document.createElement("button");
-    rb.textContent = "Reset " + game.name + " · this week";
-    rb.onclick = () => { items.forEach((_, idx) => setChecked(itemId(game.key, state.week, idx), 0)); render(); };
-    foot.appendChild(rb);
-    card.appendChild(foot);
-
-    grid.appendChild(card);
-    oDone += gDone; oTotal += gTotal;
-  });
-
-  document.getElementById("overallDone").textContent = oDone;
-  document.getElementById("overallTotal").textContent = oTotal;
-}
-
-const resetBtn = document.getElementById("resetAll");
-let armed = false, armTimer = null;
-function disarm() { armed = false; clearTimeout(armTimer); resetBtn.classList.remove("arm"); resetBtn.textContent = "↺ Reset all"; }
-resetBtn.onclick = () => {
-  if (!armed) {
-    armed = true;
-    resetBtn.classList.add("arm");
-    resetBtn.textContent = "Click again to reset everything";
-    armTimer = setTimeout(disarm, 3000);
-    return;
+  componentDidMount() {
+    this._timers = {};
+    try {
+      const ui = JSON.parse(localStorage.getItem("session-planner-ui-v2"));
+      if (ui) this.setState({ ui: Object.assign({ hideDone: false, rules: false, selected: null, view: "list" }, ui) });
+    } catch (e) {}
+    fetch("data.json")
+      .then((r) => { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then((d) => this.setState({
+        data: d,
+        ticks: this.loadJSON("session-planner:" + (d.game || "GAME"), {}),
+        custom: this.loadJSON("session-planner-custom:" + (d.game || "GAME"), []),
+        hidden: this.loadJSON("session-planner-hidden:" + (d.game || "GAME"), []),
+        reminders: this.loadJSON("session-planner-reminders:" + (d.game || "GAME"), []),
+        order: this.loadJSON("session-planner-order:" + (d.game || "GAME"), {}),
+      }, () => this.scheduleReminders()))
+      .catch(() => this.setState({ error: true }));
+    this._tick = setInterval(() => this.setState({ now: Date.now() }), 30000);
   }
-  disarm();
-  state.checks = {};
-  save();
-  render();
-};
 
-renderTabs();
-render();
+  componentWillUnmount() {
+    clearInterval(this._tick);
+    Object.keys(this._timers || {}).forEach((k) => clearTimeout(this._timers[k]));
+  }
+
+  loadJSON(key, fallback) {
+    try { return JSON.parse(localStorage.getItem(key)) || fallback; }
+    catch (e) { return fallback; }
+  }
+  saveJSON(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
+  gameKey(suffix) {
+    const g = (this.state.data && this.state.data.game) || "GAME";
+    return "session-planner" + suffix + ":" + g;
+  }
+  setUI(patch) {
+    const ui = Object.assign({}, this.state.ui, patch);
+    this.setState({ ui: ui });
+    this.saveJSON("session-planner-ui-v2", ui);
+  }
+  setTick(key, n) {
+    const t = Object.assign({}, this.state.ticks);
+    t[key] = n;
+    this.setState({ ticks: t });
+    this.saveJSON(this.gameKey(""), t);
+  }
+
+  /* ---------- reorder ---------- */
+  effectiveOrder(cycId) {
+    const data = this.state.data;
+    const cyc = ((data && data.cycles) || []).find((c) => c.id === cycId);
+    if (!cyc) return [];
+    const base = (cyc.slots || []).map((s) => s.id)
+      .concat(this.state.custom.filter((c) => c.cyc === cycId).map((c) => c.id));
+    const present = base.filter((id) => this.state.hidden.indexOf(cycId + ":" + id) < 0);
+    const saved = (this.state.order && this.state.order[cycId]) || [];
+    const out = [];
+    saved.forEach((id) => { if (present.indexOf(id) >= 0 && out.indexOf(id) < 0) out.push(id); });
+    present.forEach((id) => { if (out.indexOf(id) < 0) out.push(id); });
+    return out;
+  }
+  startDrag(e, cyc, groupName, id) {
+    if (e && e.preventDefault) e.preventDefault();
+    const rowEl = e && e.currentTarget ? e.currentTarget.parentElement : null;
+    const h = rowEl ? rowEl.getBoundingClientRect().height + 5 : 52;
+    const groupIds = (this.effectiveOrder(cyc) || []).filter((x) => this._idGroup && this._idGroup[x] === groupName);
+    const fromIndex = groupIds.indexOf(id);
+    if (fromIndex < 0) return;
+    this._drag = { cyc: cyc, groupName: groupName, groupIds: groupIds, id: id, fromIndex: fromIndex, toIndex: fromIndex, h: h, startY: (e ? e.clientY : 0), dy: 0 };
+    this.setState({ drag: this._drag });
+    this._onMove = (ev) => this.dragMove(ev);
+    this._onUp = () => this.dragEnd();
+    window.addEventListener("pointermove", this._onMove);
+    window.addEventListener("pointerup", this._onUp);
+  }
+  dragMove(ev) {
+    const d = this._drag; if (!d) return;
+    const dy = ev.clientY - d.startY;
+    let to = d.fromIndex + Math.round(dy / d.h);
+    to = Math.max(0, Math.min(d.groupIds.length - 1, to));
+    d.dy = dy; d.toIndex = to;
+    this.setState({ drag: Object.assign({}, d) });
+  }
+  dragEnd() {
+    const d = this._drag;
+    if (this._onMove) window.removeEventListener("pointermove", this._onMove);
+    if (this._onUp) window.removeEventListener("pointerup", this._onUp);
+    this._onMove = null; this._onUp = null; this._drag = null;
+    if (d && d.toIndex !== d.fromIndex) {
+      const ids = d.groupIds.slice();
+      const moved = ids.splice(d.fromIndex, 1)[0];
+      ids.splice(d.toIndex, 0, moved);
+      const gset = {}; d.groupIds.forEach((x) => { gset[x] = true; });
+      let gi = 0;
+      const global = this.effectiveOrder(d.cyc).map((x) => gset[x] ? ids[gi++] : x);
+      const order = Object.assign({}, this.state.order); order[d.cyc] = global;
+      this.saveJSON(this.gameKey("-order"), order);
+      this.setState({ order: order, drag: null });
+    } else {
+      this.setState({ drag: null });
+    }
+  }
+  catAccent(name, i) {
+    const hues = [255, 158, 300, 34, 96, 200, 330, 128];
+    return "oklch(0.72 0.13 " + hues[i % hues.length] + ")";
+  }
+
+  /* ---------- reminders ---------- */
+  setReminders(list) {
+    this.setState({ reminders: list }, () => this.scheduleReminders());
+    this.saveJSON(this.gameKey("-reminders"), list);
+  }
+  scheduleReminders() {
+    if (!this._timers) this._timers = {};
+    Object.keys(this._timers).forEach((k) => clearTimeout(this._timers[k]));
+    this._timers = {};
+    const now = Date.now();
+    (this.state.reminders || []).forEach((r) => {
+      if (!r.at) return;
+      const delta = new Date(r.at).getTime() - now;
+      if (delta > 0 && delta < 2147483647) this._timers[r.id] = setTimeout(() => this.fireReminder(r), delta);
+    });
+  }
+  fireReminder(r) {
+    if (typeof Notification !== "undefined" && Notification.permission === "granted") {
+      try { new Notification((r.label || "Reminder"), { body: r.note || "Task reminder" }); } catch (e) {}
+    }
+    this.setState({ now: Date.now(), panelOpen: true });
+  }
+  openRemind(cyc, slotId, label) {
+    this.setState({ panelOpen: true, rCtx: { cyc: cyc, slotId: slotId, label: label }, rNote: "", rAt: "", resetOpen: false, adding: false, confirmKey: null });
+  }
+  confirmRemind() {
+    const ctx = this.state.rCtx || { cyc: this.currentCycleId(), slotId: null, label: "" };
+    const note = (this.state.rNote || "").trim();
+    if (!note && !ctx.label) return;
+    const rem = { id: "rem-" + Date.now(), cyc: ctx.cyc, slotId: ctx.slotId, label: ctx.label || note || "Reminder", note: note, at: this.state.rAt || "" };
+    this.setReminders((this.state.reminders || []).concat([rem]));
+    this.setState({ rCtx: null, rNote: "", rAt: "" });
+  }
+  removeReminder(id) { this.setReminders((this.state.reminders || []).filter((r) => r.id !== id)); }
+  toggleAlerts() {
+    if (typeof Notification === "undefined") return;
+    if (Notification.permission === "granted") { this.setState({ notifPerm: "granted" }); return; }
+    Notification.requestPermission().then((p) => this.setState({ notifPerm: p }));
+  }
+  formatRel(at, now) {
+    if (!at) return { text: "any time", overdue: false };
+    const d = new Date(at).getTime();
+    if (isNaN(d)) return { text: "any time", overdue: false };
+    let diff = d - now;
+    const overdue = diff <= 0;
+    diff = Math.abs(diff);
+    const m = Math.round(diff / 60000);
+    let text;
+    if (m < 1) text = overdue ? "now" : "< 1 min";
+    else if (m < 60) text = m + " min";
+    else if (m < 1440) text = Math.round(m / 60) + " h";
+    else text = Math.round(m / 1440) + " d";
+    return { text: overdue ? text + " overdue" : "in " + text, overdue: overdue };
+  }
+
+  /* ---------- reset ---------- */
+  arm(scope) { this.setState({ resetArmed: scope }); }
+  cancelReset() { this.setState({ resetArmed: null }); }
+  execReset() {
+    const scope = this.state.resetArmed;
+    if (scope === "wave") {
+      const cyc = this.currentCycleId();
+      const ticks = {}; Object.keys(this.state.ticks).forEach((k) => { if (k.indexOf(cyc + ":") !== 0) ticks[k] = this.state.ticks[k]; });
+      const hidden = this.state.hidden.filter((k) => k.indexOf(cyc + ":") !== 0);
+      const custom = this.state.custom.filter((c) => c.cyc !== cyc);
+      const order = Object.assign({}, this.state.order); delete order[cyc];
+      this.setState({ ticks: ticks, hidden: hidden, custom: custom, order: order, resetOpen: false, resetArmed: null });
+      this.saveJSON(this.gameKey(""), ticks); this.saveJSON(this.gameKey("-hidden"), hidden);
+      this.saveJSON(this.gameKey("-custom"), custom); this.saveJSON(this.gameKey("-order"), order);
+    } else if (scope === "game") {
+      this.setState({ ticks: {}, hidden: [], custom: [], order: {}, reminders: [], resetOpen: false, resetArmed: null }, () => this.scheduleReminders());
+      this.saveJSON(this.gameKey(""), {}); this.saveJSON(this.gameKey("-hidden"), []);
+      this.saveJSON(this.gameKey("-custom"), []); this.saveJSON(this.gameKey("-order"), {}); this.saveJSON(this.gameKey("-reminders"), []);
+    } else if (scope === "all") {
+      try { Object.keys(localStorage).forEach((k) => { if (k.indexOf("session-planner") === 0 && k !== "session-planner-ui-v2") localStorage.removeItem(k); }); } catch (e) {}
+      this.setState({ ticks: {}, hidden: [], custom: [], order: {}, reminders: [], resetOpen: false, resetArmed: null }, () => this.scheduleReminders());
+    }
+  }
+
+  /* ---------- tasks ---------- */
+  addTask() {
+    const cycId = this.currentCycleId();
+    const label = (this.state.addLabel || "").trim();
+    if (!label || !cycId) return;
+    const target = Math.max(1, Math.min(9, parseInt(this.state.addTarget, 10) || 1));
+    const custom = this.state.custom.concat([{ id: "custom-" + Date.now(), cyc: cycId, label: label, target: target }]);
+    this.setState({ custom: custom, adding: false, addLabel: "", addTarget: 1 });
+    this.saveJSON(this.gameKey("-custom"), custom);
+  }
+  removeTask(cycId, slot) {
+    if (slot.custom) {
+      const custom = this.state.custom.filter((c) => c.id !== slot.id);
+      this.setState({ custom: custom });
+      this.saveJSON(this.gameKey("-custom"), custom);
+    } else {
+      const hidden = this.state.hidden.concat([cycId + ":" + slot.id]);
+      this.setState({ hidden: hidden });
+      this.saveJSON(this.gameKey("-hidden"), hidden);
+    }
+  }
+  restoreHidden(cycId) {
+    const hidden = this.state.hidden.filter((k) => k.indexOf(cycId + ":") !== 0);
+    this.setState({ hidden: hidden });
+    this.saveJSON(this.gameKey("-hidden"), hidden);
+  }
+  currentCycleId() {
+    const cycles = (this.state.data && this.state.data.cycles) || [];
+    if (!cycles.length) return null;
+    const sel = this.state.ui.selected;
+    return cycles.some((c) => c.id === sel) ? sel : cycles[0].id;
+  }
+  sentence(s) {
+    if (!s) return s;
+    let out = s.toLowerCase();
+    out = out.replace(/[a-z]/, (c) => c.toUpperCase());
+    const keep = ["AI", "JP", "KR", "IEC", "VO", "VD", "ID"];
+    keep.forEach((k) => { out = out.replace(new RegExp("\\b" + k + "\\b", "gi"), k); });
+    out = out.replace(/\s([a-z])$/, (m, c) => " " + c.toUpperCase());
+    return out;
+  }
+  mondayVM(status, custom) {
+    if (custom) return { connected: false, text: "", fg: "var(--cf-fg-disabled)", icon: "ph ph-hard-drives", color: "var(--cf-gray-7)", tip: "Local task", key: "LOCAL" };
+    const s = (status || "").trim().toUpperCase();
+    if (!s) return { connected: false, text: "", fg: "var(--cf-fg-disabled)", icon: "ph ph-cloud-slash", color: "var(--cf-gray-7)", tip: "Not synced to Monday", key: "NONE" };
+    if (s.indexOf("DONE") >= 0) return { connected: true, text: this.sentence(s), fg: "var(--cf-success-darker)", icon: "ph-fill ph-cloud-check", color: "var(--cf-success)", tip: "Monday: " + this.sentence(s), key: "DONE" };
+    if (s.indexOf("WORK") >= 0) return { connected: true, text: this.sentence(s), fg: "var(--cf-primary-darker)", icon: "ph-fill ph-cloud-arrow-up", color: "var(--cf-primary-darker)", tip: "Monday: " + this.sentence(s), key: "WORKING" };
+    if (s.indexOf("STUCK") >= 0 || s.indexOf("BLOCK") >= 0) return { connected: true, text: this.sentence(s), fg: "var(--cf-error-darker)", icon: "ph-fill ph-cloud-warning", color: "var(--cf-error)", tip: "Monday: " + this.sentence(s), key: "STUCK" };
+    return { connected: true, text: this.sentence(s), fg: "var(--cf-fg-secondary)", icon: "ph-fill ph-cloud", color: "var(--cf-fg-secondary)", tip: "Monday: " + this.sentence(s), key: "TODO" };
+  }
+  splitTitle(label) {
+    const m = (label || "").match(/^(.*?)\s*\(([^)]*)\)\s*$/);
+    if (m && m[1].trim()) return { main: m[1].trim(), sub: m[2].trim() };
+    return { main: label || "", sub: "" };
+  }
+  splitLabel(raw) {
+    const parts = (raw || "").split("·");
+    return { eyebrow: parts.length > 1 ? parts[0].trim() : "", name: this.sentence((parts.length > 1 ? parts.slice(1).join("·") : raw).trim()) };
+  }
+
+  renderVals() {
+    const data = this.state.data;
+    const ticks = this.state.ticks;
+    const ui = this.state.ui;
+    const hidden = this.state.hidden;
+    const now = this.state.now;
+    const confirmKey = this.state.confirmKey;
+    const dim = this.props.dimCompleted !== undefined ? !!this.props.dimCompleted : true;
+    const comfy = (this.props.density || "COMFORTABLE") === "COMFORTABLE";
+    const showRules = !!ui.rules;
+    const hideDone = !!ui.hideDone;
+    const view = ui.view || "list";
+    const selectedId = this.currentCycleId();
+
+    const remSet = {};
+    (this.state.reminders || []).forEach((r) => { if (r.slotId) remSet[r.cyc + ":" + r.slotId] = true; });
+
+    let totalUnits = 0, doneUnits = 0;
+    const waves = [];
+    let cur = null;
+
+    (((data && data.cycles) || [])).forEach((cyc) => {
+      let cycTotal = 0, cycDone = 0, hiddenCount = 0;
+      const customSlots = this.state.custom.filter((c) => c.cyc === cyc.id)
+        .map((c) => ({ id: c.id, label: c.label, target: c.target, custom: true, group: "ADDED" }));
+
+      let slots = (cyc.slots || []).concat(customSlots)
+        .filter((slot) => { if (hidden.indexOf(cyc.id + ":" + slot.id) >= 0) { hiddenCount++; return false; } return true; })
+        .map((slot) => {
+          const target = Math.max(1, slot.target || 1);
+          const key = cyc.id + ":" + slot.id;
+          const jsonDone = typeof slot.done === "number" ? slot.done : (slot.done ? target : 0);
+          const raw = ticks[key] !== undefined ? ticks[key] : jsonDone;
+          const count = Math.max(0, Math.min(target, raw));
+          const complete = count >= target;
+          cycTotal += target; cycDone += count;
+
+          const cells = [];
+          for (let i = 0; i < target; i++) {
+            const on = i < count;
+            cells.push({
+              onClick: () => this.setTick(key, i + 1 === count ? i : i + 1),
+              tip: "Unit " + (i + 1) + " of " + target,
+              bg: on ? "var(--cf-primary)" : "transparent",
+              border: on ? "var(--cf-primary)" : "var(--cf-gray-7)",
+              checkOpacity: on ? 1 : 0,
+            });
+          }
+          const m = this.mondayVM(slot.monday && slot.monday.status, slot.custom);
+          const inNotion = !!(slot.monday && slot.monday.in_notion);
+          const briefed = !!(slot.monday && slot.monday.brief_created);
+          const label = slot.custom ? slot.label : this.sentence(slot.label || slot.id);
+          const hasRem = !!remSet[key];
+
+          return {
+            id: slot.id,
+            dragTransform: "none",
+            dragTransition: "transform 170ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), box-shadow 160ms var(--cf-ease-standard)",
+            dragZ: "auto",
+            dragShadow: "none",
+            dragBg: "var(--cf-bg-paper)",
+            dragBorder: "var(--cf-divider-strong)",
+            group: slot.group || "OTHER",
+            complete: complete,
+            unitsDone: count, unitsTotal: target,
+            label: label,
+            labelMain: this.splitTitle(label).main,
+            labelSub: this.splitTitle(label).sub,
+            hasSub: !!this.splitTitle(label).sub,
+            rule: this.sentence(slot.rule || ""),
+            showRule: showRules && !!slot.rule,
+            fillText: slot.fill || "", showFill: !!slot.fill,
+            labelColor: complete ? "var(--cf-fg-disabled)" : "var(--cf-fg)",
+            labelDeco: complete ? "line-through" : "none",
+            rowOpacity: complete && dim ? 0.6 : 1,
+            cells: cells,
+            toggleAll: () => this.setTick(key, complete ? 0 : target),
+            remove: () => this.setState({ confirmKey: key, confirmCtx: { cyc: cyc.id, slot: slot }, adding: false, panelOpen: false, resetOpen: false }),
+            confirmOpen: confirmKey === key,
+            notConfirming: confirmKey !== key,
+            confirmRemove: () => { this.removeTask(cyc.id, slot); this.setState({ confirmKey: null, confirmCtx: null }); },
+            cancelRemove: () => this.setState({ confirmKey: null, confirmCtx: null }),
+            openRemind: () => this.openRemind(cyc.id, slot.id, label),
+            bellClass: hasRem ? "ph-fill ph-bell" : "ph ph-bell",
+            bellColor: hasRem ? "var(--cf-primary-darker)" : "var(--cf-fg-disabled)",
+            bellOpacity: hasRem ? 1 : 0.4,
+            syncIcon: m.icon, syncColor: m.color, syncText: m.text, syncFg: m.fg, syncConnected: m.connected, syncTip: m.tip, syncKey: m.key,
+            syncDot: m.key === "LOCAL" ? "var(--cf-gray-7)" : (m.connected ? "var(--cf-success)" : "var(--cf-error)"),
+            notionTip: inNotion ? "In Notion" : "Not in Notion",
+            briefTip: briefed ? "Brief created" : "No brief yet",
+            notionClass: inNotion ? "ph-fill ph-notebook" : "ph ph-notebook",
+            notionColor: inNotion ? "var(--cf-warning)" : "var(--cf-gray-6)",
+            briefClass: briefed ? "ph-fill ph-file-text" : "ph ph-file-text",
+            briefColor: briefed ? "var(--cf-info)" : "var(--cf-gray-6)",
+            startDrag: (e) => this.startDrag(e, cyc.id, slot.group || "OTHER", slot.id),
+          };
+        });
+
+      const ord = this.effectiveOrder(cyc.id);
+      slots.sort((a, b) => {
+        const ia = ord.indexOf(a.id), ib = ord.indexOf(b.id);
+        return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
+      });
+
+      totalUnits += cycTotal; doneUnits += cycDone;
+      const complete = cycTotal > 0 && cycDone >= cycTotal;
+      const pct = cycTotal > 0 ? Math.round((cycDone / cycTotal) * 100) : 0;
+      const isSel = cyc.id === selectedId;
+      const named = this.splitLabel(cyc.label || cyc.id);
+
+      waves.push({
+        name: named.name,
+        weight: isSel ? 600 : 400,
+        count: cycDone + "/" + cycTotal,
+        countColor: complete ? "var(--cf-success-darker)" : (isSel ? "var(--cf-fg-secondary)" : "var(--cf-fg-disabled)"),
+        chipBorder: isSel ? "var(--cf-primary-light)" : "var(--cf-border)",
+        bg: isSel ? "var(--cf-primary-lighter)" : "transparent",
+        fg: isSel ? "var(--cf-primary-contrast)" : "var(--cf-fg-secondary)",
+        select: () => this.setUI({ selected: cyc.id }),
+      });
+
+      if (isSel) {
+        const visible = hideDone ? slots.filter((s) => !s.complete) : slots;
+        // list groups
+        const groups = [], gmap = {};
+        visible.forEach((s) => {
+          const g = s.group || "OTHER";
+          if (!gmap[g]) { gmap[g] = { name: g, slots: [], done: 0, total: 0 }; groups.push(gmap[g]); }
+          gmap[g].slots.push(s); gmap[g].done += s.unitsDone; gmap[g].total += s.unitsTotal;
+        });
+        groups.forEach((g) => {
+          const gc = g.total > 0 && g.done >= g.total;
+          g.count = g.done + "/" + g.total;
+          g.countColor = gc ? "var(--cf-success-darker)" : "var(--cf-fg-disabled)";
+        });
+        // drag: map id->group + live transforms
+        this._idGroup = {}; this._curCyc = selectedId;
+        visible.forEach((s) => { this._idGroup[s.id] = s.group || "OTHER"; });
+        if (this.state.drag && this.state.drag.cyc === selectedId) {
+          const d = this.state.drag;
+          groups.forEach((g) => {
+            if (g.name !== d.groupName) return;
+            g.slots.forEach((s, i) => {
+              if (s.id === d.id) {
+                s.dragTransform = "translateY(" + d.dy + "px)";
+                s.dragTransition = "none"; s.dragZ = 50;
+                s.dragShadow = "0 14px 32px rgba(0,0,0,0.55)";
+                s.dragBg = "var(--cf-bg-elevation-2)"; s.dragBorder = "var(--cf-primary)";
+              } else {
+                let shift = 0;
+                if (d.toIndex > d.fromIndex && i > d.fromIndex && i <= d.toIndex) shift = -d.h;
+                else if (d.toIndex < d.fromIndex && i >= d.toIndex && i < d.fromIndex) shift = d.h;
+                s.dragTransform = "translateY(" + shift + "px)";
+                s.dragTransition = "transform 170ms var(--cf-ease-standard)";
+              }
+            });
+          });
+        }
+        // board columns by category
+        const cols = groups.map((g, i) => ({
+          label: g.name, accent: this.catAccent(g.name, i), slots: g.slots, count: g.count,
+        }));
+
+        cur = {
+          eyebrow: (named.eyebrow ? named.eyebrow + " · " : "") + ((data && data.game) || ""),
+          name: named.name, count: cycDone + "/" + cycTotal, pct: pct + "%",
+          barColor: complete ? "var(--cf-success)" : "var(--cf-primary)",
+          groups: groups, flat: visible, cols: cols,
+          empty: visible.length === 0, hiddenCount: hiddenCount,
+        };
+      }
+    });
+
+    const reminderVMs = (this.state.reminders || []).map((r) => {
+      const rel = this.formatRel(r.at, now);
+      return {
+        title: r.label || "Reminder", note: r.note || "",
+        hasNote: !!(r.note && r.note.trim() && r.note.trim() !== (r.label || "")),
+        when: rel.text,
+        whenColor: rel.overdue ? "var(--cf-error)" : "var(--cf-fg-disabled)",
+        dot: rel.overdue ? "var(--cf-error)" : "var(--cf-primary-darker)",
+        remove: () => this.removeReminder(r.id),
+      };
+    });
+    const overdueCount = reminderVMs.filter((v) => v.whenColor === "var(--cf-error)").length;
+    const remCount = reminderVMs.length;
+    const perm = this.state.notifPerm;
+    const rCtx = this.state.rCtx;
+
+    const viewDefs = [
+      { key: "list", label: "List", icon: "ph ph-list" },
+      { key: "gallery", label: "Gallery", icon: "ph ph-squares-four" },
+      { key: "table", label: "Table", icon: "ph ph-table" },
+      { key: "board", label: "Board", icon: "ph ph-kanban" },
+    ];
+    const viewOptions = viewDefs.map((v) => ({
+      label: v.label, icon: v.icon,
+      weight: view === v.key ? 600 : 400,
+      bg: view === v.key ? "var(--cf-bg-paper)" : "transparent",
+      fg: view === v.key ? "var(--cf-fg)" : "var(--cf-fg-secondary)",
+      select: () => this.setUI({ view: v.key }),
+    }));
+
+    const armed = this.state.resetArmed;
+    const armedLabels = { wave: "this wave", game: "this game", all: "all games" };
+
+    return {
+      waves: waves,
+      loaded: !!data && !!cur,
+      error: this.state.error,
+      showLoading: !data && !this.state.error,
+      remainingLabel: String(Math.max(0, totalUnits - doneUnits)),
+      totalLabel: String(totalUnits),
+      cardPad: comfy ? "9px 14px" : "7px 12px",
+      curEyebrow: cur ? cur.eyebrow : "",
+      curName: cur ? cur.name : "",
+      curPct: cur ? cur.pct : "0%",
+      curBarColor: cur ? cur.barColor : "var(--cf-primary)",
+      curGroups: cur ? cur.groups : [],
+      curFlat: cur ? cur.flat : [],
+      curCols: cur ? cur.cols : [],
+      curEmpty: !!cur && cur.empty,
+      curHasHidden: !!cur && cur.hiddenCount > 0,
+      curHiddenLabel: cur ? String(cur.hiddenCount) : "0",
+      curRestore: () => this.restoreHidden(selectedId),
+      isList: view === "list", isGallery: view === "gallery", isTable: view === "table", isBoard: view === "board",
+      viewOptions: viewOptions,
+      hideBg: hideDone ? "var(--cf-primary-lighter)" : "transparent",
+      hideFg: hideDone ? "var(--cf-primary-darker)" : "var(--cf-fg-secondary)",
+      hideBorder: hideDone ? "var(--cf-primary-light)" : "var(--cf-border)",
+      hideIcon: hideDone ? "ph-fill ph-eye-slash" : "ph ph-eye-slash",
+      rulesBg: showRules ? "var(--cf-primary-lighter)" : "transparent",
+      rulesFg: showRules ? "var(--cf-primary-darker)" : "var(--cf-fg-secondary)",
+      rulesBorder: showRules ? "var(--cf-primary-light)" : "var(--cf-border)",
+      rulesIcon: showRules ? "ph-fill ph-info" : "ph ph-info",
+      toggleHideDone: () => this.setUI({ hideDone: !this.state.ui.hideDone }),
+      toggleRules: () => this.setUI({ rules: !this.state.ui.rules }),
+      // reset
+      resetOpen: this.state.resetOpen,
+      resetBg: this.state.resetOpen ? "var(--cf-action-selected, var(--cf-bg-elevation-1))" : "transparent",
+      resetFg: this.state.resetOpen ? "var(--cf-fg)" : "var(--cf-fg-secondary)",
+      resetBorder: this.state.resetOpen ? "var(--cf-gray-7)" : "var(--cf-border)",
+      toggleReset: () => this.setState({ resetOpen: !this.state.resetOpen, resetArmed: null, panelOpen: false }),
+      resetIdle: !armed,
+      resetArmedShow: !!armed,
+      resetArmedLabel: armed ? armedLabels[armed] : "",
+      armWave: () => this.arm("wave"),
+      armGame: () => this.arm("game"),
+      armAll: () => this.arm("all"),
+      execReset: () => this.execReset(),
+      cancelReset: () => this.cancelReset(),
+      // add
+      addingHere: this.state.adding,
+      notAddingHere: !this.state.adding,
+      startAdd: () => this.setState({ adding: true, addLabel: "", addTarget: 1, panelOpen: false, resetOpen: false, confirmKey: null }),
+      confirmAdd: () => this.addTask(),
+      cancelAdd: () => this.setState({ adding: false }),
+      addLabel: this.state.addLabel, addTarget: this.state.addTarget,
+      onAddLabel: (e) => this.setState({ addLabel: e.target.value }),
+      onAddTarget: (e) => this.setState({ addTarget: e.target.value }),
+      onAddKey: (e) => { if (e.key === "Enter") this.addTask(); if (e.key === "Escape") this.setState({ adding: false }); },
+      // reminders
+      reminders: reminderVMs,
+      hasReminders: remCount > 0, noReminders: remCount === 0, reminderCount: String(remCount),
+      badgeBg: overdueCount > 0 ? "var(--cf-error)" : "var(--cf-primary)",
+      panelOpen: this.state.panelOpen,
+      togglePanel: () => this.setState({ panelOpen: !this.state.panelOpen, rCtx: null, resetOpen: false }),
+      bellIcon: remCount > 0 ? "ph-fill ph-bell" : "ph ph-bell",
+      bellBg: this.state.panelOpen ? "var(--cf-primary-lighter)" : "transparent",
+      bellFg: this.state.panelOpen ? "var(--cf-primary-darker)" : "var(--cf-fg-secondary)",
+      bellBorder: this.state.panelOpen ? "var(--cf-primary-light)" : "var(--cf-border)",
+      rNote: this.state.rNote, rAt: this.state.rAt,
+      rNotePlaceholder: rCtx ? "Note (optional)…" : "Reminder note…",
+      rCtxHas: !!rCtx, rCtxLabel: rCtx ? rCtx.label : "",
+      clearRCtx: () => this.setState({ rCtx: null }),
+      onRNote: (e) => this.setState({ rNote: e.target.value }),
+      onRAt: (e) => this.setState({ rAt: e.target.value }),
+      onRKey: (e) => { if (e.key === "Enter") this.confirmRemind(); },
+      confirmRemind: () => this.confirmRemind(),
+      alertsLabel: perm === "granted" ? "Alerts on" : (perm === "unsupported" ? "No alerts" : "Enable alerts"),
+      alertsIcon: perm === "granted" ? "ph-fill ph-bell-ringing" : "ph ph-bell-simple-slash",
+      alertsBg: perm === "granted" ? "var(--cf-primary-lighter)" : "transparent",
+      alertsFg: perm === "granted" ? "var(--cf-primary-darker)" : "var(--cf-fg-secondary)",
+      alertsBorder: perm === "granted" ? "var(--cf-primary-light)" : "var(--cf-border)",
+      toggleAlerts: () => this.toggleAlerts(),
+      updatedLine: data ? "Last Doctor sync " + (data.updated || "—").toLowerCase() : "Awaiting Doctor sync",
+    };
+  }
+}
 </script>
 </body>
 </html>

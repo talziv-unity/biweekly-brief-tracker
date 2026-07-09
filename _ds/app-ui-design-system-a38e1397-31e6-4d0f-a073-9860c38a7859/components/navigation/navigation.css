@@ -1,0 +1,123 @@
+/* ── Navigation: Tabs, AppBar, Toolbar, Breadcrumbs, NavigationRail,
+   Sidebar, BottomNavigation, PageIndicator ───────────────────────────────── */
+
+/* Tabs */
+.appui-tabs { display: flex; flex-direction: column; }
+.appui-tabs__list { display: flex; gap: 2px; border-bottom: 1px solid var(--border); }
+.appui-tab {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 12px; border: none; background: none; cursor: pointer;
+  color: var(--foreground-secondary); font-family: var(--font-sans);
+  font-size: var(--text-sm); font-weight: var(--font-weight-medium);
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: var(--transition-control);
+}
+.appui-tab:hover { color: var(--foreground); }
+.appui-tab[data-active="true"] { color: var(--foreground); border-bottom-color: var(--primary); }
+.appui-tab .ph { font-size: var(--icon-sm); }
+.appui-tabs__panel { padding: 14px 2px; }
+
+/* AppBar */
+.appui-appbar {
+  display: flex; align-items: center; gap: 12px;
+  height: 44px; padding: 0 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+}
+.appui-appbar__title { font-size: var(--text-body-lg); font-weight: var(--font-weight-semibold); }
+.appui-appbar__spacer { flex: 1; }
+
+/* Toolbar */
+.appui-toolbar {
+  display: flex; align-items: center; gap: 4px;
+  padding: 4px 6px; background: var(--surface-inset);
+  border: 1px solid var(--border); border-radius: var(--radius-md);
+}
+.appui-toolbar__sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 4px; }
+
+/* Breadcrumbs */
+.appui-breadcrumbs { display: flex; align-items: center; gap: 4px; font-family: var(--font-sans); font-size: var(--text-sm); color: var(--foreground-secondary); }
+.appui-breadcrumbs a { color: var(--foreground-secondary); text-decoration: none; padding: 2px 4px; border-radius: var(--radius-sm); }
+.appui-breadcrumbs a:hover { color: var(--foreground); background: var(--control-hover); }
+.appui-breadcrumbs__sep { color: var(--foreground-muted); display: inline-flex; }
+.appui-breadcrumbs__current { color: var(--foreground); font-weight: var(--font-weight-medium); padding: 2px 4px; }
+
+/* NavigationRail */
+.appui-rail {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  width: 56px; padding: 8px 0; background: var(--surface);
+  border-right: 1px solid var(--border); height: 100%;
+}
+.appui-rail__item {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  width: 44px; padding: 6px 0; border: none; background: none; cursor: pointer;
+  color: var(--foreground-secondary); border-radius: var(--radius-md);
+  font-family: var(--font-sans); font-size: 10px; transition: var(--transition-control);
+}
+.appui-rail__item .ph { font-size: 20px; }
+.appui-rail__item:hover { background: var(--control-hover); color: var(--foreground); }
+.appui-rail__item[data-active="true"] { color: var(--primary); background: var(--selected); }
+
+/* Sidebar */
+.appui-sidebar {
+  display: flex; flex-direction: column; gap: 2px;
+  width: 240px; padding: 8px; background: var(--surface);
+  border-right: 1px solid var(--border); height: 100%; overflow: auto;
+}
+.appui-sidebar__section { padding: 10px 8px 4px; font-size: var(--text-xs); color: var(--foreground-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.appui-sidebar__item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px; border: none; background: none; cursor: pointer;
+  color: var(--foreground); border-radius: var(--radius-md);
+  font-family: var(--font-sans); font-size: var(--text-sm); text-align: left; width: 100%;
+  transition: var(--transition-control);
+}
+.appui-sidebar__item .ph { font-size: var(--icon-sm); color: var(--foreground-secondary); }
+.appui-sidebar__item:hover { background: var(--control-hover); }
+.appui-sidebar__item[data-active="true"] { background: var(--selected); color: var(--foreground-emphasis); }
+.appui-sidebar__item[data-active="true"] .ph { color: var(--primary); }
+.appui-sidebar__item-badge { margin-left: auto; }
+
+/* BottomNavigation */
+.appui-bottomnav {
+  display: flex; align-items: stretch;
+  background: var(--surface); border-top: 1px solid var(--border);
+  height: 56px;
+}
+.appui-bottomnav__item {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  border: none; background: none; cursor: pointer; color: var(--foreground-secondary);
+  font-family: var(--font-sans); font-size: 10px; transition: var(--transition-control);
+}
+.appui-bottomnav__item .ph { font-size: 20px; }
+.appui-bottomnav__item[data-active="true"] { color: var(--primary); }
+
+/* PageIndicator */
+.appui-pageindicator { display: inline-flex; align-items: center; gap: 6px; }
+.appui-pageindicator__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); cursor: pointer; transition: var(--transition-control); border: none; padding: 0; }
+.appui-pageindicator__dot[data-active="true"] { background: var(--primary); width: 18px; border-radius: var(--radius-full); }
+
+/* ActionBar (contextual selection bar) */
+.appui-actionbar {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--surface-overlay); border: 1px solid var(--border-input);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-popover);
+  padding: 6px 8px 6px 12px; font-family: var(--font-sans); color: var(--foreground);
+}
+.appui-actionbar__count { font-size: var(--text-sm); font-weight: var(--font-weight-medium); white-space: nowrap; }
+.appui-actionbar__sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 0; }
+.appui-actionbar__actions { display: flex; align-items: center; gap: 2px; }
+
+/* UserSwitcher */
+.appui-userswitcher {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 6px 8px; border: none; background: none; cursor: pointer;
+  border-radius: var(--radius-md); color: var(--foreground); text-align: left;
+  font-family: var(--font-sans); transition: var(--transition-control);
+}
+.appui-userswitcher:hover { background: var(--control-hover); }
+.appui-userswitcher__meta { min-width: 0; flex: 1; }
+.appui-userswitcher__name { font-size: var(--text-sm); font-weight: var(--font-weight-medium); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appui-userswitcher__org { font-size: var(--text-xs); color: var(--foreground-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appui-userswitcher__caret { color: var(--foreground-secondary); flex-shrink: 0; }

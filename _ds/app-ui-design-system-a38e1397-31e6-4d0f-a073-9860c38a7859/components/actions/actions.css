@@ -1,0 +1,163 @@
+/* ── Actions: Button, IconButton, ActionButton, ActionGroup, FAB ─────────── */
+
+.appui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-body);
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-control);
+  height: var(--control-height-md);
+  padding: 0 16px;
+}
+.appui-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.appui-btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.appui-btn .ph,
+.appui-btn svg {
+  font-size: var(--icon-sm);
+  flex-shrink: 0;
+}
+
+/* Sizes */
+.appui-btn--sm { height: var(--control-height-sm); padding: 0 12px; font-size: var(--text-sm); }
+.appui-btn--lg { height: var(--control-height-lg); padding: 0 32px; }
+
+/* Variants */
+.appui-btn--default { background: var(--primary); color: var(--primary-foreground); }
+.appui-btn--default:hover { background: var(--primary-hover); }
+.appui-btn--default:active { background: var(--primary-active); }
+.appui-btn--destructive { background: var(--destructive); color: var(--destructive-foreground); }
+.appui-btn--destructive:hover { background: var(--destructive-hover); }
+.appui-btn--destructive:active { background: var(--destructive-active); }
+.appui-btn--secondary { background: var(--control); color: var(--control-foreground); border-color: var(--border-strong); }
+.appui-btn--secondary:hover { background: var(--control-hover); }
+.appui-btn--outline { background: var(--background); color: var(--foreground); border-color: var(--border-strong); }
+.appui-btn--outline:hover { background: var(--control-hover); color: var(--foreground); }
+.appui-btn--ghost { background: transparent; color: var(--foreground); }
+.appui-btn--ghost:hover { background: var(--control-hover); }
+.appui-btn--link { background: transparent; color: var(--primary); padding: 0; height: auto; text-underline-offset: 4px; }
+.appui-btn--link:hover { text-decoration: underline; }
+
+/* ── IconButton ──────────────────────────────────────────────────────────── */
+.appui-iconbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--foreground);
+  background: transparent;
+  transition: var(--transition-control);
+  width: var(--control-square-md);
+  height: var(--control-square-md);
+  flex-shrink: 0;
+}
+.appui-iconbtn .ph { font-size: var(--icon-sm); }
+.appui-iconbtn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ring); }
+.appui-iconbtn:disabled { pointer-events: none; opacity: 0.5; }
+.appui-iconbtn--sm { width: var(--control-square-sm); height: var(--control-square-sm); }
+.appui-iconbtn--sm .ph { font-size: var(--icon-xs); }
+.appui-iconbtn--lg { width: var(--control-square-lg); height: var(--control-square-lg); }
+.appui-iconbtn--lg .ph { font-size: var(--icon-lg); }
+
+.appui-iconbtn--quiet { background: transparent; }
+.appui-iconbtn--quiet:hover { background: var(--control-hover); }
+.appui-iconbtn--default { background: var(--control); border-color: var(--border-strong); }
+.appui-iconbtn--default:hover { background: var(--control-hover); }
+.appui-iconbtn--accent { background: var(--primary); color: var(--primary-foreground); }
+.appui-iconbtn--accent:hover { background: var(--primary-hover); }
+.appui-iconbtn[data-selected="true"] { background: var(--selected); color: var(--foreground-emphasis); }
+.appui-iconbtn[data-selected="true"]:hover { background: var(--selected-hover); }
+
+/* ── ActionButton (lower-emphasis, toolbars / toggles) ───────────────────── */
+.appui-actionbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  height: var(--control-height-md);
+  padding: 0 12px;
+  cursor: pointer;
+  transition: var(--transition-control);
+  border: 1px solid var(--border-input);
+  background: var(--muted);
+  color: var(--foreground);
+}
+.appui-actionbtn .ph { font-size: var(--icon-sm); flex-shrink: 0; }
+.appui-actionbtn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ring); }
+.appui-actionbtn:disabled { cursor: not-allowed; opacity: 0.5; }
+.appui-actionbtn--ghost { background: transparent; border-color: transparent; }
+.appui-actionbtn--ghost:hover { background: var(--control-hover); }
+.appui-actionbtn--sm { height: var(--control-height-sm); padding: 0 8px; font-size: var(--text-xs); }
+.appui-actionbtn--lg { height: var(--control-height-lg); padding: 0 16px; }
+.appui-actionbtn--icon { width: var(--control-square-md); padding: 0; }
+/* Selected (toggle on) treatments */
+.appui-actionbtn[data-state="on"] { background: var(--selected); color: var(--foreground-emphasis); }
+.appui-actionbtn[data-state="on"][data-emphasis="accent"] { background: var(--primary); color: var(--primary-foreground); border-color: transparent; }
+
+/* ── ActionGroup ─────────────────────────────────────────────────────────── */
+.appui-actiongroup { display: inline-flex; align-items: center; gap: var(--space-xs); }
+.appui-actiongroup--segmented {
+  gap: 0;
+  background: var(--surface-inset);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  padding: 2px;
+}
+.appui-actiongroup--segmented .appui-actionbtn {
+  background: transparent;
+  border-color: transparent;
+  color: var(--foreground-secondary);
+  border-radius: var(--radius-sm);
+}
+.appui-actiongroup--segmented .appui-actionbtn:hover { color: var(--foreground); }
+.appui-actiongroup--segmented .appui-actionbtn[data-state="on"] {
+  background: var(--surface-sunken);
+  color: var(--primary);
+}
+
+/* ── FloatingActionButton ────────────────────────────────────────────────── */
+.appui-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  cursor: pointer;
+  box-shadow: var(--shadow-popover);
+  transition: var(--transition-control);
+  height: 48px;
+  width: 48px;
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-medium);
+}
+.appui-fab .ph { font-size: 20px; }
+.appui-fab:hover { background: var(--primary-hover); }
+.appui-fab:active { background: var(--primary-active); }
+.appui-fab:focus-visible { outline: none; box-shadow: var(--shadow-popover), 0 0 0 3px var(--ring); }
+.appui-fab--extended { width: auto; padding: 0 20px; border-radius: var(--radius-full); }
+.appui-fab--sm { height: 40px; width: 40px; }
+.appui-fab--sm.appui-fab--extended { width: auto; }

@@ -1,0 +1,696 @@
+/* ============================================================================
+   Cloud Foundation Design System — Colors & Type
+   Source of truth: Unity-Technologies/cloud-foundation-design-system
+   (packages/library/theme). Built on MUI + @radix-ui/colors.
+   ----------------------------------------------------------------------------
+   - Spacing grid: 8px (MUI spacing unit). spacing(1) = 8px.
+   - Primary is a custom Unity blue scale; neutrals + semantics are Radix.
+   - Two color schemes: light (default) and dark (set [data-theme="dark"]
+     or class .cf-dark on a wrapping element / :root).
+   ========================================================================== */
+
+/* Self-hosted webfonts — Inter (UI) + Roboto Mono (code).
+   Subsetted per Google Fonts unicode-range so only needed glyphs load.
+   Files live in fonts/. Paths resolve relative to this stylesheet. */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-400-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-400-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-400-greek-ext.woff2') format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-400-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-400-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Inter-500-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Inter-500-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Inter-500-greek-ext.woff2') format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Inter-500-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Inter-500-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Inter-500-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Inter-500-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-600-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-600-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-600-greek-ext.woff2') format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-600-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-600-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-700-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-700-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-700-greek-ext.woff2') format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-700-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-700-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-700-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/Inter-900-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/Inter-900-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/Inter-900-greek-ext.woff2') format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/Inter-900-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/Inter-900-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/Inter-900-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/Inter-900-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/RobotoMono-400-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/RobotoMono-400-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/RobotoMono-400-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/RobotoMono-400-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/RobotoMono-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/RobotoMono-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/RobotoMono-500-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/RobotoMono-500-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/RobotoMono-500-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/RobotoMono-500-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/RobotoMono-500-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/RobotoMono-500-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+  /* ---- Font families ------------------------------------------------------ */
+  --cf-font-sans: "Inter", Helvetica, Arial, sans-serif;
+  --cf-font-mono: "Roboto Mono", Menlo, Monaco, "Courier New", monospace;
+
+  /* ---- Font weights ------------------------------------------------------- */
+  --cf-weight-regular: 400;
+  --cf-weight-medium: 500;
+  --cf-weight-semibold: 600;
+  --cf-weight-bold: 700;
+  --cf-weight-black: 900;
+
+  /* ---- Spacing scale (8px grid) ------------------------------------------ */
+  --cf-space-0_5: 4px;
+  --cf-space-1: 8px;
+  --cf-space-1_5: 12px;
+  --cf-space-2: 16px;
+  --cf-space-3: 24px;
+  --cf-space-4: 32px;
+  --cf-space-5: 40px;
+  --cf-space-6: 48px;
+
+  /* ---- Radii -------------------------------------------------------------- */
+  --cf-radius-sm: 4px;   /* cards, surfaces */
+  --cf-radius-md: 6px;   /* buttons, inputs */
+  --cf-radius-lg: 8px;   /* dialogs, large surfaces */
+  --cf-radius-pill: 999px;
+
+  /* ---- Layout constants (from theme/constants.ts) ------------------------ */
+  --cf-app-header-height: 40px;
+  --cf-sidenav-expanded: 224px;
+  --cf-sidenav-collapsed: 52px;
+  --cf-sidenav-header-height: 56px;
+  --cf-max-container-width: 1430px;
+  --cf-nav-anim: 0.25s;
+
+  /* ---- Motion ------------------------------------------------------------- */
+  --cf-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --cf-ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --cf-ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --cf-duration-short: 150ms;
+  --cf-duration-standard: 250ms;
+
+  /* ======================================================================
+     LIGHT SCHEME (default)
+     ====================================================================== */
+
+  /* ---- Brand primary (custom Unity blue) ---- */
+  --cf-primary-50:  #FCFDFE;
+  --cf-primary-100: #F5F9FE;
+  --cf-primary-200: #ECF5FF;
+  --cf-primary-300: #DCECFF;
+  --cf-primary-400: #CBE2FE;
+  --cf-primary-500: #B7D5F9;
+  --cf-primary-600: #9EC4F1;
+  --cf-primary-700: #7AACE8;
+  --cf-primary-800: #0A6EC8;
+  --cf-primary-900: #0060B8;
+  --cf-primary-1000: #0F70CB;
+  --cf-primary-1100: #0E345B;
+
+  --cf-primary-lighter: #ECF5FF;
+  --cf-primary-light:   #CBE2FE;
+  --cf-primary:         #0A6EC8;   /* main */
+  --cf-primary-dark:    #0060B8;
+  --cf-primary-darker:  #0F70CB;
+  --cf-primary-contrast: #0E345B;
+  --cf-on-primary:      #FFFFFF;   /* buttonContrastText */
+
+  /* ---- Neutrals (Radix gray) ---- */
+  --cf-gray-1:  #FCFCFC;
+  --cf-gray-2:  #F9F9F9;
+  --cf-gray-3:  #F0F0F0;
+  --cf-gray-4:  #E8E8E8;
+  --cf-gray-5:  #E0E0E0;
+  --cf-gray-6:  #D9D9D9;
+  --cf-gray-7:  #CECECE;
+  --cf-gray-8:  #BBBBBB;
+  --cf-gray-9:  #8D8D8D;
+  --cf-gray-10: #838383;
+  --cf-gray-11: #646464;
+  --cf-gray-12: #202020;
+
+  /* ---- Text ---- */
+  --cf-fg:           #202020;  /* text.primary  = gray12 */
+  --cf-fg-secondary: #646464;  /* text.secondary = gray11 */
+  --cf-fg-disabled:  #838383;  /* text.disabled  = gray10 */
+
+  /* ---- Surfaces ---- */
+  --cf-bg:            #FFFFFF;  /* background.default */
+  --cf-bg-neutral:    #FFFFFF;
+  --cf-bg-paper:      #FCFCFC;  /* gray1 */
+  --cf-bg-elevation-0: #F9F9F9;
+  --cf-bg-elevation-1: #F6F6F6;
+  --cf-bg-elevation-2: #F0F0F0;
+  --cf-bg-modal:      #FFFFFF;
+  --cf-bg-datagrid-header: #F9F9F9;
+  --cf-backdrop:      rgba(0, 0, 0, 0.30);
+
+  /* ---- Borders & dividers ---- */
+  --cf-divider:        rgba(0, 0, 0, 0.10);
+  --cf-divider-strong: #E8E8E8;  /* dividerElevation0 = gray4 */
+  --cf-border:         #BBBBBB;  /* outlinedBorder = gray8 */
+
+  /* ---- Action states ---- */
+  --cf-action-active:   #838383;  /* gray10 */
+  --cf-action-hover:    rgba(0, 0, 0, 0.05);
+  --cf-action-selected: #E8E8E8;  /* gray4 */
+  --cf-action-disabled: #E0E0E0;  /* gray5 */
+  --cf-action-disabled-bg: #F0F0F0;
+
+  /* ---- Semantic: info (Radix indigo) ---- */
+  --cf-info-lighter: #F7F9FF;
+  --cf-info-light:   #D2DEFF;
+  --cf-info:         #3E63DD;
+  --cf-info-dark:    #3358D4;
+  --cf-info-darker:  #3A5BC7;
+  --cf-info-contrast: #1F2D5C;
+
+  /* ---- Semantic: success (Radix green) ---- */
+  --cf-success-lighter: #F4FBF6;
+  --cf-success-light:   #C4E8D1;
+  --cf-success:         #30A46C;
+  --cf-success-dark:    #2B9A66;
+  --cf-success-darker:  #218358;
+  --cf-success-contrast: #193B2D;
+
+  /* ---- Semantic: error (Radix red) ---- */
+  --cf-error-lighter: #FFF7F7;
+  --cf-error-light:   #FFCDCE;
+  --cf-error:         #E5484D;
+  --cf-error-dark:    #DC3E42;
+  --cf-error-darker:  #CE2C31;
+  --cf-error-contrast: #641723;
+
+  /* ---- Semantic: warning (Radix amber) ---- */
+  --cf-warning-lighter: #FEFBE9;
+  --cf-warning-light:   #FBE577;
+  --cf-warning:         #FFC53D;  /* amber9 */
+  --cf-warning-dark:    #FFBA18;
+  --cf-warning-darker:  #AB6400;
+  --cf-warning-contrast: #4F3422;
+
+  /* ---- Data-viz chart series (solid) ---- */
+  --cf-chart-1:  #0090FF;  /* blue */
+  --cf-chart-2:  #E93D82;  /* crimson */
+  --cf-chart-3:  #8E4EC6;  /* purple */
+  --cf-chart-4:  #3E63DD;  /* indigo */
+  --cf-chart-5:  #F76B15;  /* orange */
+  --cf-chart-6:  #86EAD4;  /* mint */
+  --cf-chart-7:  #D6409F;  /* pink */
+  --cf-chart-8:  #46A758;  /* grass */
+  --cf-chart-positive: #30A46C;
+  --cf-chart-negative: #E5484D;
+  --cf-chart-neutral:  #8D8D8D;
+
+  /* ---- Elevation shadows (light) ---- */
+  --cf-shadow-xs: 0px 4px 8px -2px rgba(16, 24, 40, 0.12);
+  --cf-shadow-sm: 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+  --cf-shadow-md: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+  --cf-shadow-card: 0px 1px 2px rgba(16, 24, 40, 0.06), 0px 1px 3px rgba(16, 24, 40, 0.10);
+  --cf-shadow-popover: 0px 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -6px rgba(16, 24, 40, 0.08);
+}
+
+/* ==========================================================================
+   DARK SCHEME
+   ========================================================================== */
+:root[data-theme="dark"],
+.cf-dark {
+  --cf-primary-50:  #000000;
+  --cf-primary-100: #061220;
+  --cf-primary-200: #012348;
+  --cf-primary-300: #002E67;
+  --cf-primary-400: #003C7C;
+  --cf-primary-500: #004A8E;
+  --cf-primary-600: #085BA6;
+  --cf-primary-700: #086DC7;
+  --cf-primary-800: #0A6EC8;
+  --cf-primary-900: #1361AD;
+  --cf-primary-1000: #6EB8FF;
+  --cf-primary-1100: #C6E4FF;
+
+  --cf-primary-lighter: #012348;
+  --cf-primary-light:   #003C7C;
+  --cf-primary:         #0A6EC8;
+  --cf-primary-dark:    #1361AD;
+  --cf-primary-darker:  #6EB8FF;
+  --cf-primary-contrast: #C6E4FF;
+  --cf-on-primary:      #FFFFFF;
+
+  /* Radix grayDark */
+  --cf-gray-1:  #111111;
+  --cf-gray-2:  #191919;
+  --cf-gray-3:  #222222;
+  --cf-gray-4:  #2A2A2A;
+  --cf-gray-5:  #313131;
+  --cf-gray-6:  #3A3A3A;
+  --cf-gray-7:  #484848;
+  --cf-gray-8:  #606060;
+  --cf-gray-9:  #6E6E6E;
+  --cf-gray-10: #7B7B7B;
+  --cf-gray-11: #B4B4B4;
+  --cf-gray-12: #EEEEEE;
+
+  --cf-fg:           #EEEEEE;
+  --cf-fg-secondary: #B4B4B4;
+  --cf-fg-disabled:  #7B7B7B;
+
+  --cf-bg:            #131313;
+  --cf-bg-neutral:    #FFFFFF;
+  --cf-bg-paper:      #191919;
+  --cf-bg-elevation-0: #222222;
+  --cf-bg-elevation-1: #2A2A2A;
+  --cf-bg-elevation-2: #313131;
+  --cf-bg-modal:      #2A2A2A;
+  --cf-bg-datagrid-header: #222222;
+  --cf-backdrop:      rgba(0, 0, 0, 0.70);
+
+  --cf-divider:        rgba(255, 255, 255, 0.08);
+  --cf-divider-strong: #3A3A3A;
+  --cf-border:         #3A3A3A;
+
+  --cf-action-active:   #7B7B7B;
+  --cf-action-hover:    rgba(255, 255, 255, 0.05);
+  --cf-action-selected: #313131;
+  --cf-action-disabled: #3A3A3A;
+  --cf-action-disabled-bg: #191919;
+
+  --cf-info-lighter: #141726;
+  --cf-info-light:   #253974;
+  --cf-info:         #3E63DD;
+  --cf-info-dark:    #3E63DD;
+  --cf-info-darker:  #9EB1FF;
+  --cf-info-contrast: #D6E1FF;
+
+  --cf-success-lighter: #0E1512;
+  --cf-success-light:   #1B3B2A;
+  --cf-success:         #30A46C;
+  --cf-success-dark:    #30A46C;
+  --cf-success-darker:  #3DD68C;
+  --cf-success-contrast: #B1F1CB;
+
+  --cf-error-lighter: #1F1315;
+  --cf-error-light:   #500F1C;
+  --cf-error:         #E5484D;
+  --cf-error-dark:    #E5484D;
+  --cf-error-darker:  #FF9592;
+  --cf-error-contrast: #FFD1D9;
+
+  --cf-warning-lighter: #1F1300;
+  --cf-warning-light:   #4F3917;
+  --cf-warning:         #FFC53D;
+  --cf-warning-dark:    #FFC53D;
+  --cf-warning-darker:  #FFD60A;
+  --cf-warning-contrast: #FFE7B3;
+
+  --cf-shadow-xs: 0px 4px 8px -2px rgba(0, 0, 0, 0.34);
+  --cf-shadow-sm: 0px 12px 14px -3px rgba(0, 0, 0, 0.45);
+  --cf-shadow-md: 0px 24px 48px -12px rgba(0, 0, 0, 0.44);
+  --cf-shadow-card: 0px 1px 4px rgba(0, 0, 0, 0.72);
+  --cf-shadow-popover: 0px 8px 8px -4px rgba(0, 0, 0, 0.03), 0px 20px 24px -6px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY — semantic classes
+   Mirrors theme/typography/typography.ts. rem values assume 16px root.
+   ========================================================================== */
+.cf-type-base {
+  font-family: var(--cf-font-sans);
+  color: var(--cf-fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display / headings */
+.cf-title { font: var(--cf-weight-semibold) 2.5rem/3rem var(--cf-font-sans); letter-spacing: -0.01rem; }
+.cf-h1    { font: var(--cf-weight-semibold) 1.5rem/1.75rem var(--cf-font-sans); letter-spacing: -0.01rem; }
+.cf-h2    { font: var(--cf-weight-semibold) 1.125rem/1.75rem var(--cf-font-sans); letter-spacing: -0.01rem; }
+.cf-h3    { font: var(--cf-weight-semibold) 1rem/1.5rem var(--cf-font-sans); letter-spacing: -0.01rem; }
+.cf-h4    { font: var(--cf-weight-semibold) 0.875rem/1.25rem var(--cf-font-sans); letter-spacing: -0.01rem; }
+.cf-h5    { font: var(--cf-weight-semibold) 0.813rem/1rem var(--cf-font-sans); }
+.cf-h6    { font: var(--cf-weight-semibold) 0.75rem/0.75rem var(--cf-font-sans); }
+
+/* Body & supporting */
+.cf-subtitle1 { font: var(--cf-weight-medium) 0.875rem/1.25rem var(--cf-font-sans); letter-spacing: 0.01rem; }
+.cf-subtitle2 { font: var(--cf-weight-medium) 0.813rem/1.25rem var(--cf-font-sans); }
+.cf-body1     { font: var(--cf-weight-regular) 0.875rem/1.25rem var(--cf-font-sans); }
+.cf-body2     { font: var(--cf-weight-regular) 0.813rem/1.25rem var(--cf-font-sans); }
+.cf-button    { font: var(--cf-weight-semibold) 0.875rem/1.25rem var(--cf-font-sans); letter-spacing: 0.018rem; }
+.cf-overline  { font: var(--cf-weight-medium) 0.75rem/1rem var(--cf-font-sans); letter-spacing: 0.01rem; text-transform: uppercase; }
+.cf-caption   { font: var(--cf-weight-regular) 0.75rem/1rem var(--cf-font-sans); }
+.cf-input-label { font: var(--cf-weight-medium) 0.813rem/1rem var(--cf-font-sans); letter-spacing: 0.01rem; }
+.cf-chip-label { font: var(--cf-weight-semibold) 0.75rem/1rem var(--cf-font-sans); letter-spacing: 0.01rem; }
+.cf-table-header { font: var(--cf-weight-semibold) 0.813rem/1.25rem var(--cf-font-sans); letter-spacing: 0.01rem; }
+.cf-code      { font: 400 0.75rem/1.125rem var(--cf-font-mono); }
+
+/* Chart number callouts */
+.cf-chart1 { font: var(--cf-weight-medium) 1.75rem/1.75rem var(--cf-font-sans); letter-spacing: -0.018rem; }
+.cf-chart2 { font: var(--cf-weight-medium) 1.25rem/1.25rem var(--cf-font-sans); }
+
+/* Convenience color helpers */
+.cf-fg-primary   { color: var(--cf-fg); }
+.cf-fg-secondary { color: var(--cf-fg-secondary); }
+.cf-fg-disabled  { color: var(--cf-fg-disabled); }

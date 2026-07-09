@@ -1,0 +1,43 @@
+/* ── Canvas: node graph (CanvasNode, CanvasEdge, SelectionRect) + CurveEditor ── */
+
+.appui-canvas {
+  position: relative; overflow: hidden;
+  background-color: var(--canvas);
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* CanvasNode */
+.appui-canvasnode {
+  position: absolute; min-width: 150px;
+  background: var(--surface-raised); border: 1px solid var(--border-input);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-raised);
+  font-family: var(--font-sans); color: var(--foreground); overflow: hidden;
+}
+.appui-canvasnode[data-selected="true"] { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary), var(--shadow-popover); }
+.appui-canvasnode__head { display: flex; align-items: center; gap: 6px; padding: 6px 10px; font-size: var(--text-sm); font-weight: var(--font-weight-medium); border-bottom: 1px solid var(--border); cursor: grab; }
+.appui-canvasnode__accent { width: 8px; height: 8px; border-radius: 2px; background: var(--primary); flex-shrink: 0; }
+.appui-canvasnode__body { padding: 6px 0; }
+.appui-canvasnode__port { display: flex; align-items: center; gap: 8px; padding: 3px 10px; font-size: var(--text-xs); color: var(--foreground-secondary); position: relative; }
+.appui-canvasnode__port--out { justify-content: flex-end; text-align: right; }
+.appui-canvasnode__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--surface); border: 2px solid var(--border-strong); position: absolute; top: 50%; transform: translateY(-50%); }
+.appui-canvasnode__port--in .appui-canvasnode__dot { left: -5px; }
+.appui-canvasnode__port--out .appui-canvasnode__dot { right: -5px; }
+.appui-canvasnode__dot[data-connected="true"] { background: var(--primary); border-color: var(--primary); }
+
+/* CanvasEdge (svg overlay) */
+.appui-canvasedge { fill: none; stroke: var(--border-strong); stroke-width: 2; }
+.appui-canvasedge--active { stroke: var(--primary); }
+
+/* SelectionRect (marquee) */
+.appui-selectionrect { position: absolute; border: 1px solid var(--primary); background: var(--selected); pointer-events: none; border-radius: 1px; }
+
+/* CurveEditor */
+.appui-curveeditor {
+  position: relative; background: var(--surface-sunken);
+  border: 1px solid var(--border-input); border-radius: var(--radius-md); overflow: hidden;
+}
+.appui-curveeditor__grid line { stroke: var(--border); stroke-width: 1; opacity: .5; }
+.appui-curveeditor__curve { fill: none; stroke: var(--primary); stroke-width: 2; }
+.appui-curveeditor__key { fill: var(--background); stroke: var(--primary); stroke-width: 2; }
+.appui-curveeditor__key[data-selected="true"] { fill: var(--primary); }

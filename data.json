@@ -1,0 +1,1137 @@
+{
+  "game": "Hole It",
+  "updated": "2026-07-09 · 10:17 · BY DOCTOR",
+  "board_id": "9959638270",
+  "notion_data_source": "3807685c-1d84-8173-815e-000bd1f69398",
+  "cycles": [
+    {
+      "id": "wave-a",
+      "label": "2026-07 · Wave A",
+      "kind": "plan",
+      "slots": [
+        {
+          "id": "vid-aihook",
+          "group": "Video",
+          "label": "AI-hook test",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "experimental ~20% slice · 1 brief holding 6 versions · 2 per AI-hook type",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "vid-winner",
+          "group": "Video",
+          "label": "Winner iteration",
+          "target": 4,
+          "done": false,
+          "fill": "",
+          "rule": "Giaco gold-zone lever · based-on a real winner VD-ID · floor-pairing control",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "vid-salvage",
+          "group": "Video",
+          "label": "Salvage / retry",
+          "target": 3,
+          "done": false,
+          "fill": "",
+          "rule": "believe + change-hypothesis · iterate while improving, drop on stall",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "sett",
+          "group": "Video",
+          "label": "Sett (complex)",
+          "target": 2,
+          "done": false,
+          "fill": "",
+          "rule": "freelance offload · brief the ~2 complex ones · rest freestyle · NOT Monday-tracked",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "poolday",
+          "group": "Inspiration",
+          "label": "Poolday",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "in-house AI Inspiration",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "sonicvo",
+          "group": "Inspiration",
+          "label": "SonicVO",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "in-house AI Inspiration (VO) · Hole It = 'describe the game, not the gameplay'",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "playable",
+          "group": "Playable",
+          "label": "Playable",
+          "target": 3,
+          "done": false,
+          "fill": "",
+          "rule": "video-first gated · +4 configs each · Viktoryia 2-3 slide",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "wave-b",
+      "label": "2026-07 · Wave B",
+      "kind": "plan",
+      "slots": [
+        {
+          "id": "vid-aihook",
+          "group": "Video",
+          "label": "AI-hook test",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "experimental ~20% slice · 1 brief holding 6 versions · 2 per AI-hook type",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "vid-winner",
+          "group": "Video",
+          "label": "Winner iteration",
+          "target": 4,
+          "done": false,
+          "fill": "",
+          "rule": "Giaco gold-zone lever · based-on a real winner VD-ID · floor-pairing control",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "vid-salvage",
+          "group": "Video",
+          "label": "Salvage / retry",
+          "target": 3,
+          "done": false,
+          "fill": "",
+          "rule": "believe + change-hypothesis · iterate while improving, drop on stall",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "sett",
+          "group": "Video",
+          "label": "Sett (complex)",
+          "target": 2,
+          "done": false,
+          "fill": "",
+          "rule": "freelance offload · brief the ~2 complex ones · rest freestyle · NOT Monday-tracked",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "poolday",
+          "group": "Inspiration",
+          "label": "Poolday",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "in-house AI Inspiration",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "sonicvo",
+          "group": "Inspiration",
+          "label": "SonicVO",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "in-house AI Inspiration (VO) · Hole It = 'describe the game, not the gameplay'",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "playable",
+          "group": "Playable",
+          "label": "Playable",
+          "target": 3,
+          "done": false,
+          "fill": "",
+          "rule": "video-first gated · +4 configs each · Viktoryia 2-3 slide",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "monthly",
+      "label": "2026-07 · Monthly overlays",
+      "kind": "plan",
+      "slots": [
+        {
+          "id": "iec",
+          "group": "Monthly / ASO",
+          "label": "IEC",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "monthly overlay",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "banner",
+          "group": "Monthly / ASO",
+          "label": "Banner",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "display",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "icon",
+          "group": "Monthly / ASO",
+          "label": "Icon",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "ASO / store test",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "images",
+          "group": "Monthly / Social",
+          "label": "Images (Google/FB)",
+          "target": 4,
+          "done": false,
+          "fill": "",
+          "rule": "CTA / opening-hook iterations · 4 sizes (1x1, 9x16, 1200x628, 1200x1500) · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "longform-mashup",
+          "group": "Monthly / Social",
+          "label": "Long-form — mashup",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "combine multiple creatives into 1 long video (Lane E, Unity)",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "longform-extended",
+          "group": "Monthly / Social",
+          "label": "Long-form — extended single (90-120s)",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "take ONE creative -> 1 whole long video · social/Google-FB test",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "jpkr-banner",
+          "group": "Monthly / Social",
+          "label": "JP/KR banner",
+          "target": 4,
+          "done": false,
+          "fill": "",
+          "rule": "2 each country · Hole It active",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "jpkr-playable",
+          "group": "Monthly / Social",
+          "label": "JP/KR playable",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "Hole It active",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "liveboard",
+      "label": "Live board",
+      "kind": "live",
+      "slots": [
+        {
+          "id": "mon-12483947948",
+          "group": "SETT AI",
+          "label": "Bag Crack  - (4 monthly slots - each slot 4 deliveries)  - JUNE",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "",
+          "monday": {
+            "status": "Ready to upload",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12483947948",
+          "brief_url": "https://drive.google.com/drive/u/2/folders/14Qeo2usik7IZ21WB1Bzd0BqqUxqkIhtf"
+        },
+        {
+          "id": "mon-12240644898",
+          "group": "Video",
+          "label": "Cylinder Reskin",
+          "target": 1,
+          "done": 0,
+          "fill": "Cylinder Reskin",
+          "rule": "Iteration · due 2026-07-07",
+          "monday": {
+            "status": "In Testing",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240644898",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e82f94bee6_4_0#slide=id.g3e82f94bee6_4_0"
+        },
+        {
+          "id": "mon-12369923161",
+          "group": "Playable",
+          "label": "V22 Optimization & Rearrange",
+          "target": 1,
+          "done": 0,
+          "fill": "V22 Optimization & Rearrange",
+          "rule": "due 2026-07-13",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12369923161",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ee49324886_1_0#slide=id.g3ee49324886_1_0"
+        },
+        {
+          "id": "mon-12240622557",
+          "group": "Video",
+          "label": "Color Checkerboard",
+          "target": 1,
+          "done": 0,
+          "fill": "Color Checkerboard",
+          "rule": "New Concept · due 2026-07-09",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240622557",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec68fe105a_1_0#slide=id.g3ec68fe105a_1_0"
+        },
+        {
+          "id": "mon-12240599681",
+          "group": "Video",
+          "label": "Sneak-Peak Hype Intro",
+          "target": 1,
+          "done": 0,
+          "fill": "Sneak-Peak Hype Intro",
+          "rule": "New Concept · due 2026-07-03",
+          "monday": {
+            "status": "In Testing",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240599681",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e82f94bee6_2_0#slide=id.g3e82f94bee6_2_0"
+        },
+        {
+          "id": "mon-12240721569",
+          "group": "Video",
+          "label": "Reskin Obj Explosion",
+          "target": 1,
+          "done": 0,
+          "fill": "Reskin Obj Explosion",
+          "rule": "New Concept · due 2026-07-06",
+          "monday": {
+            "status": "In Testing",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240721569",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e731f34b35_0_39#slide=id.g3e731f34b35_0_39"
+        },
+        {
+          "id": "mon-12369929008",
+          "group": "Video",
+          "label": "Reskin Monochromatic Control",
+          "target": 1,
+          "done": 0,
+          "fill": "Reskin Monochromatic Control",
+          "rule": "Iteration · due 2026-07-20",
+          "monday": {
+            "status": "Ready for Design",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12369929008",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e778165ea4_2_6#slide=id.g3e778165ea4_2_6"
+        },
+        {
+          "id": "mon-12369923810",
+          "group": "Video",
+          "label": "JP / KR Localization",
+          "target": 1,
+          "done": 0,
+          "fill": "JP / KR Localization",
+          "rule": "due 2026-07-17",
+          "monday": {
+            "status": "Ready for Design",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12369923810",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3f0dd1fd7d9_1_0#slide=id.g3f0dd1fd7d9_1_0"
+        },
+        {
+          "id": "mon-12369920944",
+          "group": "Video",
+          "label": "UGC Podcast Story",
+          "target": 1,
+          "done": 0,
+          "fill": "UGC Podcast Story",
+          "rule": "due 2026-07-14",
+          "monday": {
+            "status": "Ready for Design",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12369920944",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e8f2f518c0_2_0#slide=id.g3e8f2f518c0_2_0"
+        },
+        {
+          "id": "mon-12369948775",
+          "group": "Video",
+          "label": "Classical Beat-Match",
+          "target": 1,
+          "done": 0,
+          "fill": "Classical Beat-Match",
+          "rule": "New Concept · due 2026-07-16",
+          "monday": {
+            "status": "Ready for Design",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12369948775",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3f1d5c81e7d_1_0#slide=id.g3f1d5c81e7d_1_0"
+        },
+        {
+          "id": "mon-12240586738",
+          "group": "Video",
+          "label": "Beach Tower Reskin",
+          "target": 1,
+          "done": 0,
+          "fill": "Beach Tower Reskin",
+          "rule": "New Concept · due 2026-07-17",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240586738",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec0dedece0_1_0#slide=id.g3ec0dedece0_1_0"
+        },
+        {
+          "id": "mon-12074642996",
+          "group": "Playable",
+          "label": "Playable 31- Mintegral",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "due 2026-07-17",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": true,
+            "brief_created": false
+          },
+          "monday_item_id": "12074642996",
+          "brief_url": null
+        },
+        {
+          "id": "mon-11675442165",
+          "group": "Video",
+          "label": "New Videos (Sonic VO)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "11675442165",
+          "brief_url": null
+        },
+        {
+          "id": "mon-11677621182",
+          "group": "Playable",
+          "label": "Playable",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "",
+          "monday": {
+            "status": "New Request",
+            "in_notion": true,
+            "brief_created": false
+          },
+          "monday_item_id": "11677621182",
+          "brief_url": null
+        },
+        {
+          "id": "mon-11677621724",
+          "group": "Video",
+          "label": "New Videos (New Concept)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "11677621724",
+          "brief_url": null
+        },
+        {
+          "id": "mon-11675434460",
+          "group": "Video",
+          "label": "New Videos (Poolday)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "11675434460",
+          "brief_url": null
+        },
+        {
+          "id": "mon-11677600490",
+          "group": "Video",
+          "label": "New Videos (Iteration)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "Iteration",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "11677600490",
+          "brief_url": null
+        },
+        {
+          "id": "mon-12346513403",
+          "group": "Icon",
+          "label": "Bunny x Hole Icons",
+          "target": 1,
+          "done": 0,
+          "fill": "Bunny x Hole Icons",
+          "rule": "due 2026-06-24",
+          "monday": {
+            "status": "In Testing",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12346513403",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ee7649edbb_4_0#slide=id.g3ee7649edbb_4_0"
+        },
+        {
+          "id": "mon-12239873475",
+          "group": "Video",
+          "label": "Store Creative Mashup",
+          "target": 1,
+          "done": 0,
+          "fill": "Store Creative Mashup",
+          "rule": "due 2026-06-24",
+          "monday": {
+            "status": "Ready for Testing",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12239873475",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e82f94bee6_9_0#slide=id.g3e82f94bee6_9_0"
+        },
+        {
+          "id": "mon-12240594141",
+          "group": "Playable",
+          "label": "lvll255NEWLayout1 Inspiration",
+          "target": 1,
+          "done": 1,
+          "fill": "lvll255NEWLayout1 Inspiration",
+          "rule": "due 2026-07-08",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240594141",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec818dfcf5_0_22#slide=id.g3ec818dfcf5_0_22"
+        },
+        {
+          "id": "mon-12368123906",
+          "group": "Playable",
+          "label": "Playable V35- Sett",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-07-07",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": false
+          },
+          "monday_item_id": "12368123906",
+          "brief_url": null
+        },
+        {
+          "id": "mon-12145325581",
+          "group": "Video",
+          "label": "Saw-Cut Sushi Hook",
+          "target": 1,
+          "done": 1,
+          "fill": "Saw-Cut Sushi Hook",
+          "rule": "New Concept · due 2026-06-26",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12145325581",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3a8a70d3311_1_0#slide=id.g3a8a70d3311_1_0"
+        },
+        {
+          "id": "mon-12240664165",
+          "group": "Playable",
+          "label": "V06 Winner - Optimized Rebuild",
+          "target": 1,
+          "done": 1,
+          "fill": "V06 Winner - Optimized Rebuild",
+          "rule": "due 2026-07-03",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240664165",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec818dfcf5_0_4#slide=id.g3ec818dfcf5_0_4"
+        },
+        {
+          "id": "mon-12231469660",
+          "group": "IEC",
+          "label": "IEC",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-06-09",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "12231469660",
+          "brief_url": null
+        },
+        {
+          "id": "mon-12240637893",
+          "group": "Video",
+          "label": "S.Korean Translation",
+          "target": 1,
+          "done": 1,
+          "fill": "S.Korean Translation",
+          "rule": "New Concept · due 2026-06-30",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240637893",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ebe4f7bf5b_1_0#slide=id.g3ebe4f7bf5b_1_0"
+        },
+        {
+          "id": "mon-12145342368",
+          "group": "Playable",
+          "label": "Funlevel 384 Inspiration",
+          "target": 1,
+          "done": 1,
+          "fill": "Funlevel 384 Inspiration",
+          "rule": "due 2026-06-30",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12145342368",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ea13c8aa1a_1_0#slide=id.g3ea13c8aa1a_1_0"
+        },
+        {
+          "id": "mon-12145341557",
+          "group": "Video",
+          "label": "Eastertower Mass Reskin",
+          "target": 1,
+          "done": 1,
+          "fill": "Eastertower Mass Reskin",
+          "rule": "Iteration · due 2026-06-24",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12145341557",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e2bad3e081_1_0#slide=id.g3e2bad3e081_1_0"
+        },
+        {
+          "id": "mon-12049688416",
+          "group": "Video",
+          "label": "Sushi Fields Block",
+          "target": 1,
+          "done": 1,
+          "fill": "Sushi Fields Block",
+          "rule": "New Concept · due 2026-06-12",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12049688416",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e339355677_1_0#slide=id.g3e339355677_1_0"
+        },
+        {
+          "id": "mon-12145325824",
+          "group": "Banner",
+          "label": "Banner \"4\" Reskin",
+          "target": 1,
+          "done": 1,
+          "fill": "Banner \"4\" Reskin",
+          "rule": "due 2026-06-12",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12145325824",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ea3167cc2f_0_16#slide=id.g3ea3167cc2f_0_16"
+        },
+        {
+          "id": "mon-12049732989",
+          "group": "Video",
+          "label": "Easter Eggs Tower Reskin",
+          "target": 1,
+          "done": 1,
+          "fill": "Easter Eggs Tower Reskin",
+          "rule": "Iteration · due 2026-06-05",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12049732989",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e429361c80_2_0#slide=id.g3e429361c80_2_0"
+        },
+        {
+          "id": "mon-12049724913",
+          "group": "Playable",
+          "label": "V6 Tower + Bombs Difficulty Layer",
+          "target": 1,
+          "done": 1,
+          "fill": "V6 Tower + Bombs Difficulty Layer",
+          "rule": "due 2026-06-05",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12049724913",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3a8aea539a7_9_0#slide=id.g3a8aea539a7_9_0"
+        },
+        {
+          "id": "mon-12049632997",
+          "group": "Video",
+          "label": "Perfume Inside Reorder",
+          "target": 1,
+          "done": 1,
+          "fill": "Perfume Inside Reorder",
+          "rule": "New Concept · due 2026-06-09",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049632997",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e3a85b0a92_6_0#slide=id.g3e3a85b0a92_6_0"
+        },
+        {
+          "id": "mon-12049711794",
+          "group": "Video",
+          "label": "Glass Cylinder Shatter",
+          "target": 1,
+          "done": 1,
+          "fill": "Glass Cylinder Shatter",
+          "rule": "Iteration · due 2026-06-08",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12049711794",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e339355677_3_0#slide=id.g3e339355677_3_0"
+        },
+        {
+          "id": "mon-12061420969",
+          "group": "Playable",
+          "label": "Picnic-Layout Inspiration",
+          "target": 1,
+          "done": 1,
+          "fill": "Picnic-Layout Inspiration",
+          "rule": "due 2026-06-11",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12061420969",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3a8aea539a7_4_147#slide=id.g3a8aea539a7_4_147"
+        },
+        {
+          "id": "mon-12049753939",
+          "group": "Video",
+          "label": "Pool Day UGC Top Controls",
+          "target": 1,
+          "done": 1,
+          "fill": "Pool Day UGC Top Controls",
+          "rule": "due 2026-06-01",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049753939",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3a8aea539a7_6_0#slide=id.g3a8aea539a7_6_0"
+        },
+        {
+          "id": "mon-12049679933",
+          "group": "Video",
+          "label": "VO Top Controls",
+          "target": 1,
+          "done": 1,
+          "fill": "VO Top Controls",
+          "rule": "due 2026-06-05",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049679933",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3a8aea539a7_1_0#slide=id.g3a8aea539a7_1_0"
+        },
+        {
+          "id": "mon-11891652552",
+          "group": "ASO",
+          "label": "Screenshots Store",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-05-22",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "11891652552",
+          "brief_url": null
+        },
+        {
+          "id": "mon-12049731737",
+          "group": "Video",
+          "label": "Cosmetics Pyramid",
+          "target": 1,
+          "done": 1,
+          "fill": "Cosmetics Pyramid",
+          "rule": "New Concept · due 2026-05-28",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12049731737",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e2b3b48017_15_0#slide=id.g3e2b3b48017_15_0"
+        },
+        {
+          "id": "mon-12049727623",
+          "group": "Video",
+          "label": "SIZE UP! Text Overlay",
+          "target": 1,
+          "done": 1,
+          "fill": "SIZE UP! Text Overlay",
+          "rule": "New Concept · due 2026-05-29",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12049727623",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e339355677_5_66#slide=id.g3e339355677_5_66"
+        },
+        {
+          "id": "mon-11908748982",
+          "group": "Playable",
+          "label": "Lvl 383",
+          "target": 1,
+          "done": 1,
+          "fill": "Lvl 383",
+          "rule": "due 2026-05-25",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11908748982",
+          "brief_url": "https://docs.google.com/presentation/d/11PqddtpxzrXvBmAbIEORumE7vxhEsKCz4zaOJKIfjcw/edit?slide=id.g39a851acc37_0_100#slide=id.g39a851acc37_0_100"
+        },
+        {
+          "id": "mon-11907193588",
+          "group": "Video",
+          "label": "Supermarket Shopping",
+          "target": 1,
+          "done": 1,
+          "fill": "Supermarket Shopping",
+          "rule": "Iteration · due 2026-05-22",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11907193588",
+          "brief_url": "https://docs.google.com/presentation/d/11PqddtpxzrXvBmAbIEORumE7vxhEsKCz4zaOJKIfjcw/edit?slide=id.g39a851acc37_0_10#slide=id.g39a851acc37_0_10"
+        },
+        {
+          "id": "mon-11936671412",
+          "group": "Banner",
+          "label": "Banners",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-05-25",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": false
+          },
+          "monday_item_id": "11936671412",
+          "brief_url": null
+        },
+        {
+          "id": "mon-12049778112",
+          "group": "Playable",
+          "label": "Playable V28- Dev",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-05-20",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "12049778112",
+          "brief_url": null
+        },
+        {
+          "id": "mon-11907233780",
+          "group": "Video",
+          "label": "Toys Pyramids",
+          "target": 1,
+          "done": 1,
+          "fill": "Toys Pyramids",
+          "rule": "New Concept · due 2026-05-21",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11907233780",
+          "brief_url": "https://docs.google.com/presentation/d/11PqddtpxzrXvBmAbIEORumE7vxhEsKCz4zaOJKIfjcw/edit?slide=id.g39a851acc37_0_47#slide=id.g39a851acc37_0_47"
+        },
+        {
+          "id": "mon-11907198772",
+          "group": "Video",
+          "label": "Objects Explosion",
+          "target": 1,
+          "done": 1,
+          "fill": "Objects Explosion",
+          "rule": "New Concept · due 2026-05-20",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "11907198772",
+          "brief_url": "https://docs.google.com/presentation/d/11PqddtpxzrXvBmAbIEORumE7vxhEsKCz4zaOJKIfjcw/edit?slide=id.g39a851acc37_0_82#slide=id.g39a851acc37_0_82"
+        },
+        {
+          "id": "mon-11907204209",
+          "group": "Video",
+          "label": "Cube Blocks",
+          "target": 1,
+          "done": 1,
+          "fill": "Cube Blocks",
+          "rule": "New Concept · due 2026-05-21",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11907204209",
+          "brief_url": "https://docs.google.com/presentation/d/11PqddtpxzrXvBmAbIEORumE7vxhEsKCz4zaOJKIfjcw/edit?slide=id.g3dab9ffcc68_21_4#slide=id.g3dab9ffcc68_21_4"
+        },
+        {
+          "id": "mon-11827117905",
+          "group": "Playable",
+          "label": "Cosmetics Tower Progress",
+          "target": 1,
+          "done": 1,
+          "fill": "Cosmetics Tower Progress",
+          "rule": "New Concept · due 2026-05-15",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11827117905",
+          "brief_url": "https://docs.google.com/presentation/d/11PqddtpxzrXvBmAbIEORumE7vxhEsKCz4zaOJKIfjcw/edit?slide=id.g3d957736a76_0_71#slide=id.g3d957736a76_0_71"
+        },
+        {
+          "id": "mon-11826976060",
+          "group": "Video",
+          "label": "Perfumes Pyramids + Bag",
+          "target": 1,
+          "done": 1,
+          "fill": "Perfumes Pyramids + Bag",
+          "rule": "New Concept · due 2026-05-15",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11826976060",
+          "brief_url": "https://docs.google.com/presentation/d/11PqddtpxzrXvBmAbIEORumE7vxhEsKCz4zaOJKIfjcw/edit?slide=id.g3d957736a76_0_28#slide=id.g3d957736a76_0_28"
+        },
+        {
+          "id": "mon-11624401993",
+          "group": "Video",
+          "label": "Poolday videos-May",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-05-15",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "11624401993",
+          "brief_url": null
+        }
+      ]
+    }
+  ],
+  "_provenance": {
+    "monday_pulled": "2026-07-09 03:02",
+    "monday_count": 49,
+    "monday_done": 30,
+    "notion_pulled": "2026-07-09 03:30",
+    "notion_concepts": 52,
+    "notion_matched": 26,
+    "briefs_linked": 37
+  }
+}

@@ -1,0 +1,9 @@
+/* ============================================================================
+   Unity App UI — Webfonts
+   Inter (UI) + Roboto Mono (code). The Figma file and registry both use Inter
+   throughout; Roboto Mono is used for code/monospace contexts. Loaded from
+   Google Fonts so the system is self-contained for prototyping. In production,
+   Unity self-hosts Inter — swap these @imports for your own @font-face/src.
+   ============================================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap");

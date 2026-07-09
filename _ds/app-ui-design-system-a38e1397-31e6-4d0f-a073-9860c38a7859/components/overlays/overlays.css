@@ -1,0 +1,115 @@
+/* ── Overlays: Dialog, AlertDialog, Drawer, Menu, MenuItem ───────────────── */
+
+.appui-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: appui-fade-in var(--duration-150) var(--ease-out);
+}
+@keyframes appui-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes appui-scale-in { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes appui-slide-right { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes appui-slide-left { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+
+/* Dialog */
+.appui-dialog {
+  background: var(--surface);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-dialog);
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  animation: appui-scale-in var(--duration-150) var(--ease-out);
+}
+.appui-dialog__header { display: flex; align-items: flex-start; gap: 12px; padding: 16px 16px 8px; }
+.appui-dialog__heading { flex: 1; }
+.appui-dialog__title { font-size: var(--text-heading-sm); font-weight: var(--font-weight-semibold); line-height: 1.2; }
+.appui-dialog__desc { font-size: var(--text-sm); color: var(--foreground-secondary); margin: 4px 0 0; }
+.appui-dialog__body { padding: 8px 16px; overflow: auto; font-size: var(--text-body); }
+.appui-dialog__footer { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 16px 16px; }
+.appui-dialog__icon { flex-shrink: 0; margin-top: 2px; }
+
+/* AlertDialog variants tint the icon */
+.appui-dialog--destructive .appui-dialog__icon { color: var(--destructive); }
+.appui-dialog--warning .appui-dialog__icon { color: var(--warning); }
+.appui-dialog--info .appui-dialog__icon { color: var(--primary); }
+
+/* Drawer */
+.appui-drawer-backdrop {
+  position: fixed; inset: 0; background: var(--overlay); z-index: 100;
+  display: flex; animation: appui-fade-in var(--duration-150) var(--ease-out);
+}
+.appui-drawer-backdrop--right { justify-content: flex-end; }
+.appui-drawer {
+  background: var(--surface);
+  border-left: 1px solid var(--border-input);
+  box-shadow: var(--shadow-drawer);
+  width: min(360px, 90vw);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  animation: appui-slide-right var(--duration-200) var(--ease-out);
+}
+.appui-drawer--left { border-left: none; border-right: 1px solid var(--border-input); animation: appui-slide-left var(--duration-200) var(--ease-out); }
+.appui-drawer__header { display: flex; align-items: center; gap: 8px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+.appui-drawer__title { flex: 1; font-size: var(--text-body-lg); font-weight: var(--font-weight-semibold); }
+.appui-drawer__body { padding: 16px; overflow: auto; flex: 1; }
+
+/* Menu */
+.appui-menu {
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-menu);
+  padding: 4px;
+  min-width: 180px;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+.appui-menu__label { padding: 6px 8px 4px; font-size: var(--text-xs); color: var(--foreground-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.appui-menuitem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 5px 8px;
+  border: none;
+  background: none;
+  border-radius: var(--radius-sm);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  text-align: left;
+  cursor: pointer;
+}
+.appui-menuitem:hover, .appui-menuitem:focus-visible { background: var(--control-hover); outline: none; }
+.appui-menuitem[data-active="true"] { background: var(--selected); }
+.appui-menuitem__shortcut { margin-left: auto; color: var(--foreground-muted); font-size: var(--text-xs); }
+.appui-menuitem--destructive { color: var(--destructive); }
+.appui-menuitem--destructive:hover { background: color-mix(in srgb, var(--destructive) 18%, transparent); }
+.appui-menuitem:disabled { opacity: 0.4; pointer-events: none; }
+.appui-menu__separator { height: 1px; background: var(--border); margin: 4px 0; }
+
+/* ContextMenu (right-click positioned menu) */
+.appui-contextmenu-layer { position: fixed; inset: 0; z-index: 150; }
+.appui-contextmenu { position: absolute; }
+
+/* TweakMenu (labeled control popover — runtime tweak/debug panel) */
+.appui-tweakmenu {
+  width: 260px; background: var(--surface-overlay); border: 1px solid var(--border-input);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-menu); color: var(--foreground);
+  font-family: var(--font-sans); overflow: hidden;
+}
+.appui-tweakmenu__head { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--border); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); }
+.appui-tweakmenu__body { padding: 10px 12px; display: flex; flex-direction: column; gap: 10px; max-height: 320px; overflow: auto; }
+.appui-tweakmenu__row { display: grid; grid-template-columns: 1fr 120px; align-items: center; gap: 10px; }
+.appui-tweakmenu__row > label { font-size: var(--text-sm); color: var(--foreground-secondary); }
+.appui-tweakmenu__group { font-size: var(--text-xs); color: var(--foreground-muted); text-transform: uppercase; letter-spacing: .04em; padding-top: 4px; }
