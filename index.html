@@ -90,9 +90,9 @@
 
     <!-- games row -->
     <div style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
-      <span style="font: 600 12px/1 var(--cf-font-sans); padding: 6px 12px; border-radius: 999px; background: var(--cf-primary-lighter); color: var(--cf-primary-darker); white-space: nowrap;">Hole It</span>
-      <span style="font: 400 12px/1 var(--cf-font-sans); padding: 6px 12px; border-radius: 999px; color: var(--cf-fg-disabled); cursor: not-allowed; white-space: nowrap;">Screw Guru</span>
-      <span style="font: 400 12px/1 var(--cf-font-sans); padding: 6px 12px; border-radius: 999px; color: var(--cf-fg-disabled); cursor: not-allowed; white-space: nowrap;">Unravel</span>
+      <sc-for list="{{ games }}" as="gm" hint-placeholder-count="3">
+        <button onClick="{{ gm.select }}" style="font: {{ gm.weight }} 12px/1 var(--cf-font-sans); padding: 6px 14px; border-radius: 999px; border: 1px solid {{ gm.border }}; background: {{ gm.bg }}; color: {{ gm.fg }}; cursor: pointer; white-space: nowrap; transition: background 140ms var(--cf-ease-standard), color 140ms var(--cf-ease-standard), border-color 140ms var(--cf-ease-standard), transform 120ms var(--cf-ease-standard);" style-hover="transform: translateY(-1px); border-color: var(--cf-gray-7);">{{ gm.name }}</button>
+      </sc-for>
     </div>
 
     <!-- waves row -->
@@ -109,7 +109,7 @@
 
   <!-- ===== BODY ===== -->
   <div style="flex: 1; min-width: 0; overflow-y: auto;">
-    <div style="max-width: 980px; margin: 0 auto; box-sizing: border-box; padding: 13px 20px 18px; display: flex; flex-direction: column; gap: 11px;">
+    <div style="max-width: min(1680px, 96vw); margin: 0 auto; box-sizing: border-box; padding: 13px 28px 22px; display: flex; flex-direction: column; gap: 11px;">
 
       <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
         <div class="cf-body2" style="color: var(--cf-error);">data.json not found — awaiting Doctor sync.</div>
@@ -189,7 +189,7 @@
 
         <!-- ============ LIST VIEW ============ -->
         <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
-          <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); align-items: start; gap: 16px 24px;">
             <sc-for list="{{ curGroups }}" as="grp" hint-placeholder-count="3">
               <div style="display: flex; flex-direction: column; gap: 5px;">
                 <div style="display: flex; align-items: center; gap: 10px; padding: 0 2px;">
@@ -479,11 +479,24 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this._timers = {};
+    let startGame = "hole_it";
     try {
       const ui = JSON.parse(localStorage.getItem("session-planner-ui-v2"));
-      if (ui) this.setState({ ui: Object.assign({ hideDone: false, rules: false, selected: null, view: "list" }, ui) });
+      if (ui) {
+        this.setState({ ui: Object.assign({ hideDone: false, rules: false, selected: null, view: "list", game: "hole_it" }, ui) });
+        if (ui.game) startGame = ui.game;
+      }
     } catch (e) {}
-    fetch("data.json")
+    this.loadGame(startGame);
+    this._tick = setInterval(() => this.setState({ now: Date.now() }), 30000);
+  }
+
+  loadGame(slug) {
+    const files = { hole_it: "data.json", screw_guru: "data.screw_guru.json", unravel: "data.unravel.json" };
+    const file = files[slug] || "data.json";
+    this.setUI({ game: slug, selected: null });   // switch game → reset wave to first (Wave A)
+    this.setState({ data: null, error: false });
+    fetch(file)
       .then((r) => { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
       .then((d) => this.setState({
         data: d,
@@ -494,7 +507,6 @@ class Component extends DCLogic {
         order: this.loadJSON("session-planner-order:" + (d.game || "GAME"), {}),
       }, () => this.scheduleReminders()))
       .catch(() => this.setState({ error: true }));
-    this._tick = setInterval(() => this.setState({ now: Date.now() }), 30000);
   }
 
   componentWillUnmount() {
@@ -930,6 +942,21 @@ class Component extends DCLogic {
 
     return {
       waves: waves,
+      games: [
+        { slug: "hole_it", name: "Hole It" },
+        { slug: "screw_guru", name: "Screw Guru" },
+        { slug: "unravel", name: "Unravel" },
+      ].map((g) => {
+        const on = ((this.state.ui && this.state.ui.game) || "hole_it") === g.slug;
+        return {
+          name: g.name,
+          weight: on ? 600 : 400,
+          bg: on ? "var(--cf-primary-lighter)" : "transparent",
+          fg: on ? "var(--cf-primary-darker)" : "var(--cf-fg-secondary)",
+          border: on ? "var(--cf-primary-light)" : "var(--cf-border)",
+          select: () => this.loadGame(g.slug),
+        };
+      }),
       loaded: !!data && !!cur,
       error: this.state.error,
       showLoading: !data && !this.state.error,

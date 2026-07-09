@@ -1,6 +1,6 @@
 {
   "game": "Hole It",
-  "updated": "2026-07-09 · 10:17 · BY DOCTOR",
+  "updated": "2026-07-09 · 13:57 · BY DOCTOR",
   "board_id": "9959638270",
   "notion_data_source": "3807685c-1d84-8173-815e-000bd1f69398",
   "cycles": [
@@ -347,7 +347,7 @@
           "fill": "",
           "rule": "",
           "monday": {
-            "status": "Ready to upload",
+            "status": "Ready for Testing",
             "in_notion": false,
             "brief_created": true
           },
@@ -1126,7 +1126,7 @@
     }
   ],
   "_provenance": {
-    "monday_pulled": "2026-07-09 03:02",
+    "monday_pulled": "2026-07-09 13:57",
     "monday_count": 49,
     "monday_done": 30,
     "notion_pulled": "2026-07-09 03:30",
