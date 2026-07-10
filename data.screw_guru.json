@@ -1,188 +1,224 @@
 {
   "game": "Screw Guru",
-  "updated": "2026-07-09 · 15:06 · BY DOCTOR",
+  "updated": "2026-07-10 · 23:42 · BY DOCTOR",
   "board_id": "9959638270",
   "notion_data_source": "4717685c-1d84-82c2-bb6c-87296b2e4bdb",
   "cycles": [
     {
       "id": "wave-a",
       "label": "2026-07 · Wave A",
-      "kind": "plan",
+      "kind": "live",
       "slots": [
         {
-          "id": "vid-new",
-          "group": "Video",
-          "label": "New concept video",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 3 new-concept videos / month",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "vid-iter",
-          "group": "Video",
-          "label": "Video iteration",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 2 iterations / month",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "sett",
-          "group": "Video",
-          "label": "Sett AI (outsourced)",
-          "target": 6,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 12 / month · Screw Guru = Sett-HEAVY · outsource carries volume",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "poolday",
-          "group": "Inspiration",
-          "label": "Poolday",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 4 / month · in-house AI Inspiration",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "sonicvo",
-          "group": "Inspiration",
-          "label": "SonicVO",
-          "target": 4,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 8 / month · in-house AI Inspiration (VO)",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "playable",
+          "id": "mon-12240638229",
           "group": "Playable",
-          "label": "Playable / IEC PA",
-          "target": 2,
-          "done": false,
+          "label": "Screw Guru - Playable V48",
+          "target": 1,
+          "done": 0,
           "fill": "",
-          "rule": "Production Plan · 3 / month · video-first gated · 4 configs / concept",
+          "rule": "New Concept · due 2026-07-15",
+          "due": "2026-07-15",
           "monday": {
-            "status": "",
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240638229",
+          "brief_url": "https://docs.google.com/presentation/d/1h9Xm1Py8TWtFuBjhrpM57yIBFT-jo226BbRf43yOi1o/edit?usp=sharing"
+        },
+        {
+          "id": "mon-12240608938",
+          "group": "Video",
+          "label": "Screw Guru - New Videos (Iteraion)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-14",
+          "due": "2026-07-14",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240608938",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_47#slide=id.g3eba9ad0c6c_0_47"
+        },
+        {
+          "id": "mon-12240645988",
+          "group": "Video",
+          "label": "Screw Guru - New Videos (Iteraion)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-08",
+          "due": "2026-07-08",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240645988",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_36#slide=id.g3eba9ad0c6c_0_36"
+        },
+        {
+          "id": "mon-12049724829",
+          "group": "Video",
+          "label": "Screw Guru - New Videos (Poolday)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-07-01",
+          "due": "2026-07-01",
+          "monday": {
+            "status": "Testing Done",
             "in_notion": false,
             "brief_created": false
-          }
+          },
+          "monday_item_id": "12049724829",
+          "brief_url": null
+        },
+        {
+          "id": "sett-12334619693",
+          "group": "SETT AI",
+          "label": "New Videos (SETT)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "SETT AI · 2026-07-13 · New Request",
+          "due": "2026-07-13",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "brief_url": "https://docs.google.com/presentation/d/1RMJ-uS_0SX3Keu8VF2OmocMpxZoZ6VIHcYyF_ySoUfo/edit",
+          "delivery_url": "https://drive.google.com/drive/folders/1-kLEH5E6s-avwY07TGg-4OHH6dqB1QNi"
         }
       ]
     },
     {
       "id": "wave-b",
       "label": "2026-07 · Wave B",
-      "kind": "plan",
+      "kind": "live",
       "slots": [
         {
-          "id": "vid-new",
+          "id": "mon-12410715694",
           "group": "Video",
-          "label": "New concept video",
+          "label": "Screw Guru- Tik Tok Videos- Aviv",
           "target": 1,
-          "done": false,
+          "done": 0,
           "fill": "",
-          "rule": "Production Plan · 3 new-concept videos / month",
+          "rule": "due 2026-07-27",
+          "due": "2026-07-27",
           "monday": {
-            "status": "",
+            "status": "Ready for Design",
             "in_notion": false,
             "brief_created": false
-          }
+          },
+          "monday_item_id": "12410715694",
+          "brief_url": null
         },
         {
-          "id": "vid-iter",
+          "id": "mon-12369858424",
           "group": "Video",
-          "label": "Video iteration",
+          "label": "Screw Guru - New Videos (New Concept)",
           "target": 1,
-          "done": false,
+          "done": 0,
           "fill": "",
-          "rule": "Production Plan · 2 iterations / month",
+          "rule": "New Concept · due 2026-07-22",
+          "due": "2026-07-22",
           "monday": {
-            "status": "",
+            "status": "Ready for Design",
             "in_notion": false,
-            "brief_created": false
-          }
+            "brief_created": true
+          },
+          "monday_item_id": "12369858424",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3ef48d6975b_3_16#slide=id.g3ef48d6975b_3_16"
         },
         {
-          "id": "sett",
+          "id": "mon-12369914217",
           "group": "Video",
-          "label": "Sett AI (outsourced)",
-          "target": 6,
-          "done": false,
+          "label": "Screw Guru - New Videos (Iteraion)",
+          "target": 1,
+          "done": 0,
           "fill": "",
-          "rule": "Production Plan · 12 / month · Screw Guru = Sett-HEAVY · outsource carries volume",
+          "rule": "New Concept · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
-            "status": "",
+            "status": "Ready for Design",
             "in_notion": false,
-            "brief_created": false
-          }
+            "brief_created": true
+          },
+          "monday_item_id": "12369914217",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3ef48d6975b_3_0#slide=id.g3ef48d6975b_3_0"
         },
         {
-          "id": "poolday",
-          "group": "Inspiration",
-          "label": "Poolday",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 4 / month · in-house AI Inspiration",
+          "id": "mon-12369906911",
+          "group": "Video",
+          "label": "Female UGC - 3 Setups",
+          "target": 1,
+          "done": 0,
+          "fill": "Female UGC - 3 Setups",
+          "rule": "due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
-            "status": "",
+            "status": "Ready for Design",
             "in_notion": false,
-            "brief_created": false
-          }
+            "brief_created": true
+          },
+          "monday_item_id": "12369906911",
+          "brief_url": "https://docs.google.com/presentation/d/1WTWzOZx5uCduj2uvsSTtLwN8_S5l4U1hd925r89WCw4/edit?slide=id.g3f31ae601ba_2_75#slide=id.g3f31ae601ba_2_75"
         },
         {
-          "id": "sonicvo",
-          "group": "Inspiration",
-          "label": "SonicVO",
-          "target": 4,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 8 / month · in-house AI Inspiration (VO)",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "playable",
+          "id": "mon-12369968204",
           "group": "Playable",
-          "label": "Playable / IEC PA",
+          "label": "VO + Timer on Control",
           "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 3 / month · video-first gated · 4 configs / concept",
+          "done": 0,
+          "fill": "VO + Timer on Control",
+          "rule": "New Concept · due 2026-07-16",
+          "due": "2026-07-16",
           "monday": {
-            "status": "",
+            "status": "Ready for Design",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12369968204",
+          "brief_url": "https://docs.google.com/presentation/d/1WTWzOZx5uCduj2uvsSTtLwN8_S5l4U1hd925r89WCw4/edit?slide=id.g3f31c99e698_1_0#slide=id.g3f31c99e698_1_0"
+        },
+        {
+          "id": "sett-12334619695",
+          "group": "SETT AI",
+          "label": "New Videos (SETT)",
+          "target": 1,
+          "done": 0,
+          "fill": "⚠ brief needed",
+          "rule": "SETT AI · 2026-07-20 · New Request",
+          "due": "2026-07-20",
+          "monday": {
+            "status": "New Request",
             "in_notion": false,
             "brief_created": false
-          }
+          },
+          "brief_url": null,
+          "delivery_url": "https://drive.google.com/drive/folders/1-kLEH5E6s-avwY07TGg-4OHH6dqB1QNi"
+        },
+        {
+          "id": "sett-12334619697",
+          "group": "SETT AI",
+          "label": "New Videos (SETT)",
+          "target": 1,
+          "done": 0,
+          "fill": "⚠ brief needed",
+          "rule": "SETT AI · 2026-07-27 · New Request",
+          "due": "2026-07-27",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "brief_url": null,
+          "delivery_url": "https://drive.google.com/drive/folders/1-kLEH5E6s-avwY07TGg-4OHH6dqB1QNi"
         }
       ]
     },
@@ -262,6 +298,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "In Testing",
             "in_notion": false,
@@ -278,6 +315,7 @@
           "done": 0,
           "fill": "",
           "rule": "due 2026-07-27",
+          "due": "2026-07-27",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -294,6 +332,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-22",
+          "due": "2026-07-22",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -310,6 +349,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -326,6 +366,7 @@
           "done": 0,
           "fill": "Female UGC - 3 Setups",
           "rule": "due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -342,6 +383,7 @@
           "done": 0,
           "fill": "VO + Timer on Control",
           "rule": "New Concept · due 2026-07-16",
+          "due": "2026-07-16",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -358,6 +400,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-15",
+          "due": "2026-07-15",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -374,6 +417,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-14",
+          "due": "2026-07-14",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -390,6 +434,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -406,6 +451,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -422,6 +468,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -438,6 +485,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -454,6 +502,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -470,6 +519,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-07-08",
+          "due": "2026-07-08",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -486,6 +536,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-04-20",
+          "due": "2026-04-20",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -502,6 +553,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-07-01",
+          "due": "2026-07-01",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -518,6 +570,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-29",
+          "due": "2026-06-29",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -534,6 +587,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-24",
+          "due": "2026-06-24",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -550,6 +604,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-15",
+          "due": "2026-06-15",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -566,6 +621,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-15",
+          "due": "2026-06-15",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -582,6 +638,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-06-08",
+          "due": "2026-06-08",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -598,6 +655,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-27",
+          "due": "2026-05-27",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -614,6 +672,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-22",
+          "due": "2026-05-22",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -630,6 +689,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-05-20",
+          "due": "2026-05-20",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -646,6 +706,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-05-19",
+          "due": "2026-05-19",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -662,6 +723,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-29",
+          "due": "2026-05-29",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -678,6 +740,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-05-18",
+          "due": "2026-05-18",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,

@@ -1,216 +1,326 @@
 {
   "game": "Hole It",
-  "updated": "2026-07-09 · 13:57 · BY DOCTOR",
+  "updated": "2026-07-10 · 23:42 · BY DOCTOR",
   "board_id": "9959638270",
   "notion_data_source": "3807685c-1d84-8173-815e-000bd1f69398",
   "cycles": [
     {
       "id": "wave-a",
       "label": "2026-07 · Wave A",
-      "kind": "plan",
+      "kind": "live",
       "slots": [
         {
-          "id": "vid-aihook",
+          "id": "mon-12240644898",
           "group": "Video",
-          "label": "AI-hook test",
+          "label": "Cylinder Reskin",
           "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "experimental ~20% slice · 1 brief holding 6 versions · 2 per AI-hook type",
+          "done": 0,
+          "fill": "Cylinder Reskin",
+          "rule": "Iteration · due 2026-07-07",
+          "due": "2026-07-07",
           "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
+            "status": "In Testing",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240644898",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e82f94bee6_4_0#slide=id.g3e82f94bee6_4_0"
         },
         {
-          "id": "vid-winner",
-          "group": "Video",
-          "label": "Winner iteration",
-          "target": 4,
-          "done": false,
-          "fill": "",
-          "rule": "Giaco gold-zone lever · based-on a real winner VD-ID · floor-pairing control",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "vid-salvage",
-          "group": "Video",
-          "label": "Salvage / retry",
-          "target": 3,
-          "done": false,
-          "fill": "",
-          "rule": "believe + change-hypothesis · iterate while improving, drop on stall",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "sett",
-          "group": "Video",
-          "label": "Sett (complex)",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "freelance offload · brief the ~2 complex ones · rest freestyle · NOT Monday-tracked",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "poolday",
-          "group": "Inspiration",
-          "label": "Poolday",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "in-house AI Inspiration",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "sonicvo",
-          "group": "Inspiration",
-          "label": "SonicVO",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "in-house AI Inspiration (VO) · Hole It = 'describe the game, not the gameplay'",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "playable",
+          "id": "mon-12369923161",
           "group": "Playable",
-          "label": "Playable",
-          "target": 3,
-          "done": false,
-          "fill": "",
-          "rule": "video-first gated · +4 configs each · Viktoryia 2-3 slide",
+          "label": "V22 Optimization & Rearrange",
+          "target": 1,
+          "done": 0,
+          "fill": "V22 Optimization & Rearrange",
+          "rule": "due 2026-07-13",
+          "due": "2026-07-13",
           "monday": {
-            "status": "",
+            "status": "In Progress",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12369923161",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ee49324886_1_0#slide=id.g3ee49324886_1_0"
+        },
+        {
+          "id": "mon-12240622557",
+          "group": "Video",
+          "label": "Color Checkerboard",
+          "target": 1,
+          "done": 0,
+          "fill": "Color Checkerboard",
+          "rule": "New Concept · due 2026-07-09",
+          "due": "2026-07-09",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240622557",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec68fe105a_1_0#slide=id.g3ec68fe105a_1_0"
+        },
+        {
+          "id": "mon-12240599681",
+          "group": "Video",
+          "label": "Sneak-Peak Hype Intro",
+          "target": 1,
+          "done": 0,
+          "fill": "Sneak-Peak Hype Intro",
+          "rule": "New Concept · due 2026-07-03",
+          "due": "2026-07-03",
+          "monday": {
+            "status": "In Testing",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240599681",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e82f94bee6_2_0#slide=id.g3e82f94bee6_2_0"
+        },
+        {
+          "id": "mon-12240721569",
+          "group": "Video",
+          "label": "Reskin Obj Explosion",
+          "target": 1,
+          "done": 0,
+          "fill": "Reskin Obj Explosion",
+          "rule": "New Concept · due 2026-07-06",
+          "due": "2026-07-06",
+          "monday": {
+            "status": "In Testing",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240721569",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e731f34b35_0_39#slide=id.g3e731f34b35_0_39"
+        },
+        {
+          "id": "mon-12369920944",
+          "group": "Video",
+          "label": "UGC Podcast Story",
+          "target": 1,
+          "done": 0,
+          "fill": "UGC Podcast Story",
+          "rule": "due 2026-07-14",
+          "due": "2026-07-14",
+          "monday": {
+            "status": "Ready for Design",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12369920944",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e8f2f518c0_2_0#slide=id.g3e8f2f518c0_2_0"
+        },
+        {
+          "id": "mon-12240594141",
+          "group": "Playable",
+          "label": "lvll255NEWLayout1 Inspiration",
+          "target": 1,
+          "done": 1,
+          "fill": "lvll255NEWLayout1 Inspiration",
+          "rule": "due 2026-07-08",
+          "due": "2026-07-08",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240594141",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec818dfcf5_0_22#slide=id.g3ec818dfcf5_0_22"
+        },
+        {
+          "id": "mon-12368123906",
+          "group": "Playable",
+          "label": "Playable V35- Sett",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-07-07",
+          "due": "2026-07-07",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": false
+          },
+          "monday_item_id": "12368123906",
+          "brief_url": null
+        },
+        {
+          "id": "mon-12240664165",
+          "group": "Playable",
+          "label": "V06 Winner - Optimized Rebuild",
+          "target": 1,
+          "done": 1,
+          "fill": "V06 Winner - Optimized Rebuild",
+          "rule": "due 2026-07-03",
+          "due": "2026-07-03",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240664165",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec818dfcf5_0_4#slide=id.g3ec818dfcf5_0_4"
+        },
+        {
+          "id": "sett-12334619702",
+          "group": "SETT AI",
+          "label": "New Videos (SETT)",
+          "target": 1,
+          "done": 0,
+          "fill": "⚠ brief needed",
+          "rule": "SETT AI · 2026-07-06 · Working on it",
+          "due": "2026-07-06",
+          "monday": {
+            "status": "Working on it",
             "in_notion": false,
             "brief_created": false
-          }
+          },
+          "brief_url": null,
+          "delivery_url": "https://drive.google.com/drive/u/2/folders/1g3ij-mIbMyE_8ptODfyRKUFWzb5Vxt2g"
+        },
+        {
+          "id": "sett-12334619704",
+          "group": "SETT AI",
+          "label": "New Videos (SETT)",
+          "target": 1,
+          "done": 0,
+          "fill": "⚠ brief needed",
+          "rule": "SETT AI · 2026-07-13 · New Request",
+          "due": "2026-07-13",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "brief_url": null,
+          "delivery_url": "https://drive.google.com/drive/folders/1jnyKhAOfMmXA-hcwb99EbFH8oLoSFoLp"
         }
       ]
     },
     {
       "id": "wave-b",
       "label": "2026-07 · Wave B",
-      "kind": "plan",
+      "kind": "live",
       "slots": [
         {
-          "id": "vid-aihook",
+          "id": "mon-12369929008",
           "group": "Video",
-          "label": "AI-hook test",
+          "label": "Reskin Monochromatic Control",
           "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "experimental ~20% slice · 1 brief holding 6 versions · 2 per AI-hook type",
+          "done": 0,
+          "fill": "Reskin Monochromatic Control",
+          "rule": "Iteration · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
+            "status": "Ready for Design",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12369929008",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3e778165ea4_2_6#slide=id.g3e778165ea4_2_6"
         },
         {
-          "id": "vid-winner",
+          "id": "mon-12369923810",
           "group": "Video",
-          "label": "Winner iteration",
-          "target": 4,
-          "done": false,
-          "fill": "",
-          "rule": "Giaco gold-zone lever · based-on a real winner VD-ID · floor-pairing control",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "vid-salvage",
-          "group": "Video",
-          "label": "Salvage / retry",
-          "target": 3,
-          "done": false,
-          "fill": "",
-          "rule": "believe + change-hypothesis · iterate while improving, drop on stall",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "sett",
-          "group": "Video",
-          "label": "Sett (complex)",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "freelance offload · brief the ~2 complex ones · rest freestyle · NOT Monday-tracked",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "poolday",
-          "group": "Inspiration",
-          "label": "Poolday",
+          "label": "JP / KR Localization",
           "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "in-house AI Inspiration",
+          "done": 0,
+          "fill": "JP / KR Localization",
+          "rule": "due 2026-07-17",
+          "due": "2026-07-17",
           "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
+            "status": "Ready for Design",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12369923810",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3f0dd1fd7d9_1_0#slide=id.g3f0dd1fd7d9_1_0"
         },
         {
-          "id": "sonicvo",
-          "group": "Inspiration",
-          "label": "SonicVO",
+          "id": "mon-12369948775",
+          "group": "Video",
+          "label": "Classical Beat-Match",
           "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "in-house AI Inspiration (VO) · Hole It = 'describe the game, not the gameplay'",
+          "done": 0,
+          "fill": "Classical Beat-Match",
+          "rule": "New Concept · due 2026-07-16",
+          "due": "2026-07-16",
           "monday": {
-            "status": "",
+            "status": "Ready for Design",
             "in_notion": false,
-            "brief_created": false
-          }
+            "brief_created": true
+          },
+          "monday_item_id": "12369948775",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3f1d5c81e7d_1_0#slide=id.g3f1d5c81e7d_1_0"
         },
         {
-          "id": "playable",
+          "id": "mon-12240586738",
+          "group": "Video",
+          "label": "Beach Tower Reskin",
+          "target": 1,
+          "done": 0,
+          "fill": "Beach Tower Reskin",
+          "rule": "New Concept · due 2026-07-17",
+          "due": "2026-07-17",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": true,
+            "brief_created": true
+          },
+          "monday_item_id": "12240586738",
+          "brief_url": "https://docs.google.com/presentation/d/1CrvTA8iLiXDezBYA-POhh0-bWtVY5KoiCSEL1gk8Zds/edit?slide=id.g3ec0dedece0_1_0#slide=id.g3ec0dedece0_1_0"
+        },
+        {
+          "id": "mon-12074642996",
           "group": "Playable",
-          "label": "Playable",
-          "target": 3,
-          "done": false,
+          "label": "Playable 31- Mintegral",
+          "target": 1,
+          "done": 0,
           "fill": "",
-          "rule": "video-first gated · +4 configs each · Viktoryia 2-3 slide",
+          "rule": "due 2026-07-17",
+          "due": "2026-07-17",
           "monday": {
-            "status": "",
+            "status": "In Progress",
+            "in_notion": true,
+            "brief_created": false
+          },
+          "monday_item_id": "12074642996",
+          "brief_url": null
+        },
+        {
+          "id": "sett-12334619706",
+          "group": "SETT AI",
+          "label": "New Videos (SETT)",
+          "target": 1,
+          "done": 0,
+          "fill": "⚠ brief needed",
+          "rule": "SETT AI · 2026-07-20 · New Request",
+          "due": "2026-07-20",
+          "monday": {
+            "status": "New Request",
             "in_notion": false,
             "brief_created": false
-          }
+          },
+          "brief_url": null,
+          "delivery_url": "https://drive.google.com/drive/folders/1jnyKhAOfMmXA-hcwb99EbFH8oLoSFoLp"
+        },
+        {
+          "id": "sett-12334619708",
+          "group": "SETT AI",
+          "label": "New Videos (SETT)",
+          "target": 1,
+          "done": 0,
+          "fill": "⚠ brief needed",
+          "rule": "SETT AI · 2026-07-27 · New Request",
+          "due": "2026-07-27",
+          "monday": {
+            "status": "New Request",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "brief_url": null,
+          "delivery_url": "https://drive.google.com/drive/folders/1jnyKhAOfMmXA-hcwb99EbFH8oLoSFoLp"
         }
       ]
     },
@@ -346,6 +456,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "Ready for Testing",
             "in_notion": false,
@@ -362,6 +473,7 @@
           "done": 0,
           "fill": "Cylinder Reskin",
           "rule": "Iteration · due 2026-07-07",
+          "due": "2026-07-07",
           "monday": {
             "status": "In Testing",
             "in_notion": true,
@@ -378,6 +490,7 @@
           "done": 0,
           "fill": "V22 Optimization & Rearrange",
           "rule": "due 2026-07-13",
+          "due": "2026-07-13",
           "monday": {
             "status": "In Progress",
             "in_notion": true,
@@ -394,6 +507,7 @@
           "done": 0,
           "fill": "Color Checkerboard",
           "rule": "New Concept · due 2026-07-09",
+          "due": "2026-07-09",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -410,6 +524,7 @@
           "done": 0,
           "fill": "Sneak-Peak Hype Intro",
           "rule": "New Concept · due 2026-07-03",
+          "due": "2026-07-03",
           "monday": {
             "status": "In Testing",
             "in_notion": false,
@@ -426,6 +541,7 @@
           "done": 0,
           "fill": "Reskin Obj Explosion",
           "rule": "New Concept · due 2026-07-06",
+          "due": "2026-07-06",
           "monday": {
             "status": "In Testing",
             "in_notion": true,
@@ -442,6 +558,7 @@
           "done": 0,
           "fill": "Reskin Monochromatic Control",
           "rule": "Iteration · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "Ready for Design",
             "in_notion": true,
@@ -458,6 +575,7 @@
           "done": 0,
           "fill": "JP / KR Localization",
           "rule": "due 2026-07-17",
+          "due": "2026-07-17",
           "monday": {
             "status": "Ready for Design",
             "in_notion": true,
@@ -474,6 +592,7 @@
           "done": 0,
           "fill": "UGC Podcast Story",
           "rule": "due 2026-07-14",
+          "due": "2026-07-14",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -490,6 +609,7 @@
           "done": 0,
           "fill": "Classical Beat-Match",
           "rule": "New Concept · due 2026-07-16",
+          "due": "2026-07-16",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -506,6 +626,7 @@
           "done": 0,
           "fill": "Beach Tower Reskin",
           "rule": "New Concept · due 2026-07-17",
+          "due": "2026-07-17",
           "monday": {
             "status": "In Progress",
             "in_notion": true,
@@ -522,6 +643,7 @@
           "done": 0,
           "fill": "",
           "rule": "due 2026-07-17",
+          "due": "2026-07-17",
           "monday": {
             "status": "In Progress",
             "in_notion": true,
@@ -538,6 +660,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -554,6 +677,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": true,
@@ -570,6 +694,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -586,6 +711,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -602,6 +728,7 @@
           "done": 0,
           "fill": "",
           "rule": "Iteration",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -618,6 +745,7 @@
           "done": 0,
           "fill": "Bunny x Hole Icons",
           "rule": "due 2026-06-24",
+          "due": "2026-06-24",
           "monday": {
             "status": "In Testing",
             "in_notion": false,
@@ -634,6 +762,7 @@
           "done": 0,
           "fill": "Store Creative Mashup",
           "rule": "due 2026-06-24",
+          "due": "2026-06-24",
           "monday": {
             "status": "Ready for Testing",
             "in_notion": true,
@@ -650,6 +779,7 @@
           "done": 1,
           "fill": "lvll255NEWLayout1 Inspiration",
           "rule": "due 2026-07-08",
+          "due": "2026-07-08",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -666,6 +796,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-07-07",
+          "due": "2026-07-07",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -682,6 +813,7 @@
           "done": 1,
           "fill": "Saw-Cut Sushi Hook",
           "rule": "New Concept · due 2026-06-26",
+          "due": "2026-06-26",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -698,6 +830,7 @@
           "done": 1,
           "fill": "V06 Winner - Optimized Rebuild",
           "rule": "due 2026-07-03",
+          "due": "2026-07-03",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -714,6 +847,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-06-09",
+          "due": "2026-06-09",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -730,6 +864,7 @@
           "done": 1,
           "fill": "S.Korean Translation",
           "rule": "New Concept · due 2026-06-30",
+          "due": "2026-06-30",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -746,6 +881,7 @@
           "done": 1,
           "fill": "Funlevel 384 Inspiration",
           "rule": "due 2026-06-30",
+          "due": "2026-06-30",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -762,6 +898,7 @@
           "done": 1,
           "fill": "Eastertower Mass Reskin",
           "rule": "Iteration · due 2026-06-24",
+          "due": "2026-06-24",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -778,6 +915,7 @@
           "done": 1,
           "fill": "Sushi Fields Block",
           "rule": "New Concept · due 2026-06-12",
+          "due": "2026-06-12",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -794,6 +932,7 @@
           "done": 1,
           "fill": "Banner \"4\" Reskin",
           "rule": "due 2026-06-12",
+          "due": "2026-06-12",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -810,6 +949,7 @@
           "done": 1,
           "fill": "Easter Eggs Tower Reskin",
           "rule": "Iteration · due 2026-06-05",
+          "due": "2026-06-05",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -826,6 +966,7 @@
           "done": 1,
           "fill": "V6 Tower + Bombs Difficulty Layer",
           "rule": "due 2026-06-05",
+          "due": "2026-06-05",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -842,6 +983,7 @@
           "done": 1,
           "fill": "Perfume Inside Reorder",
           "rule": "New Concept · due 2026-06-09",
+          "due": "2026-06-09",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -858,6 +1000,7 @@
           "done": 1,
           "fill": "Glass Cylinder Shatter",
           "rule": "Iteration · due 2026-06-08",
+          "due": "2026-06-08",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -874,6 +1017,7 @@
           "done": 1,
           "fill": "Picnic-Layout Inspiration",
           "rule": "due 2026-06-11",
+          "due": "2026-06-11",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -890,6 +1034,7 @@
           "done": 1,
           "fill": "Pool Day UGC Top Controls",
           "rule": "due 2026-06-01",
+          "due": "2026-06-01",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -906,6 +1051,7 @@
           "done": 1,
           "fill": "VO Top Controls",
           "rule": "due 2026-06-05",
+          "due": "2026-06-05",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -922,6 +1068,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-22",
+          "due": "2026-05-22",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -938,6 +1085,7 @@
           "done": 1,
           "fill": "Cosmetics Pyramid",
           "rule": "New Concept · due 2026-05-28",
+          "due": "2026-05-28",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -954,6 +1102,7 @@
           "done": 1,
           "fill": "SIZE UP! Text Overlay",
           "rule": "New Concept · due 2026-05-29",
+          "due": "2026-05-29",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -970,6 +1119,7 @@
           "done": 1,
           "fill": "Lvl 383",
           "rule": "due 2026-05-25",
+          "due": "2026-05-25",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -986,6 +1136,7 @@
           "done": 1,
           "fill": "Supermarket Shopping",
           "rule": "Iteration · due 2026-05-22",
+          "due": "2026-05-22",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -1002,6 +1153,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-25",
+          "due": "2026-05-25",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -1018,6 +1170,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-20",
+          "due": "2026-05-20",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -1034,6 +1187,7 @@
           "done": 1,
           "fill": "Toys Pyramids",
           "rule": "New Concept · due 2026-05-21",
+          "due": "2026-05-21",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -1050,6 +1204,7 @@
           "done": 1,
           "fill": "Objects Explosion",
           "rule": "New Concept · due 2026-05-20",
+          "due": "2026-05-20",
           "monday": {
             "status": "Testing Done",
             "in_notion": true,
@@ -1066,6 +1221,7 @@
           "done": 1,
           "fill": "Cube Blocks",
           "rule": "New Concept · due 2026-05-21",
+          "due": "2026-05-21",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -1082,6 +1238,7 @@
           "done": 1,
           "fill": "Cosmetics Tower Progress",
           "rule": "New Concept · due 2026-05-15",
+          "due": "2026-05-15",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -1098,6 +1255,7 @@
           "done": 1,
           "fill": "Perfumes Pyramids + Bag",
           "rule": "New Concept · due 2026-05-15",
+          "due": "2026-05-15",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -1114,6 +1272,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-15",
+          "due": "2026-05-15",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,

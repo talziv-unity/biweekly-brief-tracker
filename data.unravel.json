@@ -1,160 +1,207 @@
 {
   "game": "Unravel Master",
-  "updated": "2026-07-09 · 15:06 · BY DOCTOR",
+  "updated": "2026-07-10 · 23:42 · BY DOCTOR",
   "board_id": "9959638270",
   "notion_data_source": "9267685c-1d84-8308-80b5-873824baa8d2",
   "cycles": [
     {
       "id": "wave-a",
       "label": "2026-07 · Wave A",
-      "kind": "plan",
+      "kind": "live",
       "slots": [
         {
-          "id": "vid-new",
+          "id": "mon-12240608553",
           "group": "Video",
-          "label": "New concept video",
-          "target": 4,
-          "done": false,
+          "label": "Unravel Master - New Videos (Iteration)",
+          "target": 1,
+          "done": 0,
           "fill": "",
-          "rule": "Production Plan · 8 new-concept videos / month",
+          "rule": "New Concept · due 2026-07-08",
+          "due": "2026-07-08",
           "monday": {
-            "status": "",
+            "status": "Ready for Testing",
             "in_notion": false,
-            "brief_created": false
-          }
+            "brief_created": true
+          },
+          "monday_item_id": "12240608553",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_78#slide=id.g3eba9ad0c6c_0_78"
         },
         {
-          "id": "vid-iter",
-          "group": "Video",
-          "label": "Video iteration",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 4 iterations / month · winner + salvage levers",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "poolday",
-          "group": "Inspiration",
-          "label": "Poolday",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 4 / month · in-house AI Inspiration",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "sonicvo",
-          "group": "Inspiration",
-          "label": "SonicVO",
-          "target": 4,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 8 / month · in-house AI Inspiration (VO)",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "playable",
+          "id": "mon-12370032217",
           "group": "Playable",
-          "label": "Playable / IEC PA",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 3 / month · video-first gated · 4 configs / concept",
+          "label": "Mash Iterations",
+          "target": 1,
+          "done": 0,
+          "fill": "Mash Iterations",
+          "rule": "New Concept · due 2026-07-14",
+          "due": "2026-07-14",
           "monday": {
-            "status": "",
+            "status": "In Progress",
             "in_notion": false,
-            "brief_created": false
-          }
+            "brief_created": true
+          },
+          "monday_item_id": "12370032217",
+          "brief_url": "https://docs.google.com/presentation/d/1VvtLGCXCsYfdjqPy0vr_mllgrxmiokBfm9J59nsM7G8/edit?slide=id.g3f004ecc6c7_1_75#slide=id.g3f004ecc6c7_1_75"
+        },
+        {
+          "id": "mon-12369906882",
+          "group": "Video",
+          "label": "Unravel Master - New Videos (Iteration)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-15",
+          "due": "2026-07-15",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12369906882",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3ef48d6975b_3_42#slide=id.g3ef48d6975b_3_42"
+        },
+        {
+          "id": "mon-12369914317",
+          "group": "Video",
+          "label": "Unravel Master - New Videos (New Concept)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-14",
+          "due": "2026-07-14",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12369914317",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_67#slide=id.g3e362377620_0_67"
+        },
+        {
+          "id": "mon-12240661642",
+          "group": "Video",
+          "label": "Unravel Master - New Videos (Iteration)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-13",
+          "due": "2026-07-13",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240661642",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_93#slide=id.g3eba9ad0c6c_0_93"
+        },
+        {
+          "id": "mon-12240624170",
+          "group": "Video",
+          "label": "Unravel Master - New Videos (Iteration)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-10",
+          "due": "2026-07-10",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240624170",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_58#slide=id.g3eba9ad0c6c_0_58"
+        },
+        {
+          "id": "mon-12240645984",
+          "group": "Video",
+          "label": "Unravel Master - New Videos (New Concept)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-06",
+          "due": "2026-07-06",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240645984",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_27#slide=id.g3eba9ad0c6c_0_27"
+        },
+        {
+          "id": "mon-12240624843",
+          "group": "Playable",
+          "label": "Unravel Master V34 - Playable",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-02",
+          "due": "2026-07-02",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240624843",
+          "brief_url": "https://docs.google.com/presentation/d/16mDZZKzAvbAR7RLtgflL2rSvTe59z-XRvbGTM7rsl4Y/edit?usp=sharing"
+        },
+        {
+          "id": "mon-12049747229",
+          "group": "Video",
+          "label": "Unravel Master - New Videos (New Concept)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-01",
+          "due": "2026-07-01",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049747229",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_92#slide=id.g3e362377620_0_92"
         }
       ]
     },
     {
       "id": "wave-b",
       "label": "2026-07 · Wave B",
-      "kind": "plan",
+      "kind": "live",
       "slots": [
         {
-          "id": "vid-new",
-          "group": "Video",
-          "label": "New concept video",
-          "target": 4,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 8 new-concept videos / month",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "vid-iter",
-          "group": "Video",
-          "label": "Video iteration",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 4 iterations / month · winner + salvage levers",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "poolday",
-          "group": "Inspiration",
-          "label": "Poolday",
-          "target": 2,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 4 / month · in-house AI Inspiration",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "sonicvo",
-          "group": "Inspiration",
-          "label": "SonicVO",
-          "target": 4,
-          "done": false,
-          "fill": "",
-          "rule": "Production Plan · 8 / month · in-house AI Inspiration (VO)",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "playable",
+          "id": "mon-12240623654",
           "group": "Playable",
-          "label": "Playable / IEC PA",
+          "label": "Unravel Master V33 - Playable",
           "target": 1,
-          "done": false,
+          "done": 0,
           "fill": "",
-          "rule": "Production Plan · 3 / month · video-first gated · 4 configs / concept",
+          "rule": "New Concept · due 2026-07-17",
+          "due": "2026-07-17",
           "monday": {
-            "status": "",
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240623654",
+          "brief_url": "https://docs.google.com/presentation/d/17CwzKsBrW9XAxbO8t9z7DmRhE1Gs9nMqIOj7OSJbj4A/edit?usp=sharing"
+        },
+        {
+          "id": "mon-12369921727",
+          "group": "Video",
+          "label": "Unravel Master - New Videos (Poolday)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "due 2026-07-28",
+          "due": "2026-07-28",
+          "monday": {
+            "status": "Ready for Design",
             "in_notion": false,
             "brief_created": false
-          }
+          },
+          "monday_item_id": "12369921727",
+          "brief_url": null
         }
       ]
     },
@@ -234,6 +281,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-08",
+          "due": "2026-07-08",
           "monday": {
             "status": "Ready for Testing",
             "in_notion": false,
@@ -250,6 +298,7 @@
           "done": 0,
           "fill": "Mash Iterations",
           "rule": "New Concept · due 2026-07-14",
+          "due": "2026-07-14",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -266,6 +315,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-15",
+          "due": "2026-07-15",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -282,6 +332,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-14",
+          "due": "2026-07-14",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -298,6 +349,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-17",
+          "due": "2026-07-17",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -314,6 +366,7 @@
           "done": 0,
           "fill": "",
           "rule": "due 2026-07-28",
+          "due": "2026-07-28",
           "monday": {
             "status": "Ready for Design",
             "in_notion": false,
@@ -330,6 +383,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -346,6 +400,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-13",
+          "due": "2026-07-13",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -362,6 +417,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept · due 2026-07-10",
+          "due": "2026-07-10",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -378,6 +434,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -394,6 +451,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -410,6 +468,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -426,6 +485,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -442,6 +502,7 @@
           "done": 0,
           "fill": "",
           "rule": "",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -458,6 +519,7 @@
           "done": 0,
           "fill": "",
           "rule": "New Concept",
+          "due": null,
           "monday": {
             "status": "New Request",
             "in_notion": false,
@@ -474,6 +536,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-07-06",
+          "due": "2026-07-06",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -490,6 +553,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-06-25",
+          "due": "2026-06-25",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -506,6 +570,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-07-02",
+          "due": "2026-07-02",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -522,6 +587,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-07-01",
+          "due": "2026-07-01",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -538,6 +604,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-22",
+          "due": "2026-06-22",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -554,6 +621,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-17",
+          "due": "2026-06-17",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -570,6 +638,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-06-16",
+          "due": "2026-06-16",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -586,6 +655,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-11",
+          "due": "2026-06-11",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -602,6 +672,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-10",
+          "due": "2026-06-10",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -618,6 +689,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-09",
+          "due": "2026-06-09",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -634,6 +706,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-05",
+          "due": "2026-06-05",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -650,6 +723,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-05",
+          "due": "2026-06-05",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -666,6 +740,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-02",
+          "due": "2026-06-02",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -682,6 +757,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-06-01",
+          "due": "2026-06-01",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -698,6 +774,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-28",
+          "due": "2026-05-28",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -714,6 +791,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-28",
+          "due": "2026-05-28",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -730,6 +808,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-05-25",
+          "due": "2026-05-25",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -746,6 +825,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-22",
+          "due": "2026-05-22",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -762,6 +842,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-05-20",
+          "due": "2026-05-20",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -778,6 +859,7 @@
           "done": 1,
           "fill": "130-131",
           "rule": "due 2026-05-19",
+          "due": "2026-05-19",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -794,6 +876,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-05-19",
+          "due": "2026-05-19",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -810,6 +893,7 @@
           "done": 1,
           "fill": "",
           "rule": "due 2026-05-29",
+          "due": "2026-05-29",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
@@ -826,6 +910,7 @@
           "done": 1,
           "fill": "",
           "rule": "New Concept · due 2026-05-15",
+          "due": "2026-05-15",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
