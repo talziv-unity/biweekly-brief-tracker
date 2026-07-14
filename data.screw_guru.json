@@ -1,234 +1,16 @@
 {
   "game": "Screw Guru",
-  "updated": "2026-07-10 · 23:42 · BY DOCTOR",
+  "updated": "2026-07-14 · 14:34 · BY DOCTOR",
   "board_id": "9959638270",
   "notion_data_source": "4717685c-1d84-82c2-bb6c-87296b2e4bdb",
   "cycles": [
     {
-      "id": "wave-a",
-      "label": "2026-07 · Wave A",
-      "kind": "live",
-      "slots": [
-        {
-          "id": "mon-12240638229",
-          "group": "Playable",
-          "label": "Screw Guru - Playable V48",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-15",
-          "due": "2026-07-15",
-          "monday": {
-            "status": "In Progress",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12240638229",
-          "brief_url": "https://docs.google.com/presentation/d/1h9Xm1Py8TWtFuBjhrpM57yIBFT-jo226BbRf43yOi1o/edit?usp=sharing"
-        },
-        {
-          "id": "mon-12240608938",
-          "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-14",
-          "due": "2026-07-14",
-          "monday": {
-            "status": "In Progress",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12240608938",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_47#slide=id.g3eba9ad0c6c_0_47"
-        },
-        {
-          "id": "mon-12240645988",
-          "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-08",
-          "due": "2026-07-08",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12240645988",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_36#slide=id.g3eba9ad0c6c_0_36"
-        },
-        {
-          "id": "mon-12049724829",
-          "group": "Video",
-          "label": "Screw Guru - New Videos (Poolday)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "due 2026-07-01",
-          "due": "2026-07-01",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "monday_item_id": "12049724829",
-          "brief_url": null
-        },
-        {
-          "id": "sett-12334619693",
-          "group": "SETT AI",
-          "label": "New Videos (SETT)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "SETT AI · 2026-07-13 · New Request",
-          "due": "2026-07-13",
-          "monday": {
-            "status": "New Request",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "brief_url": "https://docs.google.com/presentation/d/1RMJ-uS_0SX3Keu8VF2OmocMpxZoZ6VIHcYyF_ySoUfo/edit",
-          "delivery_url": "https://drive.google.com/drive/folders/1-kLEH5E6s-avwY07TGg-4OHH6dqB1QNi"
-        }
-      ]
-    },
-    {
-      "id": "wave-b",
-      "label": "2026-07 · Wave B",
-      "kind": "live",
-      "slots": [
-        {
-          "id": "mon-12410715694",
-          "group": "Video",
-          "label": "Screw Guru- Tik Tok Videos- Aviv",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "due 2026-07-27",
-          "due": "2026-07-27",
-          "monday": {
-            "status": "Ready for Design",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "monday_item_id": "12410715694",
-          "brief_url": null
-        },
-        {
-          "id": "mon-12369858424",
-          "group": "Video",
-          "label": "Screw Guru - New Videos (New Concept)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-22",
-          "due": "2026-07-22",
-          "monday": {
-            "status": "Ready for Design",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12369858424",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3ef48d6975b_3_16#slide=id.g3ef48d6975b_3_16"
-        },
-        {
-          "id": "mon-12369914217",
-          "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-20",
-          "due": "2026-07-20",
-          "monday": {
-            "status": "Ready for Design",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12369914217",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3ef48d6975b_3_0#slide=id.g3ef48d6975b_3_0"
-        },
-        {
-          "id": "mon-12369906911",
-          "group": "Video",
-          "label": "Female UGC - 3 Setups",
-          "target": 1,
-          "done": 0,
-          "fill": "Female UGC - 3 Setups",
-          "rule": "due 2026-07-20",
-          "due": "2026-07-20",
-          "monday": {
-            "status": "Ready for Design",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12369906911",
-          "brief_url": "https://docs.google.com/presentation/d/1WTWzOZx5uCduj2uvsSTtLwN8_S5l4U1hd925r89WCw4/edit?slide=id.g3f31ae601ba_2_75#slide=id.g3f31ae601ba_2_75"
-        },
-        {
-          "id": "mon-12369968204",
-          "group": "Playable",
-          "label": "VO + Timer on Control",
-          "target": 1,
-          "done": 0,
-          "fill": "VO + Timer on Control",
-          "rule": "New Concept · due 2026-07-16",
-          "due": "2026-07-16",
-          "monday": {
-            "status": "Ready for Design",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12369968204",
-          "brief_url": "https://docs.google.com/presentation/d/1WTWzOZx5uCduj2uvsSTtLwN8_S5l4U1hd925r89WCw4/edit?slide=id.g3f31c99e698_1_0#slide=id.g3f31c99e698_1_0"
-        },
-        {
-          "id": "sett-12334619695",
-          "group": "SETT AI",
-          "label": "New Videos (SETT)",
-          "target": 1,
-          "done": 0,
-          "fill": "⚠ brief needed",
-          "rule": "SETT AI · 2026-07-20 · New Request",
-          "due": "2026-07-20",
-          "monday": {
-            "status": "New Request",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "brief_url": null,
-          "delivery_url": "https://drive.google.com/drive/folders/1-kLEH5E6s-avwY07TGg-4OHH6dqB1QNi"
-        },
-        {
-          "id": "sett-12334619697",
-          "group": "SETT AI",
-          "label": "New Videos (SETT)",
-          "target": 1,
-          "done": 0,
-          "fill": "⚠ brief needed",
-          "rule": "SETT AI · 2026-07-27 · New Request",
-          "due": "2026-07-27",
-          "monday": {
-            "status": "New Request",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "brief_url": null,
-          "delivery_url": "https://drive.google.com/drive/folders/1-kLEH5E6s-avwY07TGg-4OHH6dqB1QNi"
-        }
-      ]
-    },
-    {
-      "id": "monthly",
-      "label": "2026-07 · Monthly overlays",
+      "id": "w1",
+      "label": "Week 1 · Monthly + Sweep + Inspiration",
       "kind": "plan",
       "slots": [
         {
-          "id": "iec",
+          "id": "w1-iec-1",
           "group": "Monthly / ASO",
           "label": "IEC",
           "target": 1,
@@ -242,7 +24,7 @@
           }
         },
         {
-          "id": "banner",
+          "id": "w1-banner-1",
           "group": "Monthly / ASO",
           "label": "Banner",
           "target": 1,
@@ -256,13 +38,13 @@
           }
         },
         {
-          "id": "icon",
+          "id": "w1-icon-1",
           "group": "Monthly / ASO",
           "label": "Icon",
           "target": 1,
           "done": false,
           "fill": "",
-          "rule": "ASO / store test",
+          "rule": "ASO / store test (added 2026-07-06)",
           "monday": {
             "status": "",
             "in_notion": false,
@@ -270,13 +52,230 @@
           }
         },
         {
-          "id": "images",
-          "group": "Monthly / Social",
-          "label": "Images (Google/FB)",
-          "target": 4,
+          "id": "w1-iteration-1",
+          "group": "Video",
+          "label": "Iteration #1",
+          "target": 1,
           "done": false,
           "fill": "",
-          "rule": "4 sizes · 9x16 = gap",
+          "rule": "winner / salvage lever · based-on a real VD-ID",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-new-concept-1",
+          "group": "Video",
+          "label": "New Concept #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "new idea",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-poolday-1",
+          "group": "Inspiration",
+          "label": "Poolday #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "in-house AI Inspiration (Poolday only — no SonicVO)",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-playable-1",
+          "group": "Playable",
+          "label": "Playable #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "video-first gated · +4 configs · Viktoryia 2-3 slide",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-sett-1",
+          "group": "Video",
+          "label": "SETT #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "SETT-heavy · outsource carries it · brief ~2 complex, rest freestyle",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-sett-2",
+          "group": "Video",
+          "label": "SETT #2",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "SETT-heavy · outsource carries it · brief ~2 complex, rest freestyle",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-sett-3",
+          "group": "Video",
+          "label": "SETT #3",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "SETT-heavy · outsource carries it · brief ~2 complex, rest freestyle",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-image-1",
+          "group": "Monthly / Social",
+          "label": "Image #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-image-2",
+          "group": "Monthly / Social",
+          "label": "Image #2",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-image-3",
+          "group": "Monthly / Social",
+          "label": "Image #3",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-image-4",
+          "group": "Monthly / Social",
+          "label": "Image #4",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w1-long-video-90-120s-test-1",
+          "group": "Monthly / Social",
+          "label": "Long video 90-120s (test)",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "extended single · social / Google-FB test lane",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "label": "Week 2 · Iteration Grind",
+      "kind": "plan",
+      "slots": [
+        {
+          "id": "w2-iteration-1",
+          "group": "Video",
+          "label": "Iteration #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "winner / salvage lever · based-on a real VD-ID",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w2-iteration-2",
+          "group": "Video",
+          "label": "Iteration #2",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "winner / salvage lever · based-on a real VD-ID",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w2-playable-1",
+          "group": "Playable",
+          "label": "Playable #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "video-first gated · +4 configs · Viktoryia 2-3 slide",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "w2-sett-1",
+          "group": "Video",
+          "label": "SETT #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "SETT-heavy · outsource carries it · brief ~2 complex, rest freestyle",
           "monday": {
             "status": "",
             "in_notion": false,
@@ -293,7 +292,7 @@
         {
           "id": "mon-12452541031",
           "group": "SETT AI",
-          "label": "Screw Guru - New Videos (SETT) -  (4 monthly slots - each slot 4 deliveries) - July",
+          "label": "New Videos (SETT) -  (4 monthly slots - each slot 4 deliveries) - July",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -310,7 +309,7 @@
         {
           "id": "mon-12410715694",
           "group": "Video",
-          "label": "Screw Guru- Tik Tok Videos- Aviv",
+          "label": "Tik Tok Videos- Aviv",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -327,7 +326,7 @@
         {
           "id": "mon-12369858424",
           "group": "Video",
-          "label": "Screw Guru - New Videos (New Concept)",
+          "label": "New Videos (New Concept)",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -344,7 +343,7 @@
         {
           "id": "mon-12369914217",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
+          "label": "New Videos (Iteraion)",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -364,7 +363,7 @@
           "label": "Female UGC - 3 Setups",
           "target": 1,
           "done": 0,
-          "fill": "Female UGC - 3 Setups",
+          "fill": "",
           "rule": "due 2026-07-20",
           "due": "2026-07-20",
           "monday": {
@@ -381,7 +380,7 @@
           "label": "VO + Timer on Control",
           "target": 1,
           "done": 0,
-          "fill": "VO + Timer on Control",
+          "fill": "",
           "rule": "New Concept · due 2026-07-16",
           "due": "2026-07-16",
           "monday": {
@@ -395,7 +394,7 @@
         {
           "id": "mon-12240638229",
           "group": "Playable",
-          "label": "Screw Guru - Playable V48",
+          "label": "Playable V48",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -412,7 +411,7 @@
         {
           "id": "mon-12240608938",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
+          "label": "New Videos (Iteraion)",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -429,7 +428,7 @@
         {
           "id": "mon-11828227978",
           "group": "Video",
-          "label": "Screw Guru - New Videos (New Concept)",
+          "label": "New Videos (New Concept)",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -446,7 +445,7 @@
         {
           "id": "mon-11828257394",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
+          "label": "New Videos (Iteraion)",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -463,7 +462,7 @@
         {
           "id": "mon-11829079777",
           "group": "Playable",
-          "label": "Screw Guru - Playable",
+          "label": "Playable",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -480,7 +479,7 @@
         {
           "id": "mon-11675314094",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Poolday)",
+          "label": "New Videos (Poolday)",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -497,7 +496,7 @@
         {
           "id": "mon-11675331801",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Sonic VO)",
+          "label": "New Videos (Sonic VO)",
           "target": 1,
           "done": 0,
           "fill": "",
@@ -514,7 +513,7 @@
         {
           "id": "mon-12240645988",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
+          "label": "New Videos (Iteraion)",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -531,7 +530,7 @@
         {
           "id": "mon-11754612731",
           "group": "ASO",
-          "label": "Screw Guru - Screenshots Store",
+          "label": "Screenshots Store",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -548,7 +547,7 @@
         {
           "id": "mon-12049724829",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Poolday)",
+          "label": "New Videos (Poolday)",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -565,7 +564,7 @@
         {
           "id": "mon-12049632141",
           "group": "Video",
-          "label": "Screw Guru - New Videos (New Concept)",
+          "label": "New Videos (New Concept)",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -582,7 +581,7 @@
         {
           "id": "mon-12049696554",
           "group": "Playable",
-          "label": "Screw Guru - Playable V47",
+          "label": "Playable V47",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -599,7 +598,7 @@
         {
           "id": "mon-12049684648",
           "group": "Video",
-          "label": "Screw Guru - New Videos (Iteraion)",
+          "label": "New Videos (Iteraion)",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -616,7 +615,7 @@
         {
           "id": "mon-12049682999",
           "group": "Playable",
-          "label": "Screw Guru - Playable V46",
+          "label": "Playable V46",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -633,7 +632,7 @@
         {
           "id": "mon-12098844777",
           "group": "Banner",
-          "label": "Screw Guru - Banners",
+          "label": "Banners",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -650,7 +649,7 @@
         {
           "id": "mon-11624445948",
           "group": "Video",
-          "label": "Screw Guru- Poolday videos-May",
+          "label": "Poolday videos-May",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -667,7 +666,7 @@
         {
           "id": "mon-11936664228",
           "group": "Banner",
-          "label": "Screw Guru - Banners",
+          "label": "Banners",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -684,7 +683,7 @@
         {
           "id": "mon-11829080664",
           "group": "Playable",
-          "label": "Screw Guru - Playable 45",
+          "label": "Playable 45",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -701,7 +700,7 @@
         {
           "id": "mon-11828238348",
           "group": "Video",
-          "label": "Screw Guru - New Videos (New Concept)",
+          "label": "New Videos (New Concept)",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -718,7 +717,7 @@
         {
           "id": "mon-11624282067",
           "group": "Video",
-          "label": "Screw Guru- VO videos- April",
+          "label": "VO videos- April",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -735,7 +734,7 @@
         {
           "id": "mon-11828257110",
           "group": "Video",
-          "label": "Screw Guru - New Videos (New Concept)",
+          "label": "New Videos (New Concept)",
           "target": 1,
           "done": 1,
           "fill": "",
@@ -759,6 +758,7 @@
     "notion_pulled": null,
     "notion_concepts": 0,
     "notion_matched": 0,
-    "briefs_linked": 17
+    "briefs_linked": 17,
+    "plan_slots": 19
   }
 }
