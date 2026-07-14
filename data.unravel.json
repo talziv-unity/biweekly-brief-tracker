@@ -1,6 +1,6 @@
 {
   "game": "Unravel Master",
-  "updated": "2026-07-14 · 14:34 · BY DOCTOR",
+  "updated": "2026-07-14 · 16:36 · BY DOCTOR",
   "board_id": "9959638270",
   "notion_data_source": "9267685c-1d84-8308-80b5-873824baa8d2",
   "cycles": [
@@ -307,6 +307,74 @@
           "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_78#slide=id.g3eba9ad0c6c_0_78"
         },
         {
+          "id": "mon-12240661642",
+          "group": "Video",
+          "label": "New Videos (Iteration)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-15",
+          "due": "2026-07-15",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240661642",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_93#slide=id.g3eba9ad0c6c_0_93"
+        },
+        {
+          "id": "mon-12240624170",
+          "group": "Video",
+          "label": "New Videos (Iteration)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-10",
+          "due": "2026-07-10",
+          "monday": {
+            "status": "In Testing",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240624170",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_58#slide=id.g3eba9ad0c6c_0_58"
+        },
+        {
+          "id": "mon-12240623654",
+          "group": "Playable",
+          "label": "Unravel Master V33 - Playable",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "New Concept · due 2026-07-17",
+          "due": "2026-07-17",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12240623654",
+          "brief_url": "https://docs.google.com/presentation/d/17CwzKsBrW9XAxbO8t9z7DmRhE1Gs9nMqIOj7OSJbj4A/edit?usp=sharing"
+        },
+        {
+          "id": "mon-12369907825",
+          "group": "Video",
+          "label": "New Videos (Sonic VO) - Eugene",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "due 2026-07-06",
+          "due": "2026-07-06",
+          "monday": {
+            "status": "In Progress",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "12369907825",
+          "brief_url": null
+        },
+        {
           "id": "mon-12370032217",
           "group": "Playable",
           "label": "Mash Iterations",
@@ -324,14 +392,31 @@
           "brief_url": "https://docs.google.com/presentation/d/1VvtLGCXCsYfdjqPy0vr_mllgrxmiokBfm9J59nsM7G8/edit?slide=id.g3f004ecc6c7_1_75#slide=id.g3f004ecc6c7_1_75"
         },
         {
+          "id": "mon-12369921727",
+          "group": "Video",
+          "label": "New Videos (Poolday)",
+          "target": 1,
+          "done": 0,
+          "fill": "",
+          "rule": "due 2026-07-29",
+          "due": "2026-07-29",
+          "monday": {
+            "status": "Ready for Design",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "12369921727",
+          "brief_url": null
+        },
+        {
           "id": "mon-12369906882",
           "group": "Video",
           "label": "New Videos (Iteration)",
           "target": 1,
           "done": 0,
           "fill": "",
-          "rule": "New Concept · due 2026-07-15",
-          "due": "2026-07-15",
+          "rule": "New Concept · due 2026-07-16",
+          "due": "2026-07-16",
           "monday": {
             "status": "In Progress",
             "in_notion": false,
@@ -358,190 +443,88 @@
           "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_67#slide=id.g3e362377620_0_67"
         },
         {
-          "id": "mon-12240623654",
-          "group": "Playable",
-          "label": "Unravel Master V33 - Playable",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-17",
-          "due": "2026-07-17",
-          "monday": {
-            "status": "In Progress",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12240623654",
-          "brief_url": "https://docs.google.com/presentation/d/17CwzKsBrW9XAxbO8t9z7DmRhE1Gs9nMqIOj7OSJbj4A/edit?usp=sharing"
-        },
-        {
-          "id": "mon-12369921727",
-          "group": "Video",
-          "label": "New Videos (Poolday)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "due 2026-07-28",
-          "due": "2026-07-28",
-          "monday": {
-            "status": "Ready for Design",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "monday_item_id": "12369921727",
-          "brief_url": null
-        },
-        {
-          "id": "mon-12369907825",
-          "group": "Video",
-          "label": "New Videos (Sonic VO) - Eugene",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "",
-          "due": null,
-          "monday": {
-            "status": "In Progress",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "monday_item_id": "12369907825",
-          "brief_url": null
-        },
-        {
-          "id": "mon-12240661642",
-          "group": "Video",
-          "label": "New Videos (Iteration)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-13",
-          "due": "2026-07-13",
-          "monday": {
-            "status": "In Progress",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12240661642",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_93#slide=id.g3eba9ad0c6c_0_93"
-        },
-        {
-          "id": "mon-12240624170",
-          "group": "Video",
-          "label": "New Videos (Iteration)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "New Concept · due 2026-07-10",
-          "due": "2026-07-10",
-          "monday": {
-            "status": "In Progress",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12240624170",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_58#slide=id.g3eba9ad0c6c_0_58"
-        },
-        {
-          "id": "mon-11826922331",
+          "id": "mon-12517491739",
           "group": "Video",
           "label": "New Videos (New Concept)",
           "target": 1,
           "done": 0,
           "fill": "",
-          "rule": "New Concept",
-          "due": null,
+          "rule": "New Concept · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "New Request",
             "in_notion": false,
             "brief_created": false
           },
-          "monday_item_id": "11826922331",
+          "monday_item_id": "12517491739",
           "brief_url": null
         },
         {
-          "id": "mon-11677619620",
-          "group": "Video",
-          "label": "New Videos (Poolday)",
-          "target": 1,
-          "done": 0,
-          "fill": "",
-          "rule": "",
-          "due": null,
-          "monday": {
-            "status": "New Request",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "monday_item_id": "11677619620",
-          "brief_url": null
-        },
-        {
-          "id": "mon-11828239131",
+          "id": "mon-12517574509",
           "group": "Video",
           "label": "New Videos (Iteration)",
           "target": 1,
           "done": 0,
           "fill": "",
-          "rule": "New Concept",
-          "due": null,
+          "rule": "New Concept · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "New Request",
             "in_notion": false,
             "brief_created": false
           },
-          "monday_item_id": "11828239131",
+          "monday_item_id": "12517574509",
           "brief_url": null
         },
         {
-          "id": "mon-11829079819",
+          "id": "mon-12517564985",
           "group": "Video",
           "label": "Playable",
           "target": 1,
           "done": 0,
           "fill": "",
-          "rule": "New Concept",
-          "due": null,
+          "rule": "New Concept · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "New Request",
             "in_notion": false,
             "brief_created": false
           },
-          "monday_item_id": "11829079819",
+          "monday_item_id": "12517564985",
           "brief_url": null
         },
         {
-          "id": "mon-11677604006",
+          "id": "mon-12517498897",
           "group": "Video",
-          "label": "New Videos (Sonic VO)",
+          "label": "New Videos (New Concept)",
           "target": 1,
           "done": 0,
           "fill": "",
-          "rule": "",
-          "due": null,
+          "rule": "New Concept · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "New Request",
             "in_notion": false,
             "brief_created": false
           },
-          "monday_item_id": "11677604006",
+          "monday_item_id": "12517498897",
           "brief_url": null
         },
         {
-          "id": "mon-12228164064",
+          "id": "mon-12517558028",
           "group": "Video",
-          "label": "Playable (copy)",
+          "label": "New Videos (Iteration)",
           "target": 1,
           "done": 0,
           "fill": "",
-          "rule": "New Concept",
-          "due": null,
+          "rule": "New Concept · due 2026-07-20",
+          "due": "2026-07-20",
           "monday": {
             "status": "New Request",
             "in_notion": false,
             "brief_created": false
           },
-          "monday_item_id": "12228164064",
+          "monday_item_id": "12517558028",
           "brief_url": null
         },
         {
@@ -562,21 +545,21 @@
           "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_27#slide=id.g3eba9ad0c6c_0_27"
         },
         {
-          "id": "mon-12288214288",
+          "id": "mon-12049747229",
           "group": "Video",
-          "label": "New Video (world cup)",
+          "label": "New Videos (New Concept)",
           "target": 1,
           "done": 1,
           "fill": "",
-          "rule": "due 2026-06-25",
-          "due": "2026-06-25",
+          "rule": "New Concept · due 2026-07-01",
+          "due": "2026-07-01",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
             "brief_created": true
           },
-          "monday_item_id": "12288214288",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_0#slide=id.g3eba9ad0c6c_0_0"
+          "monday_item_id": "12049747229",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_92#slide=id.g3e362377620_0_92"
         },
         {
           "id": "mon-12240624843",
@@ -596,191 +579,21 @@
           "brief_url": "https://docs.google.com/presentation/d/16mDZZKzAvbAR7RLtgflL2rSvTe59z-XRvbGTM7rsl4Y/edit?usp=sharing"
         },
         {
-          "id": "mon-12049747229",
+          "id": "mon-11828227177",
           "group": "Video",
           "label": "New Videos (New Concept)",
           "target": 1,
           "done": 1,
           "fill": "",
-          "rule": "New Concept · due 2026-07-01",
-          "due": "2026-07-01",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049747229",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_92#slide=id.g3e362377620_0_92"
-        },
-        {
-          "id": "mon-12049632744",
-          "group": "Video",
-          "label": "New Videos (New Concept)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-22",
-          "due": "2026-06-22",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049632744",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_35#slide=id.g3e362377620_0_35"
-        },
-        {
-          "id": "mon-12049715522",
-          "group": "Playable",
-          "label": "Playable V31",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-17",
-          "due": "2026-06-17",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049715522",
-          "brief_url": "https://docs.google.com/presentation/d/1G4BBd-rnbRJ2MVoQk9teZ7LufbT2AHJLYwdIPkfy4OI/edit?usp=sharing"
-        },
-        {
-          "id": "mon-12145325759",
-          "group": "Banner",
-          "label": "Banners",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "due 2026-06-16",
-          "due": "2026-06-16",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12145325759",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e8a252a8b3_0_0#slide=id.g3e8a252a8b3_0_0"
-        },
-        {
-          "id": "mon-12049680444",
-          "group": "Video",
-          "label": "New Videos (Iteration)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-11",
-          "due": "2026-06-11",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049680444",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_82#slide=id.g3e362377620_0_82"
-        },
-        {
-          "id": "mon-12049642569",
-          "group": "Video",
-          "label": "New Videos (New Concept)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-10",
-          "due": "2026-06-10",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049642569",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_106#slide=id.g3e362377620_0_106"
-        },
-        {
-          "id": "mon-12228222318",
-          "group": "IEC",
-          "label": "IEC",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-09",
-          "due": "2026-06-09",
+          "rule": "New Concept · due 2026-05-25",
+          "due": "2026-05-25",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
             "brief_created": false
           },
-          "monday_item_id": "12228222318",
+          "monday_item_id": "11828227177",
           "brief_url": null
-        },
-        {
-          "id": "mon-12049713674",
-          "group": "Playable",
-          "label": "Playable V32",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-05",
-          "due": "2026-06-05",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049713674",
-          "brief_url": "https://docs.google.com/presentation/d/1CmchOBS-UpUrRWYOaHhI0HU512lEOewQkyOgC-Jvi-4/edit?usp=sharing"
-        },
-        {
-          "id": "mon-12049724249",
-          "group": "Video",
-          "label": "New Videos (New Concept)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-05",
-          "due": "2026-06-05",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049724249",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_185#slide=id.g3e362377620_0_185"
-        },
-        {
-          "id": "mon-12049732640",
-          "group": "Video",
-          "label": "New Videos (Iteration)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-02",
-          "due": "2026-06-02",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12049732640",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_18#slide=id.g3e362377620_0_18"
-        },
-        {
-          "id": "mon-11948511158",
-          "group": "Video",
-          "label": "New Videos (New Concept)",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-06-01",
-          "due": "2026-06-01",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "11948511158",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3df112650e3_1_0#slide=id.g3df112650e3_1_0"
         },
         {
           "id": "mon-12049632748",
@@ -800,89 +613,123 @@
           "brief_url": null
         },
         {
-          "id": "mon-12098775628",
-          "group": "Banner",
-          "label": "Banners",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "due 2026-05-28",
-          "due": "2026-05-28",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "12098775628",
-          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_128#slide=id.g3e362377620_0_128"
-        },
-        {
-          "id": "mon-11828227177",
+          "id": "mon-11948511158",
           "group": "Video",
           "label": "New Videos (New Concept)",
           "target": 1,
           "done": 1,
           "fill": "",
-          "rule": "New Concept · due 2026-05-25",
-          "due": "2026-05-25",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": false
-          },
-          "monday_item_id": "11828227177",
-          "brief_url": null
-        },
-        {
-          "id": "mon-11936678896",
-          "group": "Banner",
-          "label": "Banners",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "due 2026-05-22",
-          "due": "2026-05-22",
+          "rule": "New Concept · due 2026-06-01",
+          "due": "2026-06-01",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
             "brief_created": true
           },
-          "monday_item_id": "11936678896",
-          "brief_url": "https://docs.google.com/presentation/d/1VyAs6ohDJ10XkNG5KeTIWTcWSDjXrLO3C7E8geKhUC4/edit?slide=id.g3e29a3fbe4f_0_0#slide=id.g3e29a3fbe4f_0_0"
+          "monday_item_id": "11948511158",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3df112650e3_1_0#slide=id.g3df112650e3_1_0"
         },
         {
-          "id": "mon-11829091298",
-          "group": "Playable",
-          "label": "Playable- V30",
-          "target": 1,
-          "done": 1,
-          "fill": "",
-          "rule": "New Concept · due 2026-05-20",
-          "due": "2026-05-20",
-          "monday": {
-            "status": "Testing Done",
-            "in_notion": false,
-            "brief_created": true
-          },
-          "monday_item_id": "11829091298",
-          "brief_url": "https://docs.google.com/presentation/d/1A0aeBwzc8RxrWInMDcTR2dzTTxnUKYxmc-RVSAH8eys/edit?usp=sharing"
-        },
-        {
-          "id": "mon-11605193648",
+          "id": "mon-12049732640",
           "group": "Video",
-          "label": "130-131",
+          "label": "New Videos (Iteration)",
           "target": 1,
           "done": 1,
           "fill": "",
-          "rule": "due 2026-05-19",
-          "due": "2026-05-19",
+          "rule": "New Concept · due 2026-06-02",
+          "due": "2026-06-02",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
             "brief_created": true
           },
-          "monday_item_id": "11605193648",
-          "brief_url": "https://docs.google.com/presentation/d/1VyAs6ohDJ10XkNG5KeTIWTcWSDjXrLO3C7E8geKhUC4/edit?slide=id.g3d41a36c272_0_25#slide=id.g3d41a36c272_0_25"
+          "monday_item_id": "12049732640",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_18#slide=id.g3e362377620_0_18"
+        },
+        {
+          "id": "mon-12049724249",
+          "group": "Video",
+          "label": "New Videos (New Concept)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-06-05",
+          "due": "2026-06-05",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049724249",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_185#slide=id.g3e362377620_0_185"
+        },
+        {
+          "id": "mon-12049642569",
+          "group": "Video",
+          "label": "New Videos (New Concept)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-06-10",
+          "due": "2026-06-10",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049642569",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_106#slide=id.g3e362377620_0_106"
+        },
+        {
+          "id": "mon-12049680444",
+          "group": "Video",
+          "label": "New Videos (Iteration)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-06-11",
+          "due": "2026-06-11",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049680444",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_82#slide=id.g3e362377620_0_82"
+        },
+        {
+          "id": "mon-12049632744",
+          "group": "Video",
+          "label": "New Videos (New Concept)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-06-22",
+          "due": "2026-06-22",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049632744",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_35#slide=id.g3e362377620_0_35"
+        },
+        {
+          "id": "mon-11829082452",
+          "group": "Playable",
+          "label": "Playable- V28",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-05-15",
+          "due": "2026-05-15",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11829082452",
+          "brief_url": "https://docs.google.com/presentation/d/11yxf6LlE4Q53T02sXVrEBYNkl7NRnIq-8vAXKYxck6c/edit?usp=sharing"
         },
         {
           "id": "mon-11829097374",
@@ -902,6 +749,91 @@
           "brief_url": "https://docs.google.com/presentation/d/1J6ZLMW7I-zufLiNst6w32eqAmS8RM3hrbIkzvHjt9nI/edit?usp=sharing"
         },
         {
+          "id": "mon-11829091298",
+          "group": "Playable",
+          "label": "Playable- V30",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-05-20",
+          "due": "2026-05-20",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11829091298",
+          "brief_url": "https://docs.google.com/presentation/d/1A0aeBwzc8RxrWInMDcTR2dzTTxnUKYxmc-RVSAH8eys/edit?usp=sharing"
+        },
+        {
+          "id": "mon-12049713674",
+          "group": "Playable",
+          "label": "Playable V32",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-06-05",
+          "due": "2026-06-05",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049713674",
+          "brief_url": "https://docs.google.com/presentation/d/1CmchOBS-UpUrRWYOaHhI0HU512lEOewQkyOgC-Jvi-4/edit?usp=sharing"
+        },
+        {
+          "id": "mon-12049715522",
+          "group": "Playable",
+          "label": "Playable V31",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-06-17",
+          "due": "2026-06-17",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12049715522",
+          "brief_url": "https://docs.google.com/presentation/d/1G4BBd-rnbRJ2MVoQk9teZ7LufbT2AHJLYwdIPkfy4OI/edit?usp=sharing"
+        },
+        {
+          "id": "mon-12228222318",
+          "group": "IEC",
+          "label": "IEC",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "New Concept · due 2026-06-09",
+          "due": "2026-06-09",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": false
+          },
+          "monday_item_id": "12228222318",
+          "brief_url": null
+        },
+        {
+          "id": "mon-12288214288",
+          "group": "Video",
+          "label": "New Video (world cup)",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-06-25",
+          "due": "2026-06-25",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12288214288",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3eba9ad0c6c_0_0#slide=id.g3eba9ad0c6c_0_0"
+        },
+        {
           "id": "mon-11624097632",
           "group": "Video",
           "label": "VO videos- Ap-May",
@@ -919,28 +851,79 @@
           "brief_url": null
         },
         {
-          "id": "mon-11829082452",
-          "group": "Playable",
-          "label": "Playable- V28",
+          "id": "mon-11605193648",
+          "group": "Video",
+          "label": "130-131",
           "target": 1,
           "done": 1,
           "fill": "",
-          "rule": "New Concept · due 2026-05-15",
-          "due": "2026-05-15",
+          "rule": "due 2026-05-19",
+          "due": "2026-05-19",
           "monday": {
             "status": "Testing Done",
             "in_notion": false,
             "brief_created": true
           },
-          "monday_item_id": "11829082452",
-          "brief_url": "https://docs.google.com/presentation/d/11yxf6LlE4Q53T02sXVrEBYNkl7NRnIq-8vAXKYxck6c/edit?usp=sharing"
+          "monday_item_id": "11605193648",
+          "brief_url": "https://docs.google.com/presentation/d/1VyAs6ohDJ10XkNG5KeTIWTcWSDjXrLO3C7E8geKhUC4/edit?slide=id.g3d41a36c272_0_25#slide=id.g3d41a36c272_0_25"
+        },
+        {
+          "id": "mon-11936678896",
+          "group": "Banner",
+          "label": "Banners",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-05-22",
+          "due": "2026-05-22",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "11936678896",
+          "brief_url": "https://docs.google.com/presentation/d/1VyAs6ohDJ10XkNG5KeTIWTcWSDjXrLO3C7E8geKhUC4/edit?slide=id.g3e29a3fbe4f_0_0#slide=id.g3e29a3fbe4f_0_0"
+        },
+        {
+          "id": "mon-12098775628",
+          "group": "Banner",
+          "label": "Banners",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-05-28",
+          "due": "2026-05-28",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12098775628",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e362377620_0_128#slide=id.g3e362377620_0_128"
+        },
+        {
+          "id": "mon-12145325759",
+          "group": "Banner",
+          "label": "Banners",
+          "target": 1,
+          "done": 1,
+          "fill": "",
+          "rule": "due 2026-06-16",
+          "due": "2026-06-16",
+          "monday": {
+            "status": "Testing Done",
+            "in_notion": false,
+            "brief_created": true
+          },
+          "monday_item_id": "12145325759",
+          "brief_url": "https://docs.google.com/presentation/d/1VEjHVJiBMun5pE8lxoCEeXn5uMqvNnV8DUBh9VVBGOI/edit?slide=id.g3e8a252a8b3_0_0#slide=id.g3e8a252a8b3_0_0"
         }
       ]
     }
   ],
   "_provenance": {
-    "monday_pulled": "2026-07-09 13:57",
-    "monday_count": 38,
+    "monday_pulled": "2026-07-14 16:35",
+    "monday_count": 37,
     "monday_done": 23,
     "notion_pulled": null,
     "notion_concepts": 0,
