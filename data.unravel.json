@@ -1,56 +1,14 @@
 {
   "game": "Unravel Master",
-  "updated": "2026-07-14 · 16:36 · BY DOCTOR",
+  "updated": "2026-07-15 · 13:03 · BY DOCTOR",
   "board_id": "9959638270",
   "notion_data_source": "9267685c-1d84-8308-80b5-873824baa8d2",
   "cycles": [
     {
       "id": "w1",
-      "label": "Week 1 · Monthly + Sweep + Inspiration",
+      "label": "Week 1 · Briefs I open",
       "kind": "plan",
       "slots": [
-        {
-          "id": "w1-iec-1",
-          "group": "Monthly / ASO",
-          "label": "IEC",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "monthly overlay",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "w1-banner-1",
-          "group": "Monthly / ASO",
-          "label": "Banner",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "display",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "w1-icon-1",
-          "group": "Monthly / ASO",
-          "label": "Icon",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "ASO / store test (added 2026-07-06)",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
         {
           "id": "w1-iteration-1",
           "group": "Video",
@@ -120,82 +78,12 @@
             "in_notion": false,
             "brief_created": false
           }
-        },
-        {
-          "id": "w1-image-1",
-          "group": "Monthly / Social",
-          "label": "Image #1",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "w1-image-2",
-          "group": "Monthly / Social",
-          "label": "Image #2",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "w1-image-3",
-          "group": "Monthly / Social",
-          "label": "Image #3",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "w1-image-4",
-          "group": "Monthly / Social",
-          "label": "Image #4",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "Google/FB · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
-        },
-        {
-          "id": "w1-long-video-90-120s-test-1",
-          "group": "Monthly / Social",
-          "label": "Long video 90-120s (test)",
-          "target": 1,
-          "done": false,
-          "fill": "",
-          "rule": "extended single · social / Google-FB test lane",
-          "monday": {
-            "status": "",
-            "in_notion": false,
-            "brief_created": false
-          }
         }
       ]
     },
     {
       "id": "w2",
-      "label": "Week 2 · Iteration Grind",
+      "label": "Week 2 · Briefs I open",
       "kind": "plan",
       "slots": [
         {
@@ -227,13 +115,13 @@
           }
         },
         {
-          "id": "w2-iteration-3",
+          "id": "w2-new-concept-1",
           "group": "Video",
-          "label": "Iteration #3",
+          "label": "New Concept #1",
           "target": 1,
           "done": false,
           "fill": "",
-          "rule": "winner / salvage lever · based-on a real VD-ID · ONE rotation dimension",
+          "rule": "new idea · object as large as possible · first click critical",
           "monday": {
             "status": "",
             "in_notion": false,
@@ -241,9 +129,9 @@
           }
         },
         {
-          "id": "w2-new-concept-1",
+          "id": "w2-new-concept-2",
           "group": "Video",
-          "label": "New Concept #1",
+          "label": "New Concept #2",
           "target": 1,
           "done": false,
           "fill": "",
@@ -267,15 +155,120 @@
             "in_notion": false,
             "brief_created": false
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "monthly",
+      "label": "Monthly / Other · flexible pool",
+      "kind": "plan",
+      "slots": [
         {
-          "id": "w2-playable-2",
-          "group": "Playable",
-          "label": "Playable #2",
+          "id": "monthly-iec-1",
+          "group": "Monthly / ASO",
+          "label": "IEC",
           "target": 1,
           "done": false,
           "fill": "",
-          "rule": "video-first gated · +4 configs · Viktoryia 2-3 slide",
+          "rule": "MONTHLY · store IEC overlay · pull into a week when due",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "monthly-banner-1",
+          "group": "Monthly / ASO",
+          "label": "Banner",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "MONTHLY · display / Mintegral",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "monthly-icon-1",
+          "group": "Monthly / ASO",
+          "label": "Icon",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "MONTHLY · ASO / store test",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "monthly-image-google-fb-1",
+          "group": "Monthly / Social",
+          "label": "Image (Google/FB) #1",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "MONTHLY · social team output · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "monthly-image-google-fb-2",
+          "group": "Monthly / Social",
+          "label": "Image (Google/FB) #2",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "MONTHLY · social team output · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "monthly-image-google-fb-3",
+          "group": "Monthly / Social",
+          "label": "Image (Google/FB) #3",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "MONTHLY · social team output · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "monthly-image-google-fb-4",
+          "group": "Monthly / Social",
+          "label": "Image (Google/FB) #4",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "MONTHLY · social team output · 4 sizes 1x1 / 9x16 / 1200x628 / 1200x1500 · 9x16 = gap",
+          "monday": {
+            "status": "",
+            "in_notion": false,
+            "brief_created": false
+          }
+        },
+        {
+          "id": "monthly-long-video-90-120s-test-1",
+          "group": "Monthly / Social",
+          "label": "Long video 90-120s (test)",
+          "target": 1,
+          "done": false,
+          "fill": "",
+          "rule": "MONTHLY · 90-120s · social / Google-FB test lane",
           "monday": {
             "status": "",
             "in_notion": false,
@@ -929,6 +922,6 @@
     "notion_concepts": 0,
     "notion_matched": 0,
     "briefs_linked": 26,
-    "plan_slots": 19
+    "plan_slots": 18
   }
 }
